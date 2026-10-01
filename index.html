@@ -1038,7 +1038,7 @@ pre {
     · BMO: 10
     · AMC: 11
     · Timing desconocido: 43
-    · Actualizado: 2026-09-30T18:21:12.356787+00:00
+    · Actualizado: 2026-10-01T00:45:13.092220+00:00
   </p>
 
   <div class="table-wrap">
@@ -1396,7 +1396,7 @@ pre {
           </td>
           <td>
             <span class="badge neutral">
-              ANALIZANDO
+              SIN_SEÑAL
             </span>
           </td>
         </tr>
@@ -1460,10 +1460,10 @@ pre {
           <td><strong>ALAR</strong></td>
           <td>Alarum Technologies Ltd.</td>
           <td>UNKNOWN</td>
-          <td>-</td>
+          <td>2026-12-01</td>
           <td>
             <span class="badge bad">
-              CALENDAR_UNRESOLVED
+              DATE_HINT_MISMATCH
             </span>
           </td>
           <td>
@@ -1550,10 +1550,10 @@ pre {
           <td><strong>HUBG</strong></td>
           <td>Hub Group, Inc.</td>
           <td>UNKNOWN</td>
-          <td>-</td>
+          <td>2026-10-22</td>
           <td>
             <span class="badge bad">
-              CALENDAR_UNRESOLVED
+              DATE_HINT_MISMATCH
             </span>
           </td>
           <td>
@@ -2315,12 +2315,12 @@ pre {
 
     <div class="metric">
       <span>SIN SEÑAL</span>
-      <strong>59</strong>
+      <strong>60</strong>
     </div>
 
     <div class="metric">
       <span>PENDIENTE</span>
-      <strong>8</strong>
+      <strong>7</strong>
     </div>
 
     <div class="metric">
@@ -2433,6 +2433,46 @@ pre {
       <strong>-</strong>
     </div>
 
+    <div class="metric">
+      <span>Causal reviews</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>HIT direccional revisado</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>HIT causal limpio</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>HIT causal parcial</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>HIT tesis equivocada</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>MISS price translation</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>HIT causal limpio / HIT dir.</span>
+      <strong>-</strong>
+    </div>
+
+    <div class="metric">
+      <span>Causal ≥ parcial / HIT dir.</span>
+      <strong>-</strong>
+    </div>
+
   </section>
 
   <p class="verdict-empty">
@@ -2456,15 +2496,21 @@ pre {
             <th>Oficial</th>
             <th>Shadow</th>
             <th>Confianza</th>
+            <th>Motivo principal</th>
+            <th>Factor invalidante</th>
+            <th>Etapas de soporte</th>
             <th>Dirección real</th>
             <th>Reacción</th>
             <th>Resultado Shadow</th>
+            <th>Clasificación causal</th>
+            <th>Crédito causal</th>
+            <th>Primer problema causal</th>
           </tr>
         </thead>
         <tbody>
 
       <tr>
-        <td colspan="8">
+        <td colspan="14">
           Todavía no hay forced-direction shadows
           prospectivos registrados.
         </td>
@@ -2474,6 +2520,366 @@ pre {
       </table>
     </div>
   </details>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>
+    Learning Lab · Shadow causal
+  </h2>
+
+  <p class="verdict-empty">
+    Hipótesis de aprendizaje derivadas únicamente
+    de Shadow causal reviews congelados. Son
+    candidatos de investigación: no modifican el
+    motor, no cambian señales históricas y ningún
+    estado de esta sección equivale a VALIDATED.
+  </p>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>Candidatos activos</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>CANDIDATE</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>VALIDATING</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Promotion review</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>REJECTED</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Eventos SUPPORT</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Eventos CONTRADICTION</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Eventos DIAGNOSTIC</span>
+      <strong>0</strong>
+    </div>
+
+  </section>
+
+  <p class="verdict-empty">
+    CANDIDATE = evidencia inicial. VALIDATING exige
+    al menos 2 soportes comparables en 2 compañías.
+    Promotion review exige al menos 3 soportes del
+    mismo scope, 2 compañías, 2 fechas y como máximo
+    1 contradicción comparable. Las contradicciones
+    fuera del scope se muestran, pero no bloquean.
+    La promoción al motor sigue prohibida hasta una
+    revisión separada.
+  </p>
+
+  <details>
+    <summary>
+      Ver learning candidates
+    </summary>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Candidate</th>
+            <th>Nombre</th>
+            <th>Hipótesis</th>
+            <th>Área</th>
+            <th>Estado</th>
+            <th>Support comparable</th>
+            <th>Contradictions comparables</th>
+            <th>Diagnostic comparable</th>
+            <th>Support global</th>
+            <th>Contradictions globales</th>
+            <th>Contradicciones fuera de scope</th>
+            <th>Nº scopes</th>
+            <th>Scope activo</th>
+            <th>Tickers support</th>
+            <th>Tickers contra</th>
+            <th>Dossier</th>
+            <th>Validated</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td colspan="17">
+          Todavía no hay learning candidates
+          con soporte causal suficiente para
+          entrar en el registro activo.
+        </td>
+      </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>
+    Promotion Review · Learning Candidates
+  </h2>
+
+  <p class="verdict-empty">
+    Expedientes congelados únicamente cuando un
+    candidato alcanzó ELIGIBLE_FOR_PROMOTION_REVIEW
+    dentro de un scope comparable. El expediente
+    propone un cambio exacto, pero no modifica
+    ninguna regla ni equivale a VALIDATED.
+  </p>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>Expedientes congelados</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Elegibles ahora</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Elegibles sin expediente</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Decisiones humanas</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Aprobados para experimento</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Rechazados</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Necesita más evidencia</span>
+      <strong>0</strong>
+    </div>
+
+  </section>
+
+  <details>
+    <summary>
+      Ver expedientes de promotion review
+    </summary>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Candidate</th>
+            <th>Nombre</th>
+            <th>Estado al review</th>
+            <th>Estado actual</th>
+            <th>Scope congelado</th>
+            <th>Support comparable</th>
+            <th>Contradictions comparables</th>
+            <th>Contradicciones fuera de scope</th>
+            <th>Tipo de cambio</th>
+            <th>Etapa objetivo</th>
+            <th>Condición propuesta</th>
+            <th>Efecto propuesto</th>
+            <th>Riesgo de regresión</th>
+            <th>Tests obligatorios</th>
+            <th>Decisión humana</th>
+            <th>Reviewer</th>
+            <th>Rationale</th>
+            <th>Experimento autorizado</th>
+            <th>Validated</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td colspan="20">
+          Todavía no existe ningún expediente
+          congelado de promotion review.
+        </td>
+      </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <p class="verdict-empty">
+    Un expediente permanece histórico aunque nueva
+    evidencia cambie después el estado del candidato.
+    La decisión humana se congela por dossier.
+    APPROVE_FOR_EXPERIMENT sólo autoriza una rama
+    experimental: no modifica main, no valida la
+    regla y no altera señales históricas.
+  </p>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>
+    Experimental Engine · CURRENT vs EXPERIMENT
+  </h2>
+
+  <p class="verdict-empty">
+    Sólo contiene reglas previamente aprobadas por
+    el human gate. DEVELOPMENT y
+    RETROSPECTIVE_REPLAY son diagnósticos. La única
+    validación admisible es PROSPECTIVE_HOLDOUT,
+    congelado antes del earnings. Ningún resultado
+    experimental modifica el motor oficial.
+  </p>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>Experimentos</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Ejecutables</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Bloqueados por feature</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Prospective holdouts</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Holdouts evaluados</span>
+      <strong>0</strong>
+    </div>
+
+  </section>
+
+  <details>
+    <summary>
+      Ver comparación por experimento
+    </summary>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Candidate</th>
+            <th>Execution</th>
+            <th>Policy</th>
+            <th>Missing features</th>
+            <th>Replay N</th>
+            <th>Replay triggers</th>
+            <th>Replay CURRENT HR</th>
+            <th>Replay EXP HR</th>
+            <th>Holdout N</th>
+            <th>Holdout eval.</th>
+            <th>Holdout triggers</th>
+            <th>Holdout CURRENT HR</th>
+            <th>Holdout EXP HR</th>
+            <th>Δ señales</th>
+            <th>Misses evitados</th>
+            <th>Hits eliminados</th>
+            <th>Valor selección neto</th>
+            <th>Conclusión</th>
+            <th>Validated</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td colspan="20">
+          Todavía no existe ningún experimento
+          autorizado por el human gate.
+        </td>
+      </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      Ver casos CURRENT vs EXPERIMENT
+    </summary>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Experiment</th>
+            <th>Ticker</th>
+            <th>Fecha</th>
+            <th>Rol</th>
+            <th>CURRENT</th>
+            <th>EXPERIMENT</th>
+            <th>Rule triggered</th>
+            <th>Real</th>
+            <th>Reacción</th>
+            <th>CURRENT result</th>
+            <th>EXPERIMENT result</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td colspan="11">
+          Todavía no hay predicciones experimentales
+          congeladas.
+        </td>
+      </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <p class="verdict-empty">
+    Una mejora en replay histórico nunca valida una
+    regla. Si faltan features prospectivos, el
+    experimento queda bloqueado en vez de reconstruir
+    esos datos después del resultado.
+  </p>
 
 </section>
 
@@ -2497,21 +2903,21 @@ pre {
     <div class="metric">
       <span>SIN SEÑAL OOS</span>
       <strong>
-        59
+        60
       </strong>
     </div>
 
     <div class="metric">
       <span>Causal review listo</span>
       <strong>
-        9
+        11
       </strong>
     </div>
 
     <div class="metric">
       <span>Audits completados</span>
       <strong>
-        9
+        11
       </strong>
     </div>
 
@@ -2525,7 +2931,7 @@ pre {
     <div class="metric">
       <span>Esperando causal review</span>
       <strong>
-        50
+        49
       </strong>
     </div>
 
@@ -2539,7 +2945,7 @@ pre {
     <div class="metric">
       <span>Fail-closed</span>
       <strong>
-        4
+        5
       </strong>
     </div>
 
@@ -2561,14 +2967,14 @@ pre {
     <div class="metric">
       <span>LIMITED</span>
       <strong>
-        3
+        4
       </strong>
     </div>
 
     <div class="metric">
       <span>INSUFFICIENT</span>
       <strong>
-        5
+        6
       </strong>
     </div>
 
@@ -2596,7 +3002,7 @@ pre {
           <tr>
             <td>GOOD_ABSTENTION</td>
             <td>
-              4
+              5
             </td>
           </tr>
 
@@ -2638,7 +3044,7 @@ pre {
           <tr>
             <td>DATA_GAP</td>
             <td>
-              5
+              6
             </td>
           </tr>
 
@@ -2905,7 +3311,7 @@ pre {
           data-case="20844"
           data-ticker="AYI"
           data-cohort="OOS"
-          data-direction="PENDIENTE"
+          data-direction="SIN_SEÑAL"
         >
           <td>2026-10-01</td>
 
@@ -2919,12 +3325,12 @@ pre {
           </td>
 
           <td><span class="badge info">Prospectivo</span></td>
-          <td><span class="badge info">PENDIENTE</span></td>
+          <td><span class="badge neutral">SIN_SEÑAL</span></td>
           <td>-</td>
-          <td><span class="badge neutral">-</span></td>
-          <td><span class="badge neutral">-</span></td>
-          <td><span class="badge neutral">-</span></td>
+          <td><span class="badge bad">FALLA</span></td>
           <td><span class="badge bad">NO</span></td>
+          <td><span class="badge neutral">NO DETERMINADO</span></td>
+          <td><span class="badge good">Sí</span></td>
           <td>PENDIENTE</td>
           <td><span class="badge neutral">-</span></td>
           <td><span class="badge neutral">-</span></td>
@@ -3371,7 +3777,7 @@ pre {
           <td><span class="badge info">Prospectivo</span></td>
           <td><span class="badge info">PENDIENTE</span></td>
           <td>-</td>
-          <td><span class="badge neutral">-</span></td>
+          <td><span class="badge bad">FALLA</span></td>
           <td><span class="badge neutral">-</span></td>
           <td><span class="badge neutral">-</span></td>
           <td><span class="badge bad">NO</span></td>
@@ -7447,7 +7853,7 @@ pre {
           id="case-20844"
           data-ticker="AYI"
           data-cohort="OOS"
-          data-direction="PENDIENTE"
+          data-direction="SIN_SEÑAL"
         >
           <summary class="case-card-summary">
 
@@ -7467,8 +7873,8 @@ pre {
             </div>
 
             <div class="case-main-badges">
-              <span class="badge info">PENDIENTE</span>
-              <span class="badge info">ABIERTO</span>
+              <span class="badge neutral">SIN_SEÑAL</span>
+              <span class="badge info">CONGELADO</span>
             </div>
 
           </summary>
@@ -7487,7 +7893,7 @@ pre {
 
           <h3>
             VEREDICTO:
-            <span class="badge info">PENDIENTE</span>
+            <span class="badge neutral">SIN_SEÑAL</span>
           </h3>
         </div>
 
@@ -7501,7 +7907,7 @@ pre {
         </strong>
 
         <p>
-          El análisis sigue en curso y todavía no existe una decisión direccional válida.
+          El trimestre parecía razonablemente favorable, pero lo positivo era demasiado conocido por el mercado para convertirlo en una señal CALL.
         </p>
 
       </div>
@@ -7514,7 +7920,7 @@ pre {
         </strong>
 
         <p>
-          El análisis todavía no ha completado una dirección válida. PENDIENTE no equivale a SIN SEÑAL.
+          Había más factores favorables que desfavorables, pero lo positivo no era suficientemente nuevo ni sorprendente para justificar una señal CALL.
         </p>
 
       </div>
@@ -7528,7 +7934,7 @@ pre {
             Qué favorecía una subida
           </h4>
 
-          <ul><li>El escenario operativo previo apuntaba a una mejora.</li><li>Las previsiones futuras apuntaban a una evolución favorable.</li></ul>
+          <ul><li>El escenario operativo previo apuntaba a una mejora.</li><li>Parte del escenario negativo parecía ya reflejado en el precio.</li></ul>
 
         </div>
 
@@ -7550,7 +7956,7 @@ pre {
             Qué bloqueó la señal
           </h4>
 
-          <p class="verdict-empty">No hubo un bloqueo duro.</p>
+          <ul><li>Lo que esperábamos no aportaba una novedad suficientemente distinta de lo que el mercado ya conocía.</li><li>No se pudo identificar con suficiente seguridad qué variable iba a decidir la reacción.</li><li>Quedaban riesgos relevantes sin resolver suficientemente.</li><li>No se pudo demostrar una brecha suficiente entre nuestro escenario y el verdadero umbral del mercado.</li></ul>
 
         </div>
 
@@ -7566,7 +7972,7 @@ pre {
           </strong>
 
           <p>
-            Pendiente de completar todas las etapas necesarias antes de evaluar una señal CALL.
+            La parte operativa parecía favorable, pero esa mejora ya era conocida o esperada por el mercado. No encontramos una sorpresa positiva nueva frente al umbral real.
           </p>
 
         </div>
@@ -7579,7 +7985,7 @@ pre {
           </strong>
 
           <p>
-            Pendiente de completar todas las etapas necesarias antes de evaluar una señal PUT.
+            Parte del escenario negativo parecía ya reflejado en el precio y no encontramos una nueva sorpresa negativa suficientemente clara para justificar PUT.
           </p>
 
         </div>
@@ -7594,7 +8000,7 @@ pre {
         </strong>
 
         <p>
-          PENDIENTE. Todavía no existe una decisión CALL, PUT o SIN SEÑAL válida.
+          SIN SEÑAL. No se demostró ni una sorpresa positiva ni una sorpresa negativa con ventaja suficiente frente a lo que realmente esperaba el mercado. Por eso no se fuerza CALL, PUT ni un porcentaje artificial como 55/45.
         </p>
 
       </div>
@@ -7614,28 +8020,28 @@ pre {
               <div>
                 <span>Novedad</span>
                 <strong>
-                  <span class="badge neutral">-</span>
+                  <span class="badge bad">FALLA</span>
                 </strong>
               </div>
 
               <div>
                 <span>Variable dominante</span>
                 <strong>
-                  <span class="badge neutral">-</span>
+                  <span class="badge bad">NO</span>
                 </strong>
               </div>
 
               <div>
                 <span>Veto de riesgos</span>
                 <strong>
-                  <span class="badge neutral">-</span>
+                  <span class="badge neutral">NO DETERMINADO</span>
                 </strong>
               </div>
 
               <div>
                 <span>Brecha de expectativas</span>
                 <strong>
-                  <span class="badge neutral">-</span>
+                  <span class="badge neutral">INFORMACIÓN INSUFICIENTE</span>
                 </strong>
               </div>
 
@@ -7663,7 +8069,7 @@ pre {
 
         <div>
           <span>Resultado probable</span>
-          <p>La capacidad para estimar el trimestre es limitada. La lectura operativa general es favorable. Ingresos estimados entre $1,22 B y $1,28 B. La rentabilidad muestra señales de mejora. La demanda muestra señales favorables.</p>
+          <p>La capacidad para estimar el trimestre es limitada. La lectura operativa general es favorable. Ingresos estimados entre $1,22 B y $1,30 B. La rentabilidad muestra señales de mejora. La demanda muestra señales favorables.</p>
         </div>
 
         <div>
@@ -7674,15 +8080,15 @@ pre {
         <div>
           <span>Novedad real</span>
           <p>
-            <span class="badge neutral">-</span>
-            No está claro que exista una novedad real aprovechable. La fuerza de la novedad es -.
+            <span class="badge bad">FALLA</span>
+            Falla el filtro de novedad. No se ha demostrado que tengamos una información suficientemente distinta de lo que el mercado ya conoce o vigila. La fuerza de la novedad es ninguna. No se ha demostrado una segunda capa de sorpresa.
           </p>
         </div>
 
         <div>
           <span>Variable dominante</span>
           <p>
-            <span class="badge neutral">-</span>
+            <span class="badge bad">NO</span>
             <strong>
               no determinada
             </strong>
@@ -7693,22 +8099,22 @@ pre {
         <div>
           <span>Veto de riesgos</span>
           <p>
-            <span class="badge neutral">-</span>
-            El veto de riesgos no puede determinarse con suficiente claridad. Con la información disponible no podemos confirmar ni descartar un riesgo capaz de cambiar la reacción.
+            <span class="badge neutral">NO DETERMINADO</span>
+            El veto de riesgos no puede determinarse con suficiente claridad. Con la información disponible no podemos confirmar ni descartar un riesgo capaz de cambiar la reacción. Riesgos revisados: márgenes — gravedad media, solapado; regulación — gravedad baja, parcialmente solapado; refinanciación — gravedad baja, independiente.
           </p>
         </div>
 
         <div>
           <span>Decisión final</span>
           <p>
-            <span class="badge info">PENDIENTE</span>
-            Decisión final: -. La confianza direccional es -. La brecha frente a las expectativas reales del mercado es -.
+            <span class="badge neutral">SIN_SEÑAL</span>
+            Decisión final: SIN_SEÑAL. La confianza direccional es información insuficiente. La brecha frente a las expectativas reales del mercado es información insuficiente. No se genera señal porque: No existe novedad real suficiente; No están suficientemente resueltos los riesgos que podrían cambiar la reacción; No sabemos con suficiente seguridad qué variable decidirá la reacción. Por eso el sistema no inventa un 55/45 ni fuerza una dirección.
           </p>
         </div>
 
         <div>
           <span>Motivos que impiden dar señal</span>
-          <span class="badge neutral">-</span>
+          <div class="blocker-list"><span class="badge info">No existe novedad real suficiente</span><span class="badge info">No están suficientemente resueltos los riesgos que podrían cambiar la reacción</span><span class="badge info">No sabemos con suficiente seguridad qué variable decidirá la reacción</span></div>
         </div>
 
       </div>
@@ -7869,7 +8275,7 @@ pre {
               <div class="stage-body">
 
                 <p class="stage-summary">
-                  La capacidad para estimar el trimestre es limitada. La lectura operativa general es favorable. Ingresos estimados entre $1,22 B y $1,28 B. La rentabilidad muestra señales de mejora. La demanda muestra señales favorables.
+                  La capacidad para estimar el trimestre es limitada. La lectura operativa general es favorable. Ingresos estimados entre $1,22 B y $1,30 B. La rentabilidad muestra señales de mejora. La demanda muestra señales favorables.
                 </p>
 
                 <details class="technical">
@@ -7888,9 +8294,9 @@ pre {
                   <pre>{
   &quot;ticker&quot;: &quot;AYI&quot;,
   &quot;earnings_date&quot;: &quot;2026-10-01&quot;,
-  &quot;generated_at&quot;: &quot;2026-09-30T18:25:08.933637+00:00&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:50:28.384710+00:00&quot;,
   &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
-  &quot;response_id&quot;: &quot;resp_0fedb6100e70fd3e016abd53f8c12c87d19ff6dfd9aeb8eb3f&quot;,
+  &quot;response_id&quot;: &quot;resp_0ac0db9a46387a23016abdae4908e487d1833332a797227017&quot;,
   &quot;pack_sha256&quot;: &quot;7579847e51ebd39db77b937e9e0d6b78271ab73e62c1c88dbb585044b38b3f95&quot;,
   &quot;allowed_evidence_ids&quot;: [
     19903,
@@ -7912,13 +8318,13 @@ pre {
       &quot;estimate_basis&quot;: &quot;MULTI_SOURCE_INFERENCE&quot;,
       &quot;trajectory&quot;: &quot;STABLE&quot;,
       &quot;estimated_revenue_low_usd_b&quot;: 1.22,
-      &quot;estimated_revenue_high_usd_b&quot;: 1.28,
+      &quot;estimated_revenue_high_usd_b&quot;: 1.3,
       &quot;estimated_yoy_low_pct&quot;: null,
       &quot;estimated_yoy_high_pct&quot;: null,
-      &quot;reasoning&quot;: &quot;No explicit fiscal fourth-quarter revenue guidance is provided. The estimate is anchored to third-quarter revenue of $1.198 billion, management commentary indicating continued sequential growth into Q4, the company’s historical tendency toward stronger sales in the final two fiscal quarters, and evidence of firming lighting project conversion. The range assumes Q4 growth continues but is less steep than the prior quarter’s sequential increase. A year-over-year range is not provided because the comparable prior-year Q4 revenue is absent from the pack.&quot;,
+      &quot;reasoning&quot;: &quot;The upcoming quarter is expected to benefit from Acuity&#x27;s historical seasonality, with the final two fiscal quarters typically producing the highest sales. Management commentary also indicated continued sequential growth from Q3 to Q4, although at a less steep rate than the prior quarter. The range is therefore anchored to Q3 revenue of $1.198 billion and assumes modest sequential growth; the pack does not provide enough information to calculate a defensible year-over-year range for Q4.&quot;,
       &quot;evidence_ids&quot;: [
-        19895,
         19896,
+        19895,
         20048
       ],
       &quot;uses_fundamentals&quot;: true
@@ -7927,43 +8333,42 @@ pre {
       &quot;estimate_basis&quot;: &quot;MULTI_SOURCE_INFERENCE&quot;,
       &quot;trajectory&quot;: &quot;IMPROVING&quot;,
       &quot;estimated_non_gaap_eps_low&quot;: 5.4,
-      &quot;estimated_non_gaap_eps_high&quot;: 5.9,
-      &quot;reasoning&quot;: &quot;No explicit fiscal fourth-quarter adjusted EPS guidance is supplied. The estimate uses third-quarter adjusted diluted EPS of $5.31, substantial year-over-year operating-profit growth, a 420-basis-point GAAP operating-margin increase, and management commentary pointing to continued sequential growth and future operating leverage in lighting. The range assumes modest sequential EPS improvement, partly offset by inflation, memory-component costs, and higher SG&amp;A expenses.&quot;,
+      &quot;estimated_non_gaap_eps_high&quot;: 6.1,
+      &quot;reasoning&quot;: &quot;Adjusted diluted EPS was $5.31 in Q3, up 4% year over year, while adjusted operating profit increased 0.8% and the company maintained an 18.7% adjusted operating margin. Historical seasonality and expected sequential revenue growth support a modestly higher Q4 adjusted EPS range. Margin risks include materials inflation, higher SG&amp;A costs, and potential memory-component pressure in AIS, so the range is kept broad.&quot;,
       &quot;evidence_ids&quot;: [
         19895,
+        19896,
         20048
       ],
       &quot;uses_fundamentals&quot;: true
     },
     &quot;demand&quot;: {
       &quot;trajectory&quot;: &quot;STRENGTHENING&quot;,
-      &quot;reasoning&quot;: &quot;Demand appears to be improving at the margin: AIS was reported to have grown 15% through share gains, while lighting order trends were described as firming and project conversion rates normalizing after a soft winter period. The evidence remains mixed by segment because ABL third-quarter sales declined 2%.&quot;,
+      &quot;reasoning&quot;: &quot;Management commentary described lighting order trends as firming and project conversion rates as normalizing after a soft winter period. AIS also continued to grow at a double-digit rate through share gains and expansion into adjacent markets.&quot;,
       &quot;evidence_ids&quot;: [
-        20048,
-        19895
+        20048
       ]
     },
     &quot;key_operating_driver&quot;: {
       &quot;name&quot;: &quot;AIS segment growth and lighting project conversion&quot;,
       &quot;trajectory&quot;: &quot;STRENGTHENING&quot;,
-      &quot;reasoning&quot;: &quot;AIS growth through share gains provides a direct growth contribution, while normalization of lighting project release and conversion rates supports the expected sequential Q4 revenue increase. ABL margin execution and potential operating leverage could also support profitability as volumes recover.&quot;,
+      &quot;reasoning&quot;: &quot;AIS grew 15% in Q3 through share gains, while lighting demand was described as firming as project releases normalized. These factors are the clearest company-specific indicators supporting continued sequential growth into Q4.&quot;,
       &quot;evidence_ids&quot;: [
-        20048,
-        19895
+        20048
       ]
     },
-    &quot;probable_quarter_summary&quot;: &quot;Acuity’s fiscal Q4 is most likely to show modest sequential revenue growth from the $1.198 billion Q3 base, with revenue approximately $1.22 billion-$1.28 billion. Profitability is likely to improve modestly, with adjusted diluted EPS estimated at $5.40-$5.90, supported by AIS growth, firmer lighting project conversion, and operating leverage, but constrained by cost and expense pressures.&quot;,
+    &quot;probable_quarter_summary&quot;: &quot;Acuity most likely delivers modest sequential revenue growth in the upcoming fiscal Q4, with revenue approximately $1.22 billion to $1.30 billion. Profitability is likely to remain strong or improve modestly, producing adjusted diluted EPS around $5.40 to $6.10. The operating picture is stronger on margins and demand normalization, although revenue growth remains modest and has decelerated year over year.&quot;,
     &quot;uncertainties&quot;: [
-      &quot;There is no explicit fiscal Q4 revenue or adjusted EPS guidance in the supplied pack.&quot;,
-      &quot;Prior-year fiscal Q4 revenue is not provided, so a Q4 year-over-year revenue estimate cannot be calculated defensibly.&quot;,
-      &quot;ABL sales were down 2% in Q3, creating uncertainty around the pace of lighting-market recovery.&quot;,
-      &quot;Inflation in metals and SG&amp;A, higher medical costs, and memory-component supply shocks could limit margin expansion.&quot;,
-      &quot;The Q3 tariff refund was excluded from adjusted metrics; the availability of comparable one-time items in Q4 is unknown.&quot;
+      &quot;No direct Q4 revenue or EPS guidance is included in the research pack.&quot;,
+      &quot;A defensible Q4 year-over-year revenue estimate cannot be calculated from the supplied figures because prior-year Q4 revenue is not provided.&quot;,
+      &quot;Materials inflation, higher SG&amp;A expenses, memory-component costs in AIS, tariffs, and construction or renovation activity could affect revenue and margins.&quot;,
+      &quot;The EPS range is inferred from Q3 profitability, seasonality, and expected sequential growth rather than explicit quarterly guidance.&quot;
     ],
     &quot;evidence_ids&quot;: [
       19895,
       19896,
-      20048
+      20048,
+      19903
     ]
   },
   &quot;usage&quot;: {
@@ -7972,11 +8377,11 @@ pre {
       &quot;cache_write_tokens&quot;: 14857,
       &quot;cached_tokens&quot;: 0
     },
-    &quot;output_tokens&quot;: 1264,
+    &quot;output_tokens&quot;: 1220,
     &quot;output_tokens_details&quot;: {
       &quot;reasoning_tokens&quot;: 516
     },
-    &quot;total_tokens&quot;: 16124
+    &quot;total_tokens&quot;: 16080
   }
 }</pre>
                 </details>
@@ -8019,9 +8424,9 @@ pre {
   &quot;ticker&quot;: &quot;AYI&quot;,
   &quot;earnings_date&quot;: &quot;2026-10-01&quot;,
   &quot;research_cutoff&quot;: &quot;2026-09-30&quot;,
-  &quot;generated_at&quot;: &quot;2026-09-30T18:25:17.434556+00:00&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:50:36.406105+00:00&quot;,
   &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
-  &quot;response_id&quot;: &quot;resp_010ed84cb94414af016abd54071c9c87d18f0ccbf86cafc952&quot;,
+  &quot;response_id&quot;: &quot;resp_0448765ac4b0282a016abdae56396c87d199972096968ef337&quot;,
   &quot;pack_sha256&quot;: &quot;de01bff2639df72c86eafa485a73dbd9448eb5b696a84543a6108be2f6ce0797&quot;,
   &quot;market_source_count&quot;: 0,
   &quot;evidence_strength_normalization&quot;: {
@@ -8042,7 +8447,7 @@ pre {
       &quot;revenue_usd_b&quot;: null,
       &quot;non_gaap_eps&quot;: null,
       &quot;dispersion&quot;: &quot;UNKNOWN&quot;,
-      &quot;reasoning&quot;: &quot;No market-expectation documents or consensus estimates are supplied.&quot;,
+      &quot;reasoning&quot;: &quot;No market-expectation documents or published consensus figures are included in the hurdle pack.&quot;,
       &quot;evidence_ids&quot;: []
     },
     &quot;company_guidance&quot;: {
@@ -8051,7 +8456,7 @@ pre {
       &quot;non_gaap_eps_low&quot;: null,
       &quot;non_gaap_eps_high&quot;: null,
       &quot;non_gaap_operating_margin_pct&quot;: null,
-      &quot;reasoning&quot;: &quot;The supplied company document reports third-quarter fiscal 2026 results but does not provide numerical guidance for the upcoming report.&quot;,
+      &quot;reasoning&quot;: &quot;The supplied SEC filing reports Acuity&#x27;s completed third-quarter fiscal 2026 results, but does not provide numerical guidance for the upcoming report.&quot;,
       &quot;evidence_ids&quot;: [
         19895
       ]
@@ -8060,10 +8465,8 @@ pre {
       &quot;revenue_bar&quot;: &quot;UNCLEAR&quot;,
       &quot;eps_bar&quot;: &quot;UNCLEAR&quot;,
       &quot;kpi_expectations&quot;: [],
-      &quot;qualitative_bar&quot;: &quot;No market or company guidance hurdle for the upcoming report is supplied; therefore, no defensible qualitative bar can be established.&quot;,
-      &quot;evidence_ids&quot;: [
-        19895
-      ]
+      &quot;qualitative_bar&quot;: &quot;No supported market expectation or qualitative KPI bar can be established from the supplied materials.&quot;,
+      &quot;evidence_ids&quot;: []
     },
     &quot;real_hurdle&quot;: {
       &quot;revenue_low_usd_b&quot;: null,
@@ -8072,17 +8475,18 @@ pre {
       &quot;non_gaap_eps_high&quot;: null,
       &quot;numeric_hurdle_directly_sourced&quot;: false,
       &quot;revenue_beat_alone_likely_sufficient&quot;: &quot;UNCLEAR&quot;,
-      &quot;critical_kpi&quot;: &quot;No critical KPI hurdle identified in the supplied evidence.&quot;,
-      &quot;qualitative_hurdle&quot;: &quot;The real hurdle cannot be reconstructed from the supplied pack because it contains neither explicit numeric thresholds nor market expectations for the upcoming report.&quot;,
-      &quot;reasoning&quot;: &quot;The explicit_numeric_hurdles field is empty, so all numerical real-hurdle fields must remain null. The pack also lacks analyst consensus, investor expectations, and qualitative KPI bars for the upcoming earnings report.&quot;,
+      &quot;critical_kpi&quot;: &quot;No critical KPI hurdle is supported by the supplied evidence.&quot;,
+      &quot;qualitative_hurdle&quot;: &quot;The hurdle is not reconstructable: the pack contains no explicit numerical hurdle, company guidance for the upcoming report, analyst consensus, or market-expectation evidence.&quot;,
+      &quot;reasoning&quot;: &quot;The explicit_numeric_hurdles field is empty, so no numerical real-hurdle values may be populated. The only supplied document describes prior-quarter results and does not establish what the market required for the upcoming earnings report.&quot;,
       &quot;evidence_ids&quot;: [
         19895
       ]
     },
     &quot;uncertainties&quot;: [
-      &quot;The supplied company document is a prior-quarter results release rather than upcoming-quarter guidance.&quot;,
-      &quot;No analyst consensus, market expectation, or explicit numeric hurdle is provided.&quot;,
-      &quot;No specific KPI or narrative expectation bar is supplied.&quot;
+      &quot;No analyst consensus or market-expectation documents were supplied.&quot;,
+      &quot;No company guidance for the upcoming report was supplied.&quot;,
+      &quot;No explicit numerical hurdles were supplied.&quot;,
+      &quot;No qualitative KPI bar can be distinguished from historical reported performance.&quot;
     ],
     &quot;evidence_ids&quot;: [
       19895
@@ -8094,11 +8498,11 @@ pre {
       &quot;cache_write_tokens&quot;: 2884,
       &quot;cached_tokens&quot;: 0
     },
-    &quot;output_tokens&quot;: 591,
+    &quot;output_tokens&quot;: 614,
     &quot;output_tokens_details&quot;: {
-      &quot;reasoning_tokens&quot;: 164
+      &quot;reasoning_tokens&quot;: 176
     },
-    &quot;total_tokens&quot;: 3478
+    &quot;total_tokens&quot;: 3501
   }
 }</pre>
                 </details>
@@ -8121,7 +8525,7 @@ pre {
               <div class="stage-body">
 
                 <p class="stage-summary">
-                  La información disponible sobre las previsiones futuras es limitado. El tono esperado es mejorando. Ingresos anuales: no determinado. EPS anual: no determinado. Márgenes: mixto. Demanda: mejorando.
+                  La información disponible sobre las previsiones futuras es limitado. El tono esperado es mixto. Ingresos anuales: no determinado. EPS anual: no determinado. Márgenes: mixto. Demanda: mejorando.
                 </p>
 
                 <details class="technical">
@@ -8140,10 +8544,10 @@ pre {
                   <pre>{
   &quot;ticker&quot;: &quot;AYI&quot;,
   &quot;earnings_date&quot;: &quot;2026-10-01&quot;,
-  &quot;generated_at&quot;: &quot;2026-09-30T18:25:33.901935+00:00&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:50:46.906999+00:00&quot;,
   &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
-  &quot;response_id&quot;: &quot;resp_042e10cfe4a8b132016abd540faad087d19d8b6b6fd55348d6&quot;,
-  &quot;pack_sha256&quot;: &quot;e7d2cf82dd500638830142158279e7adad3c5d6df2744196263becb2039c5fdb&quot;,
+  &quot;response_id&quot;: &quot;resp_084b0578d87613ac016abdae5e480887d1b008e8dd1ef253eb&quot;,
+  &quot;pack_sha256&quot;: &quot;cd1383e268522eed56f06c534d97109b845166b434389eede0f197966efe5082&quot;,
   &quot;allowed_evidence_ids&quot;: [
     20046,
     20048,
@@ -8159,17 +8563,17 @@ pre {
   &quot;result&quot;: {
     &quot;assessment_status&quot;: &quot;LIMITED&quot;,
     &quot;confidence&quot;: &quot;MEDIUM&quot;,
-    &quot;overall_forward_tone&quot;: &quot;STRENGTHENING&quot;,
+    &quot;overall_forward_tone&quot;: &quot;MIXED&quot;,
     &quot;full_year_revenue&quot;: {
       &quot;expected_action&quot;: &quot;UNCLEAR&quot;,
       &quot;estimated_low_usd_b&quot;: null,
       &quot;estimated_high_usd_b&quot;: null,
       &quot;numeric_basis&quot;: &quot;INSUFFICIENT&quot;,
       &quot;uses_probable_result&quot;: false,
-      &quot;reasoning&quot;: &quot;The supplied company evidence does not provide an explicit full-year revenue outlook or a prior full-year guidance range. Management commentary supports sequential Q4 growth and firming lighting demand, but those signals do not establish a defensible full-year guidance action or range.&quot;,
+      &quot;reasoning&quot;: &quot;The supplied company evidence does not provide an explicit full-year revenue outlook or a prior full-year guidance range. Management does indicate continued sequential growth from Q3 to Q4, but that does not establish a full-year revenue guidance action.&quot;,
       &quot;evidence_ids&quot;: [
-        19895,
-        20048
+        20048,
+        19895
       ]
     },
     &quot;full_year_eps&quot;: {
@@ -8178,24 +8582,23 @@ pre {
       &quot;estimated_high&quot;: null,
       &quot;numeric_basis&quot;: &quot;INSUFFICIENT&quot;,
       &quot;uses_probable_result&quot;: false,
-      &quot;reasoning&quot;: &quot;No explicit full-year adjusted EPS outlook or prior company guidance range is supplied. Improving operating performance and potential lighting leverage support a constructive outlook, but inflation, memory-component costs, and higher SG&amp;A make a specific full-year guidance action or range unsupported.&quot;,
+      &quot;reasoning&quot;: &quot;No explicit full-year EPS outlook or prior full-year EPS guidance range is supplied. Q3 adjusted EPS and operating margin provide a performance reference, but not enough evidence to identify a likely full-year guidance action or range.&quot;,
       &quot;evidence_ids&quot;: [
-        19895,
-        20048
+        19895
       ]
     },
     &quot;key_operating_driver_outlook&quot;: {
       &quot;name&quot;: &quot;AIS segment growth and lighting project conversion&quot;,
       &quot;expected_action&quot;: &quot;MAINTAIN&quot;,
       &quot;trajectory&quot;: &quot;STRENGTHENING&quot;,
-      &quot;reasoning&quot;: &quot;Management expects AIS to maintain high growth rates through share gains and new product categories, while lighting project conversion rates are normalizing and order trends are firming. Together, these are the clearest company-specific drivers of forward growth, although the ABL recovery remains uneven.&quot;,
+      &quot;reasoning&quot;: &quot;Management expects AIS to maintain high growth rates through share gains, adjacent-market expansion, and new data-center products. Lighting project conversion is also normalizing and order trends are firming, supporting a strengthening forward driver outlook without evidence of a formal change in full-year guidance.&quot;,
       &quot;evidence_ids&quot;: [
         20048
       ]
     },
     &quot;margin_outlook&quot;: {
       &quot;trajectory&quot;: &quot;MIXED&quot;,
-      &quot;reasoning&quot;: &quot;The company delivered strong GAAP operating-margin expansion, but adjusted operating margin declined slightly year over year in Q3. Future lighting operating leverage could improve margins, while metals inflation, higher medical costs, memory-component pressures, and increased technology-related SG&amp;A create offsets.&quot;,
+      &quot;reasoning&quot;: &quot;Recent adjusted operating margin was resilient at 18.7%, and management expects operating leverage as lighting volumes recover. However, materials inflation, higher SG&amp;A costs, memory-component pressure in AIS, and potential pricing-related dilution create offsetting risks.&quot;,
       &quot;evidence_ids&quot;: [
         19895,
         20048
@@ -8203,7 +8606,7 @@ pre {
     },
     &quot;demand_outlook&quot;: {
       &quot;trajectory&quot;: &quot;STRENGTHENING&quot;,
-      &quot;reasoning&quot;: &quot;Management described lighting demand as firming, with project conversion rates returning toward normal patterns, and expects continued sequential growth from Q3 to Q4. AIS demand remains supported by share gains and expansion into data-center-related applications, though ABL sales were down 2% in Q3.&quot;,
+      &quot;reasoning&quot;: &quot;Management described lighting order trends as firming and project conversion rates as normalizing after a soft winter period. AIS continues to grow through share gains and expansion into adjacent markets.&quot;,
       &quot;evidence_ids&quot;: [
         20048
       ]
@@ -8214,37 +8617,34 @@ pre {
       &quot;non_gaap_eps_low&quot;: null,
       &quot;non_gaap_eps_high&quot;: null,
       &quot;numeric_basis&quot;: &quot;INSUFFICIENT&quot;,
-      &quot;reasoning&quot;: &quot;The evidence supports qualitative expectations for sequential Q4 revenue growth and possible operating leverage but does not provide a company-issued next-period numerical revenue or adjusted EPS range. A numerical range should not be manufactured from the probable-result estimate.&quot;,
+      &quot;reasoning&quot;: &quot;The evidence supports only qualitative expectations for continued sequential Q3-to-Q4 growth; it does not provide a company-issued numerical next-period revenue or EPS range. The probable-result estimates cannot be treated as management guidance.&quot;,
       &quot;evidence_ids&quot;: [
-        19895,
         20048
       ]
     },
-    &quot;expected_guidance_summary&quot;: &quot;Management is most likely to communicate a constructive qualitative outlook: continued sequential growth, sustained AIS momentum, improving lighting project conversion, and eventual lighting operating leverage. However, the supplied pack does not support a specific full-year revenue or EPS guidance action, nor a numerical next-period range. Margin commentary is likely to remain balanced between operating-leverage potential and inflation, component-cost, and SG&amp;A pressures.&quot;,
+    &quot;expected_guidance_summary&quot;: &quot;Management was most likely to communicate continued sequential growth into Q4, firming lighting demand, and sustained high AIS growth, while remaining cautious on margins because of materials inflation, SG&amp;A investment, memory-component costs, and tariffs. The pack does not support a specific full-year revenue or EPS guidance action.&quot;,
     &quot;uncertainties&quot;: [
       &quot;No explicit full-year revenue guidance is supplied.&quot;,
-      &quot;No explicit full-year adjusted EPS guidance is supplied.&quot;,
-      &quot;No numerical next-period guidance range is provided.&quot;,
-      &quot;ABL demand recovery is not yet uniform, with Q3 sales down 2%.&quot;,
-      &quot;Inflation, memory-component supply costs, medical-cost inflation, and higher technology-related SG&amp;A could limit margin expansion.&quot;,
-      &quot;The Q3 tariff refund was excluded from adjusted metrics, and the availability of comparable future adjustments is uncertain.&quot;
+      &quot;No explicit full-year EPS guidance is supplied.&quot;,
+      &quot;No numerical next-period management guidance is provided.&quot;,
+      &quot;Margin performance could be affected by materials inflation, SG&amp;A costs, memory-component availability, pricing actions, tariffs, and construction or renovation activity.&quot;
     ],
     &quot;evidence_ids&quot;: [
-      19895,
-      20048
+      20048,
+      19895
     ]
   },
   &quot;usage&quot;: {
-    &quot;input_tokens&quot;: 5140,
+    &quot;input_tokens&quot;: 5095,
     &quot;input_tokens_details&quot;: {
-      &quot;cache_write_tokens&quot;: 5137,
+      &quot;cache_write_tokens&quot;: 5092,
       &quot;cached_tokens&quot;: 0
     },
-    &quot;output_tokens&quot;: 1301,
+    &quot;output_tokens&quot;: 1107,
     &quot;output_tokens_details&quot;: {
-      &quot;reasoning_tokens&quot;: 516
+      &quot;reasoning_tokens&quot;: 422
     },
-    &quot;total_tokens&quot;: 6441
+    &quot;total_tokens&quot;: 6202
   }
 }</pre>
                 </details>
@@ -8286,10 +8686,10 @@ pre {
                   <pre>{
   &quot;ticker&quot;: &quot;AYI&quot;,
   &quot;earnings_date&quot;: &quot;2026-10-01&quot;,
-  &quot;generated_at&quot;: &quot;2026-09-30T18:25:45.241841+00:00&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:50:57.858765+00:00&quot;,
   &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
-  &quot;response_id&quot;: &quot;resp_06cb638109f2bee7016abd5420516087d1a8843df8eb2d8855&quot;,
-  &quot;pack_sha256&quot;: &quot;90d23a26c0fc2e9e4c184de64ca00cf277502d32c5872261db366720d302748d&quot;,
+  &quot;response_id&quot;: &quot;resp_0dfe2d489a69ca24016abdae68e9ec87d19ef92e330d76eef1&quot;,
+  &quot;pack_sha256&quot;: &quot;8891649a14980831235fe3cc95e54594b390d8a932c562e41c1034359e6ce41a&quot;,
   &quot;allowed_evidence_ids&quot;: [
     19895,
     20046,
@@ -8303,14 +8703,13 @@ pre {
       &quot;category&quot;: &quot;SEGMENT&quot;,
       &quot;predictiveness&quot;: &quot;HIGH&quot;,
       &quot;current_signal&quot;: &quot;STRENGTHENING&quot;,
-      &quot;causal_chain&quot;: &quot;AIS share gains and expansion into adjacent categories, including data-center-related products, drive higher AIS demand and segment revenue. Higher AIS revenue contributes directly to total company revenue and supports the expected sequential Q4 growth; sustained AIS momentum is also the clearest qualitative forward-guidance driver.&quot;,
-      &quot;why_predictive&quot;: &quot;AIS was reported to have grown 15% through share gains, and management expects it to maintain high growth rates. This is a direct, company-specific revenue driver with clearer forward evidence than the uneven ABL recovery.&quot;,
+      &quot;causal_chain&quot;: &quot;AIS growth through share gains and expansion into adjacent markets increases segment revenue, supports total-company sequential growth, and can improve operating leverage; however, memory-component costs and related pricing actions may affect segment margin conversion.&quot;,
+      &quot;why_predictive&quot;: &quot;AIS grew 15% in Q3, and management expects continued high growth through core share gains, adjacent-market expansion, and new data-center products. This is the clearest current operating KPI tied to incremental revenue and the expected Q3-to-Q4 growth trajectory.&quot;,
       &quot;linked_to_revenue&quot;: true,
-      &quot;linked_to_profitability&quot;: false,
+      &quot;linked_to_profitability&quot;: true,
       &quot;linked_to_guidance&quot;: true,
       &quot;evidence_ids&quot;: [
-        20048,
-        19895
+        20048
       ]
     },
     &quot;secondary_kpis&quot;: [
@@ -8318,37 +8717,37 @@ pre {
         &quot;name&quot;: &quot;Lighting project conversion and order trends&quot;,
         &quot;predictiveness&quot;: &quot;HIGH&quot;,
         &quot;current_signal&quot;: &quot;STRENGTHENING&quot;,
-        &quot;why_relevant&quot;: &quot;Normalization of project conversion rates and firming orders provide the principal support for sequential Q4 lighting recovery and total-company revenue growth. The signal is tempered by the recent ABL sales decline.&quot;,
+        &quot;why_relevant&quot;: &quot;Management reported firming lighting orders and normalization of project conversion rates after a soft winter period. Improving conversion should turn quoted and backlogged projects into Q4 revenue, while higher lighting volumes could create operating leverage.&quot;,
         &quot;evidence_ids&quot;: [
           20048
         ]
       },
       {
-        &quot;name&quot;: &quot;ABL adjusted gross margin&quot;,
-        &quot;predictiveness&quot;: &quot;MEDIUM&quot;,
-        &quot;current_signal&quot;: &quot;STABLE&quot;,
-        &quot;why_relevant&quot;: &quot;ABL maintained a 46.1% adjusted gross margin despite soft volume, providing a profitability base if lighting volumes recover. However, metals inflation and other cost pressures could constrain future margin expansion.&quot;,
-        &quot;evidence_ids&quot;: [
-          20048
-        ]
-      },
-      {
-        &quot;name&quot;: &quot;Total-company adjusted operating margin&quot;,
+        &quot;name&quot;: &quot;Adjusted operating margin&quot;,
         &quot;predictiveness&quot;: &quot;MEDIUM&quot;,
         &quot;current_signal&quot;: &quot;MIXED&quot;,
-        &quot;why_relevant&quot;: &quot;GAAP operating margin expanded materially, but adjusted operating margin declined slightly year over year, making this a useful profitability monitor but a less clean forward demand KPI.&quot;,
+        &quot;why_relevant&quot;: &quot;The 18.7% Q3 adjusted operating margin demonstrates resilient profitability, but materials inflation, higher SG&amp;A, memory-component pressure, and pricing-related dilution could limit incremental margin expansion.&quot;,
         &quot;evidence_ids&quot;: [
-          19895
+          19895,
+          20048
+        ]
+      },
+      {
+        &quot;name&quot;: &quot;Sequential revenue growth&quot;,
+        &quot;predictiveness&quot;: &quot;MEDIUM&quot;,
+        &quot;current_signal&quot;: &quot;STABLE&quot;,
+        &quot;why_relevant&quot;: &quot;Management expects continued Q3-to-Q4 growth, but at a less steep rate than the prior quarter. This is a useful near-term output KPI, though it is less leading than AIS growth or project conversion.&quot;,
+        &quot;evidence_ids&quot;: [
+          20048
         ]
       }
     ],
-    &quot;predictive_chain_summary&quot;: &quot;AIS segment growth is the strongest primary KPI because it combines an observed 15% growth rate with a stated expectation of continued high growth. Share gains and new product categories should drive AIS revenue, supporting total-company sequential growth and constructive qualitative guidance. Lighting project conversion is the key secondary demand indicator, while margin KPIs determine how much revenue growth converts into EPS.&quot;,
+    &quot;predictive_chain_summary&quot;: &quot;AIS share gains and adjacent-market expansion provide the most direct engine for incremental revenue, while lighting project conversion is the leading demand indicator for additional Q4 sales. Together they support modest sequential revenue growth and potentially stronger profitability through operating leverage, with margin risks from input costs, SG&amp;A investment, and AIS memory-component pressure. The same drivers are the principal qualitative basis for expected forward commentary, although no numerical Q4 or full-year guidance is supplied.&quot;,
     &quot;limitations&quot;: [
-      &quot;The pack does not provide an explicit Q4 revenue or adjusted EPS guidance range.&quot;,
-      &quot;AIS growth is reported qualitatively at the segment level and does not include a full-period Q4 forecast.&quot;,
-      &quot;ABL demand remains uneven, with third-quarter sales down 2%.&quot;,
-      &quot;Memory-component costs, metals inflation, medical-cost inflation, and higher SG&amp;A could limit profitability even if AIS revenue remains strong.&quot;,
-      &quot;No market expectations or hurdle is supplied, so this assessment addresses operating predictiveness only.&quot;
+      &quot;No explicit numerical Q4 revenue or EPS guidance is provided.&quot;,
+      &quot;No explicit full-year revenue or EPS guidance range is supplied.&quot;,
+      &quot;The AIS and lighting indicators are supported by management commentary, but the pack does not provide a detailed segment-level Q4 forecast.&quot;,
+      &quot;Margin conversion remains uncertain because of materials inflation, SG&amp;A costs, memory-component pressure, tariffs, and pricing actions.&quot;
     ],
     &quot;evidence_ids&quot;: [
       19895,
@@ -8356,16 +8755,16 @@ pre {
     ]
   },
   &quot;usage&quot;: {
-    &quot;input_tokens&quot;: 6659,
+    &quot;input_tokens&quot;: 6518,
     &quot;input_tokens_details&quot;: {
-      &quot;cache_write_tokens&quot;: 6656,
+      &quot;cache_write_tokens&quot;: 6515,
       &quot;cached_tokens&quot;: 0
     },
-    &quot;output_tokens&quot;: 898,
+    &quot;output_tokens&quot;: 969,
     &quot;output_tokens_details&quot;: {
-      &quot;reasoning_tokens&quot;: 313
+      &quot;reasoning_tokens&quot;: 382
     },
-    &quot;total_tokens&quot;: 7557
+    &quot;total_tokens&quot;: 7487
   }
 }</pre>
                 </details>
@@ -8381,14 +8780,14 @@ pre {
                 </span>
 
                 <span class="stage-status">
-                  PENDIENTE
+                  COMPLETADA
                 </span>
               </summary>
 
               <div class="stage-body">
 
                 <p class="stage-summary">
-                  Falla el filtro de novedad. No se ha demostrado que tengamos una información suficientemente distinta de lo que el mercado ya conoce o vigila. La fuerza de la novedad es ninguna. Existe una segunda capa posible entre el dato operativo y una sorpresa financiera o de previsiones.
+                  Falla el filtro de novedad. No se ha demostrado que tengamos una información suficientemente distinta de lo que el mercado ya conoce o vigila. La fuerza de la novedad es ninguna. No se ha demostrado una segunda capa de sorpresa.
                 </p>
 
                 <details class="technical">
@@ -8407,42 +8806,36 @@ pre {
                   <pre>{
   &quot;ticker&quot;: &quot;AYI&quot;,
   &quot;earnings_date&quot;: &quot;2026-10-01&quot;,
-  &quot;generated_at&quot;: &quot;2026-09-30T08:58:09.064222+00:00&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:51:14.908772+00:00&quot;,
   &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
-  &quot;response_id&quot;: &quot;resp_01a0243d10a31d20016abccefda2c487d0be3d61589f86ab4d&quot;,
-  &quot;pack_sha256&quot;: &quot;9d50f5428952ac50840a12be497dbb3c98c4565bb6f4571296eaa37b4d8fe0e4&quot;,
+  &quot;response_id&quot;: &quot;resp_05b3c78cfc0d3714016abdae73cb1887d19343d1ea1ee3341d&quot;,
+  &quot;pack_sha256&quot;: &quot;636d64d828680935efa1b1b69169674b10a6cba5f61f7f89fb810cd5862f9364&quot;,
   &quot;allowed_evidence_ids&quot;: [
     20046,
-    20051,
-    20050,
-    20049,
     20048,
     19895
   ],
   &quot;result&quot;: {
-    &quot;assessment_status&quot;: &quot;LIMITED&quot;,
+    &quot;assessment_status&quot;: &quot;INSUFFICIENT&quot;,
     &quot;confidence&quot;: &quot;MEDIUM&quot;,
-    &quot;primary_kpi&quot;: &quot;Lighting project conversion rate&quot;,
+    &quot;primary_kpi&quot;: &quot;AIS segment growth&quot;,
     &quot;market_awareness&quot;: {
-      &quot;directly_disclosed&quot;: &quot;PARTIAL&quot;,
-      &quot;widely_discussed&quot;: &quot;UNCLEAR&quot;,
-      &quot;easy_to_reconstruct&quot;: &quot;PARTIAL&quot;,
-      &quot;awareness_level&quot;: &quot;UNCLEAR&quot;,
-      &quot;reasoning&quot;: &quot;Management commentary reportedly described project-conversion rates normalizing and expected sequential Q3-to-Q4 growth, but the supplied company filing does not provide a quantified conversion-rate KPI. The market materials supplied focus primarily on revenue and EPS estimates, with no direct evidence that analysts were separately focused on project conversion. The qualitative direction is easy to understand from the commentary, but the magnitude and timing of conversion into revenue are not reconstructable with precision.&quot;,
+      &quot;directly_disclosed&quot;: &quot;YES&quot;,
+      &quot;widely_discussed&quot;: &quot;PARTIAL&quot;,
+      &quot;easy_to_reconstruct&quot;: &quot;YES&quot;,
+      &quot;awareness_level&quot;: &quot;MEDIUM&quot;,
+      &quot;reasoning&quot;: &quot;AIS growth of 15% was disclosed in the prior-quarter company results and reproduced in a Yahoo Finance earnings-call summary. The supplied pack does not contain enough analyst or market-source coverage to establish that it was widely discussed, but the KPI was public and straightforward to identify. The available evidence also does not show that analysts were focused on a less-obvious interpretation of the KPI.&quot;,
       &quot;evidence_ids&quot;: [
-        20048,
         19895,
-        20049,
-        20050,
-        20051
+        20048
       ]
     },
     &quot;second_layer&quot;: {
-      &quot;exists&quot;: true,
-      &quot;layer_type&quot;: &quot;PROFIT_CONVERSION&quot;,
-      &quot;description&quot;: &quot;Project conversion could translate into higher lighting volume, operating leverage, and adjusted EPS, with AIS growth providing additional support. This is the main potential KPI-to-profit conversion in the pack.&quot;,
-      &quot;why_not_fully_obvious&quot;: &quot;The timing and magnitude of operating leverage are not quantified. However, management commentary had already identified both normalization of project conversion and eventual lighting operating leverage, so the conversion chain is not demonstrably new to the market. There is also no separately sourced market margin or profit hurdle against which to establish an unexpected result.&quot;,
-      &quot;depends_on_inference&quot;: true,
+      &quot;exists&quot;: false,
+      &quot;layer_type&quot;: &quot;NONE&quot;,
+      &quot;description&quot;: &quot;No defensible non-obvious conversion from AIS growth to an unexpected margin result, profit result, guidance action, hurdle beat, or second derivative is supported.&quot;,
+      &quot;why_not_fully_obvious&quot;: &quot;The supplied material already connects AIS growth and lighting-project conversion with continued sequential growth, possible lighting operating leverage, and continued high AIS growth. No market consensus, numerical hurdle, or analyst expectation is available against which an unexpected conversion could be demonstrated.&quot;,
+      &quot;depends_on_inference&quot;: false,
       &quot;evidence_ids&quot;: [
         20048,
         19895
@@ -8450,47 +8843,30 @@ pre {
     },
     &quot;surprise_candidates&quot;: [
       {
-        &quot;area&quot;: &quot;Quarterly revenue&quot;,
-        &quot;our_pre_earnings_view&quot;: &quot;Approximately $1.21B-$1.25B, based on modest sequential growth from Q3.&quot;,
-        &quot;known_market_view&quot;: &quot;Approximately $1.25B-$1.2535B from published estimates.&quot;,
+        &quot;area&quot;: &quot;AIS segment growth&quot;,
+        &quot;our_pre_earnings_view&quot;: &quot;AIS growth should remain strong and support incremental revenue.&quot;,
+        &quot;known_market_view&quot;: &quot;The available market-facing summary already described 15% AIS growth, share gains, adjacent-market expansion, and expectations for continued high growth.&quot;,
         &quot;difference&quot;: &quot;INLINE&quot;,
         &quot;novelty_strength&quot;: &quot;NONE&quot;,
         &quot;evidence_ids&quot;: [
-          20049,
-          20050,
-          20051
-        ]
-      },
-      {
-        &quot;area&quot;: &quot;Adjusted EPS&quot;,
-        &quot;our_pre_earnings_view&quot;: &quot;Approximately $5.35-$5.75, with stable-to-improving profitability.&quot;,
-        &quot;known_market_view&quot;: &quot;Approximately $5.66 per share.&quot;,
-        &quot;difference&quot;: &quot;INLINE&quot;,
-        &quot;novelty_strength&quot;: &quot;NONE&quot;,
-        &quot;evidence_ids&quot;: [
-          20049,
-          20050,
-          20051
-        ]
-      },
-      {
-        &quot;area&quot;: &quot;Project-conversion-to-profit conversion&quot;,
-        &quot;our_pre_earnings_view&quot;: &quot;Normalizing project conversion should improve lighting volume and provide some operating leverage, but Q3 margins may remain broadly stable.&quot;,
-        &quot;known_market_view&quot;: &quot;No separately sourced qualitative KPI, margin, or profit-conversion hurdle is provided; market materials emphasize revenue and EPS estimates.&quot;,
-        &quot;difference&quot;: &quot;UNCLEAR&quot;,
-        &quot;novelty_strength&quot;: &quot;NONE&quot;,
-        &quot;evidence_ids&quot;: [
-          20048,
           19895,
-          20049,
-          20050,
-          20051
+          20048
         ]
       },
       {
-        &quot;area&quot;: &quot;Forward operating outlook&quot;,
-        &quot;our_pre_earnings_view&quot;: &quot;Constructive but qualified commentary on project conversion, AIS growth, and eventual lighting operating leverage.&quot;,
-        &quot;known_market_view&quot;: &quot;No separately sourced qualitative guidance bar; no company-issued Q4 or full-year numerical outlook is supplied.&quot;,
+        &quot;area&quot;: &quot;Lighting project conversion and order trends&quot;,
+        &quot;our_pre_earnings_view&quot;: &quot;Firming orders and normalized project conversion should support additional revenue and potential operating leverage.&quot;,
+        &quot;known_market_view&quot;: &quot;Management commentary summarized in the market-facing source already described firming orders, normalized conversion, and expected sequential Q3-to-Q4 growth.&quot;,
+        &quot;difference&quot;: &quot;INLINE&quot;,
+        &quot;novelty_strength&quot;: &quot;NONE&quot;,
+        &quot;evidence_ids&quot;: [
+          20048
+        ]
+      },
+      {
+        &quot;area&quot;: &quot;Q4 profitability conversion&quot;,
+        &quot;our_pre_earnings_view&quot;: &quot;Adjusted EPS could improve modestly with sequential revenue growth, but margin risks remain.&quot;,
+        &quot;known_market_view&quot;: &quot;No supported market EPS hurdle or analyst profitability expectation is provided; the available source only discusses potential operating leverage and cost risks.&quot;,
         &quot;difference&quot;: &quot;UNCLEAR&quot;,
         &quot;novelty_strength&quot;: &quot;NONE&quot;,
         &quot;evidence_ids&quot;: [
@@ -8501,33 +8877,29 @@ pre {
     ],
     &quot;novelty_strength&quot;: &quot;NONE&quot;,
     &quot;novelty_gate&quot;: &quot;FAIL&quot;,
-    &quot;novelty_summary&quot;: &quot;The primary KPI is qualitatively disclosed in management commentary and is not shown to be unknown or underappreciated by the market. The potential second layer—project conversion leading to lighting volume, operating leverage, and EPS—is a reasonable inference, but management had already discussed that chain and the pack provides no quantified margin or profit surprise versus a real hurdle. Revenue and EPS expectations are broadly aligned with the pre-earnings view, while qualitative market awareness is insufficiently evidenced. No defensible market-unknown second layer is established.&quot;,
+    &quot;novelty_summary&quot;: &quot;The primary KPI is public, directly disclosed, and at least partially discussed in the supplied market-facing material. The pack provides no reliable market hurdle or analyst expectation, and every plausible second-layer interpretation—sequential growth, operating leverage, or continued AIS momentum—is already present in company or market-facing commentary. Therefore, no defensible novelty is established.&quot;,
     &quot;limitations&quot;: [
-      &quot;The project-conversion evidence comes from a secondary earnings-call summary rather than a direct company filing.&quot;,
-      &quot;The KPI is described qualitatively; no numerical conversion rate, project-release data, or quantified margin conversion is supplied.&quot;,
-      &quot;The market-awareness evidence consists mainly of three published revenue/EPS estimate sources and does not directly establish analyst focus on project conversion.&quot;,
-      &quot;No separately sourced real hurdle exists for margin, profit conversion, qualitative guidance, or the project-conversion KPI.&quot;,
-      &quot;No explicit Q4 or full-year company revenue, EPS, or operating-margin guidance is supplied.&quot;
+      &quot;No analyst consensus, published market hurdle, or expectation dispersion is supplied.&quot;,
+      &quot;Only limited market-facing coverage is included, so breadth of awareness cannot be measured.&quot;,
+      &quot;No direct evidence shows that analysts focused on a non-obvious KPI conversion.&quot;,
+      &quot;The expected EPS and revenue ranges are inferred rather than compared with a supported market expectation.&quot;
     ],
     &quot;evidence_ids&quot;: [
       19895,
-      20048,
-      20049,
-      20050,
-      20051
+      20048
     ]
   },
   &quot;usage&quot;: {
-    &quot;input_tokens&quot;: 13258,
+    &quot;input_tokens&quot;: 8615,
     &quot;input_tokens_details&quot;: {
-      &quot;cache_write_tokens&quot;: 13255,
+      &quot;cache_write_tokens&quot;: 8612,
       &quot;cached_tokens&quot;: 0
     },
-    &quot;output_tokens&quot;: 2941,
+    &quot;output_tokens&quot;: 1598,
     &quot;output_tokens_details&quot;: {
-      &quot;reasoning_tokens&quot;: 2044
+      &quot;reasoning_tokens&quot;: 918
     },
-    &quot;total_tokens&quot;: 16199
+    &quot;total_tokens&quot;: 10213
   }
 }</pre>
                 </details>
@@ -8543,14 +8915,14 @@ pre {
                 </span>
 
                 <span class="stage-status">
-                  PENDIENTE
+                  COMPLETADA
                 </span>
               </summary>
 
               <div class="stage-body">
 
                 <p class="stage-summary">
-                  No hay información estructurada suficiente para esta etapa.
+                  No se ha identificado con suficiente seguridad qué variable decidirá realmente la reacción de la acción. Sin una variable dominante clara no se debe forzar CALL o PUT.
                 </p>
 
                 <details class="technical">
@@ -8566,7 +8938,107 @@ pre {
                     leerlo para entender el análisis.
                   </p>
 
-                  <pre>Sin contenido</pre>
+                  <pre>{
+  &quot;ticker&quot;: &quot;AYI&quot;,
+  &quot;earnings_date&quot;: &quot;2026-10-01&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:51:28.589316+00:00&quot;,
+  &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
+  &quot;response_id&quot;: &quot;resp_0278e00aa8f4004f016abdae85167487d1934ec0e304659f0f&quot;,
+  &quot;pack_sha256&quot;: &quot;8d41c4aa480954beb8540656787a64525717729d29ed7aee0a68189caae9e269&quot;,
+  &quot;allowed_evidence_ids&quot;: [
+    20046,
+    20048,
+    19895
+  ],
+  &quot;frozen_novelty_gate&quot;: &quot;FAIL&quot;,
+  &quot;structured_output_retry&quot;: {
+    &quot;attempted&quot;: false,
+    &quot;first_parse_error&quot;: null
+  },
+  &quot;result&quot;: {
+    &quot;assessment_status&quot;: &quot;INSUFFICIENT&quot;,
+    &quot;confidence&quot;: &quot;LOW&quot;,
+    &quot;driver_identified&quot;: false,
+    &quot;driver_resolution_state&quot;: &quot;RESEARCH_GAP&quot;,
+    &quot;key_kpi&quot;: &quot;AIS segment growth&quot;,
+    &quot;primary_driver&quot;: {
+      &quot;name&quot;: &quot;UNCLEAR&quot;,
+      &quot;category&quot;: &quot;UNCLEAR&quot;,
+      &quot;same_as_key_kpi&quot;: false,
+      &quot;market_sensitivity&quot;: &quot;UNCLEAR&quot;,
+      &quot;why_it_drives_reaction&quot;: &quot;The pack does not provide a market consensus, explicit hurdle, or upcoming-period company guidance. AIS growth, lighting project conversion, profitability, and forward commentary could each influence the reaction, but the evidence does not establish which variable the market will prioritize.&quot;,
+      &quot;favorable_condition&quot;: &quot;UNCLEAR&quot;,
+      &quot;unfavorable_condition&quot;: &quot;UNCLEAR&quot;,
+      &quot;evidence_ids&quot;: []
+    },
+    &quot;secondary_drivers&quot;: [
+      {
+        &quot;name&quot;: &quot;AIS segment growth&quot;,
+        &quot;category&quot;: &quot;DEMAND&quot;,
+        &quot;importance&quot;: &quot;HIGH&quot;,
+        &quot;reasoning&quot;: &quot;AIS grew 14.9% in Q3 and management expects continued high growth through share gains, adjacent-market expansion, and new data-center products. It is the strongest operating KPI, but its reaction importance cannot be separated from other variables without a market hurdle.&quot;,
+        &quot;evidence_ids&quot;: [
+          19895,
+          20048
+        ]
+      },
+      {
+        &quot;name&quot;: &quot;Lighting project conversion and order trends&quot;,
+        &quot;category&quot;: &quot;VOLUME&quot;,
+        &quot;importance&quot;: &quot;HIGH&quot;,
+        &quot;reasoning&quot;: &quot;Firming lighting orders and normalized project conversion could determine whether expected sequential growth materializes and whether lighting operating leverage improves. No evidence establishes that this is the market&#x27;s dominant focus.&quot;,
+        &quot;evidence_ids&quot;: [
+          20048
+        ]
+      },
+      {
+        &quot;name&quot;: &quot;Adjusted operating margin and EPS conversion&quot;,
+        &quot;category&quot;: &quot;MARGIN&quot;,
+        &quot;importance&quot;: &quot;HIGH&quot;,
+        &quot;reasoning&quot;: &quot;Q3 adjusted operating margin was resilient at 18.7%, but materials inflation, SG&amp;A investment, memory-component costs, tariffs, and pricing actions create uncertainty around profit conversion. The pack contains no market EPS or margin hurdle.&quot;,
+        &quot;evidence_ids&quot;: [
+          19895,
+          20048
+        ]
+      },
+      {
+        &quot;name&quot;: &quot;Forward commentary or guidance&quot;,
+        &quot;category&quot;: &quot;GUIDANCE&quot;,
+        &quot;importance&quot;: &quot;HIGH&quot;,
+        &quot;reasoning&quot;: &quot;Continued sequential growth and sustained AIS momentum may be discussed, but no numerical next-period or full-year guidance is supplied. A market expectation for guidance action is therefore unavailable.&quot;,
+        &quot;evidence_ids&quot;: [
+          19895,
+          20048
+        ]
+      }
+    ],
+    &quot;driver_vs_kpi&quot;: &quot;AIS segment growth is the best-supported business KPI and may predict revenue, but it cannot be identified as the dominant stock-reaction driver. The reaction could instead be controlled by lighting conversion, margin conversion, EPS, or forward commentary, and no hurdle or expectation evidence distinguishes among them.&quot;,
+    &quot;novelty_gate_observed&quot;: &quot;FAIL&quot;,
+    &quot;driver_summary&quot;: &quot;No single dominant reaction driver is defensibly identified. The operating evidence supports several plausible drivers, while the absence of consensus, a numerical hurdle, or upcoming-period guidance prevents determining which variable would most likely control the earnings reaction.&quot;,
+    &quot;limitations&quot;: [
+      &quot;No analyst consensus, published market hurdle, or expectation dispersion is supplied.&quot;,
+      &quot;No numerical company guidance for the upcoming report is provided.&quot;,
+      &quot;No evidence distinguishes the market&#x27;s relative sensitivity to AIS growth, lighting conversion, margins, EPS, or guidance.&quot;,
+      &quot;The frozen novelty assessment is FAIL and cannot be overridden.&quot;
+    ],
+    &quot;evidence_ids&quot;: [
+      19895,
+      20048
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;input_tokens&quot;: 11122,
+    &quot;input_tokens_details&quot;: {
+      &quot;cache_write_tokens&quot;: 11119,
+      &quot;cached_tokens&quot;: 0
+    },
+    &quot;output_tokens&quot;: 1263,
+    &quot;output_tokens_details&quot;: {
+      &quot;reasoning_tokens&quot;: 631
+    },
+    &quot;total_tokens&quot;: 12385
+  }
+}</pre>
                 </details>
 
               </div>
@@ -8580,14 +9052,14 @@ pre {
                 </span>
 
                 <span class="stage-status">
-                  PENDIENTE
+                  COMPLETADA
                 </span>
               </summary>
 
               <div class="stage-body">
 
                 <p class="stage-summary">
-                  No hay información estructurada suficiente para esta etapa.
+                  El veto de riesgos no puede determinarse con suficiente claridad. Con la información disponible no podemos confirmar ni descartar un riesgo capaz de cambiar la reacción. Riesgos revisados: márgenes — gravedad media, solapado; regulación — gravedad baja, parcialmente solapado; refinanciación — gravedad baja, independiente.
                 </p>
 
                 <details class="technical">
@@ -8603,7 +9075,103 @@ pre {
                     leerlo para entender el análisis.
                   </p>
 
-                  <pre>Sin contenido</pre>
+                  <pre>{
+  &quot;ticker&quot;: &quot;AYI&quot;,
+  &quot;earnings_date&quot;: &quot;2026-10-01&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:52:05.764501+00:00&quot;,
+  &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
+  &quot;response_id&quot;: &quot;resp_0fd75d013edf4556016abdae92ea8087d1b8155724b755c90e&quot;,
+  &quot;pack_sha256&quot;: &quot;7909aa35791853e4ca8b0472650d0b287083735dec44d7b754fc7dbb8a0b9af9&quot;,
+  &quot;allowed_evidence_ids&quot;: [
+    20046,
+    20048,
+    19895
+  ],
+  &quot;frozen_novelty_gate&quot;: &quot;FAIL&quot;,
+  &quot;frozen_dominant_driver&quot;: &quot;UNCLEAR&quot;,
+  &quot;result&quot;: {
+    &quot;assessment_status&quot;: &quot;INSUFFICIENT&quot;,
+    &quot;confidence&quot;: &quot;LOW&quot;,
+    &quot;novelty_gate_observed&quot;: &quot;FAIL&quot;,
+    &quot;dominant_driver&quot;: &quot;UNCLEAR — the pack does not establish which variable will control the stock reaction&quot;,
+    &quot;offsets&quot;: [
+      {
+        &quot;name&quot;: &quot;Input-cost and margin-conversion pressure&quot;,
+        &quot;category&quot;: &quot;MARGIN&quot;,
+        &quot;severity&quot;: &quot;MEDIUM&quot;,
+        &quot;independence&quot;: &quot;OVERLAPPING&quot;,
+        &quot;quantifiability&quot;: &quot;MEDIUM&quot;,
+        &quot;could_reverse_reaction&quot;: true,
+        &quot;mechanism&quot;: &quot;Materials inflation, higher SG&amp;A, memory-component costs, tariffs, and pricing actions could prevent expected revenue growth from converting into EPS or margin improvement.&quot;,
+        &quot;resolved_by_current_evidence&quot;: &quot;PARTIAL&quot;,
+        &quot;support_basis&quot;: &quot;EXPLICIT_RISK_DISCLOSURE&quot;,
+        &quot;evidence_ids&quot;: [
+          19895,
+          20048
+        ]
+      },
+      {
+        &quot;name&quot;: &quot;Tariff-policy change and applicability risk&quot;,
+        &quot;category&quot;: &quot;REGULATION&quot;,
+        &quot;severity&quot;: &quot;LOW&quot;,
+        &quot;independence&quot;: &quot;PARTIALLY_OVERLAPPING&quot;,
+        &quot;quantifiability&quot;: &quot;LOW&quot;,
+        &quot;could_reverse_reaction&quot;: false,
+        &quot;mechanism&quot;: &quot;The U.S.-China trade announcement contemplates reduced tariff treatment, while the company has reported tariff refunds and identified tariffs as a margin consideration. However, the pack does not establish AYI-specific exposure or the earnings impact of the policy event.&quot;,
+        &quot;resolved_by_current_evidence&quot;: &quot;NO&quot;,
+        &quot;support_basis&quot;: &quot;DIRECT_EVENT&quot;,
+        &quot;evidence_ids&quot;: [
+          20046,
+          19895
+        ]
+      },
+      {
+        &quot;name&quot;: &quot;Debt and refinancing exposure&quot;,
+        &quot;category&quot;: &quot;REFINANCING&quot;,
+        &quot;severity&quot;: &quot;LOW&quot;,
+        &quot;independence&quot;: &quot;INDEPENDENT&quot;,
+        &quot;quantifiability&quot;: &quot;LOW&quot;,
+        &quot;could_reverse_reaction&quot;: false,
+        &quot;mechanism&quot;: &quot;AYI reports $697.3 million of long-term debt against $411.9 million of cash, but the pack does not provide maturity, covenant, interest-rate, or refinancing terms that demonstrate financial stress.&quot;,
+        &quot;resolved_by_current_evidence&quot;: &quot;PARTIAL&quot;,
+        &quot;support_basis&quot;: &quot;ABSENCE_ONLY&quot;,
+        &quot;evidence_ids&quot;: [
+          19895
+        ]
+      }
+    ],
+    &quot;decisive_offset_present&quot;: false,
+    &quot;unquantified_material_offset_present&quot;: false,
+    &quot;operating_thesis_can_be_right_but_reaction_wrong&quot;: false,
+    &quot;offset_veto_gate&quot;: &quot;UNCLEAR&quot;,
+    &quot;veto_reason&quot;: &quot;No positively supported independent offset was found that is both material and capable of reversing the reaction. However, the supplied pack lacks a market hurdle, upcoming-period company guidance, and a defensible dominant reaction driver; therefore, it is insufficient to conclude that all material offsets have been ruled out.&quot;,
+    &quot;offset_summary&quot;: &quot;The principal identified risks are margin-related and already overlap with the modeled operating uncertainty, so they cannot create an independent offset veto. The tariff-policy event is not tied to a quantified AYI exposure. Debt and cash data do not demonstrate liquidity or refinancing stress; missing maturity and covenant detail is absence-only evidence and cannot support a veto.&quot;,
+    &quot;limitations&quot;: [
+      &quot;No market consensus, numerical hurdle, or expectation dispersion is supplied.&quot;,
+      &quot;No numerical Q4 or full-year company guidance is supplied.&quot;,
+      &quot;The dominant stock-reaction driver is unresolved.&quot;,
+      &quot;Debt maturity, covenant, interest-rate, and refinancing details are unavailable.&quot;,
+      &quot;The tariff-policy event is not linked to a quantified company-specific impact.&quot;
+    ],
+    &quot;evidence_ids&quot;: [
+      19895,
+      20046,
+      20048
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;input_tokens&quot;: 12866,
+    &quot;input_tokens_details&quot;: {
+      &quot;cache_write_tokens&quot;: 12863,
+      &quot;cached_tokens&quot;: 0
+    },
+    &quot;output_tokens&quot;: 3743,
+    &quot;output_tokens_details&quot;: {
+      &quot;reasoning_tokens&quot;: 3106
+    },
+    &quot;total_tokens&quot;: 16609
+  }
+}</pre>
                 </details>
 
               </div>
@@ -8617,14 +9185,14 @@ pre {
                 </span>
 
                 <span class="stage-status">
-                  PENDIENTE
+                  COMPLETADA
                 </span>
               </summary>
 
               <div class="stage-body">
 
                 <p class="stage-summary">
-                  No hay información estructurada suficiente para esta etapa.
+                  El descuento previo se considera el escenario negativo está más descontado. En el corto plazo la acción muestra estable y en el plazo intermedio caída previa. ¿Ha habido reducción previa de riesgo? sí. El reajuste de expectativas se considera moderado.
                 </p>
 
                 <details class="technical">
@@ -8640,7 +9208,60 @@ pre {
                     leerlo para entender el análisis.
                   </p>
 
-                  <pre>Sin contenido</pre>
+                  <pre>{
+  &quot;ticker&quot;: &quot;AYI&quot;,
+  &quot;earnings_date&quot;: &quot;2026-10-01&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:52:19.376599+00:00&quot;,
+  &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
+  &quot;response_id&quot;: &quot;resp_0f275ee7e7989080016abdaeb7aab487d1a561be9fad3cd58e&quot;,
+  &quot;pack_sha256&quot;: &quot;72cb7601da027647b5176c04efd5e200e5b0fbc04f75670165288db37125792c&quot;,
+  &quot;result&quot;: {
+    &quot;assessment_status&quot;: &quot;LIMITED&quot;,
+    &quot;confidence&quot;: &quot;MEDIUM&quot;,
+    &quot;price_setup&quot;: {
+      &quot;short_term&quot;: &quot;FLAT&quot;,
+      &quot;medium_term&quot;: &quot;SELLOFF&quot;,
+      &quot;longer_term&quot;: &quot;STRONG_SELLOFF&quot;,
+      &quot;relative_setup&quot;: &quot;MIXED&quot;,
+      &quot;reasoning&quot;: &quot;AYI rose 0.94% over the latest day and declined only 0.64% over five days, outperforming QQQ by 0.63 percentage points over five days. However, the stock fell 6.93% over 20 days and 12.78% over 60 days, versus QQQ gains of 3.06% and 2.20%, respectively. This indicates meaningful medium- and longer-term absolute and relative derisking, with no sector comparison available.&quot;
+    },
+    &quot;favorable_scenario_discounted&quot;: &quot;LOW&quot;,
+    &quot;adverse_scenario_discounted&quot;: &quot;MEDIUM&quot;,
+    &quot;discount_state&quot;: &quot;ADVERSE_SCENARIO_MORE_DISCOUNTED&quot;,
+    &quot;recent_derisking&quot;: true,
+    &quot;prior_rally_still_relevant&quot;: false,
+    &quot;expectation_reset&quot;: &quot;MODERATE&quot;,
+    &quot;price_asymmetry&quot;: &quot;The sustained 20-day and 60-day underperformance suggests that a meaningful portion of the adverse operating or sentiment scenario has already been reflected. The recent stabilization and one-day outperformance may indicate reduced incremental selling pressure. However, the favorable scenario—modest sequential growth, strengthening AIS, improving lighting conversion, and resilient profitability—does not appear fully reflected based on price action alone, while the absence of valuation, positioning, a clear market hurdle, and a dominant reaction driver prevents a stronger conclusion. A recent selloff should therefore be interpreted as partial, not complete, adverse-scenario discounting.&quot;,
+    &quot;data_completeness&quot;: {
+      &quot;price_momentum&quot;: true,
+      &quot;relative_performance&quot;: true,
+      &quot;valuation&quot;: false,
+      &quot;positioning&quot;: false,
+      &quot;estimate_revisions&quot;: &quot;PARTIAL&quot;
+    },
+    &quot;discount_summary&quot;: &quot;Price action points to moderate adverse-scenario discounting: AYI has materially underperformed QQQ over approximately one and three months, despite slight very recent relative resilience. The favorable pre-earnings thesis is not demonstrably priced in, but the lack of a supported consensus hurdle, valuation data, positioning data, sector benchmark, and reliable estimate-revision evidence limits confidence in the degree of asymmetry.&quot;,
+    &quot;limitations&quot;: [
+      &quot;No sector benchmark or sector-relative returns are supplied.&quot;,
+      &quot;Valuation and institutional positioning data are unavailable.&quot;,
+      &quot;The hurdle pack contains no supported consensus, numerical hurdle, or upcoming-period company guidance.&quot;,
+      &quot;Estimate-revision data are only partial.&quot;,
+      &quot;The frozen novelty assessment fails and the dominant stock-reaction driver is unresolved.&quot;,
+      &quot;Price weakness alone cannot establish that the adverse scenario is fully discounted.&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;input_tokens&quot;: 6163,
+    &quot;input_tokens_details&quot;: {
+      &quot;cache_write_tokens&quot;: 6160,
+      &quot;cached_tokens&quot;: 0
+    },
+    &quot;output_tokens&quot;: 1011,
+    &quot;output_tokens_details&quot;: {
+      &quot;reasoning_tokens&quot;: 475
+    },
+    &quot;total_tokens&quot;: 7174
+  }
+}</pre>
                 </details>
 
               </div>
@@ -8654,14 +9275,14 @@ pre {
                 </span>
 
                 <span class="stage-status">
-                  PENDIENTE
+                  COMPLETADA
                 </span>
               </summary>
 
               <div class="stage-body">
 
                 <p class="stage-summary">
-                  No hay información estructurada suficiente para esta etapa.
+                  Se analizaron 8 eventos anteriores: 5 terminaron con subida y 3 con bajada. La reacción mediana fue 4,31%. El histórico se considera mixto. Importante: este bloque solo modifica la confianza; no crea una señal CALL o PUT por sí mismo.
                 </p>
 
                 <details class="technical">
@@ -8677,7 +9298,266 @@ pre {
                     leerlo para entender el análisis.
                   </p>
 
-                  <pre>Sin contenido</pre>
+                  <pre>{
+  &quot;ticker&quot;: &quot;AYI&quot;,
+  &quot;earnings_date&quot;: &quot;2026-10-01&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:53:01.656781+00:00&quot;,
+  &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
+  &quot;response_id&quot;: &quot;resp_09177bee3de2fddd016abdaec54ea887d190092b978e74aa23&quot;,
+  &quot;pack_sha256&quot;: &quot;42e64aad76af8c6f01cb2488a17ceb6ffc501fd61bd433d33513c1dc4947790d&quot;,
+  &quot;result&quot;: {
+    &quot;assessment_status&quot;: &quot;LIMITED&quot;,
+    &quot;confidence&quot;: &quot;MEDIUM&quot;,
+    &quot;event_count&quot;: 8,
+    &quot;up_count&quot;: 5,
+    &quot;down_count&quot;: 3,
+    &quot;median_stock_pct&quot;: 4.31,
+    &quot;median_vs_qqq_pct&quot;: 4.04,
+    &quot;median_vs_sector_pct&quot;: null,
+    &quot;raw_reaction_skew&quot;: &quot;MIXED&quot;,
+    &quot;event_analyses&quot;: [
+      {
+        &quot;evidence_id&quot;: 19895,
+        &quot;release_date&quot;: &quot;2026-06-25&quot;,
+        &quot;stock_reaction_pct&quot;: 17.64,
+        &quot;relative_vs_qqq_pct&quot;: 16.83,
+        &quot;relative_vs_sector_pct&quot;: null,
+        &quot;revenue_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;eps_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;guidance_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;key_operating_driver_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;secondary_operating_driver_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;margin_signal&quot;: &quot;MIXED&quot;,
+        &quot;release_takeaway&quot;: &quot;Nine-month sales increased 8.3%, while AIS sales rose 14.9%. AIS adjusted operating margin expanded, but total-company adjusted operating margin declined 60 basis points. The release was followed by the largest positive reaction in the sample.&quot;,
+        &quot;consensus_comparison_available&quot;: false,
+        &quot;evidence_ids&quot;: [
+          19895
+        ]
+      },
+      {
+        &quot;evidence_id&quot;: 19898,
+        &quot;release_date&quot;: &quot;2026-04-02&quot;,
+        &quot;stock_reaction_pct&quot;: -7.52,
+        &quot;relative_vs_qqq_pct&quot;: -7.63,
+        &quot;relative_vs_sector_pct&quot;: null,
+        &quot;revenue_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;eps_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;guidance_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;key_operating_driver_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;secondary_operating_driver_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;margin_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;release_takeaway&quot;: &quot;Reported sales increased 4.9%, operating profit increased 21%, adjusted operating profit increased 8%, and adjusted diluted EPS increased 11%. Management also reported margin expansion, yet the stock fell 7.52% relative to a modestly positive QQQ session.&quot;,
+        &quot;consensus_comparison_available&quot;: false,
+        &quot;evidence_ids&quot;: [
+          19898
+        ]
+      },
+      {
+        &quot;evidence_id&quot;: 19901,
+        &quot;release_date&quot;: &quot;2026-01-08&quot;,
+        &quot;stock_reaction_pct&quot;: -12.85,
+        &quot;relative_vs_qqq_pct&quot;: -12.28,
+        &quot;relative_vs_sector_pct&quot;: null,
+        &quot;revenue_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;eps_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;guidance_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;key_operating_driver_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;secondary_operating_driver_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;margin_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;release_takeaway&quot;: &quot;First-quarter sales increased 20.2%, adjusted operating profit increased 24%, diluted EPS increased 14%, and adjusted diluted EPS increased 18%, with management describing margin expansion. The stock nevertheless declined 12.85%, one of the largest negative reactions in the sample.&quot;,
+        &quot;consensus_comparison_available&quot;: false,
+        &quot;evidence_ids&quot;: [
+          19901
+        ]
+      },
+      {
+        &quot;evidence_id&quot;: 19904,
+        &quot;release_date&quot;: &quot;2025-10-01&quot;,
+        &quot;stock_reaction_pct&quot;: 5.4,
+        &quot;relative_vs_qqq_pct&quot;: 4.92,
+        &quot;relative_vs_sector_pct&quot;: null,
+        &quot;revenue_signal&quot;: &quot;MIXED&quot;,
+        &quot;eps_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;guidance_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;key_operating_driver_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;secondary_operating_driver_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;margin_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;release_takeaway&quot;: &quot;Fourth-quarter sales increased 2.2% and sales grew in both Lighting and Spaces, although full-year sales declined 3%. Fourth-quarter and full-year EPS increased, and the release highlighted margin expansion. The stock rose 5.4%.&quot;,
+        &quot;consensus_comparison_available&quot;: false,
+        &quot;evidence_ids&quot;: [
+          19904
+        ]
+      },
+      {
+        &quot;evidence_id&quot;: 19905,
+        &quot;release_date&quot;: &quot;2025-06-26&quot;,
+        &quot;stock_reaction_pct&quot;: 5.81,
+        &quot;relative_vs_qqq_pct&quot;: 4.87,
+        &quot;relative_vs_sector_pct&quot;: null,
+        &quot;revenue_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;eps_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;guidance_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;key_operating_driver_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;secondary_operating_driver_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;margin_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;release_takeaway&quot;: &quot;Nine-month sales increased 11.7%; reported quarterly sales increased 2.7% in Lighting and 248.9% in AIS. Adjusted operating margins increased in both segments, and adjusted EBITDA margin expanded 140 basis points. The stock rose 5.81%.&quot;,
+        &quot;consensus_comparison_available&quot;: false,
+        &quot;evidence_ids&quot;: [
+          19905
+        ]
+      },
+      {
+        &quot;evidence_id&quot;: 19907,
+        &quot;release_date&quot;: &quot;2025-04-03&quot;,
+        &quot;stock_reaction_pct&quot;: -3.43,
+        &quot;relative_vs_qqq_pct&quot;: 1.92,
+        &quot;relative_vs_sector_pct&quot;: null,
+        &quot;revenue_signal&quot;: &quot;MIXED&quot;,
+        &quot;eps_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;guidance_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;key_operating_driver_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;secondary_operating_driver_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;margin_signal&quot;: &quot;MIXED&quot;,
+        &quot;release_takeaway&quot;: &quot;Six-month sales increased 6.4%, but quarterly Lighting sales declined 0.3% while AIS sales increased 151.8%. Adjusted Lighting margin expanded while adjusted AIS margin declined, producing a mixed operating and margin profile. The stock fell 3.43% but outperformed QQQ.&quot;,
+        &quot;consensus_comparison_available&quot;: false,
+        &quot;evidence_ids&quot;: [
+          19907
+        ]
+      },
+      {
+        &quot;evidence_id&quot;: 19912,
+        &quot;release_date&quot;: &quot;2025-01-08&quot;,
+        &quot;stock_reaction_pct&quot;: 3.22,
+        &quot;relative_vs_qqq_pct&quot;: 3.2,
+        &quot;relative_vs_sector_pct&quot;: null,
+        &quot;revenue_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;eps_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;guidance_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;key_operating_driver_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;secondary_operating_driver_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;margin_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;release_takeaway&quot;: &quot;First-quarter sales increased 1.8%, diluted EPS increased 4%, adjusted diluted EPS increased 7%, and adjusted operating profit increased 3%. Management also stated that adjusted operating margin increased. The stock rose 3.22%.&quot;,
+        &quot;consensus_comparison_available&quot;: false,
+        &quot;evidence_ids&quot;: [
+          19912
+        ]
+      },
+      {
+        &quot;evidence_id&quot;: 19918,
+        &quot;release_date&quot;: &quot;2024-10-01&quot;,
+        &quot;stock_reaction_pct&quot;: 8.7,
+        &quot;relative_vs_qqq_pct&quot;: 10.09,
+        &quot;relative_vs_sector_pct&quot;: null,
+        &quot;revenue_signal&quot;: &quot;MIXED&quot;,
+        &quot;eps_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;guidance_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;key_operating_driver_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;secondary_operating_driver_signal&quot;: &quot;NOT_DISCLOSED&quot;,
+        &quot;margin_signal&quot;: &quot;STRENGTHENING&quot;,
+        &quot;release_takeaway&quot;: &quot;Fourth-quarter sales increased 2.2% and sales grew in both Lighting and Spaces, while full-year sales declined 3%. Fourth-quarter diluted EPS increased 43% and adjusted diluted EPS increased 8%, with margin expansion highlighted. The stock rose 8.7%, the second-largest positive reaction.&quot;,
+        &quot;consensus_comparison_available&quot;: false,
+        &quot;evidence_ids&quot;: [
+          19918
+        ]
+      }
+    ],
+    &quot;sensitivity_areas&quot;: [
+      {
+        &quot;area&quot;: &quot;KEY_OPERATING_DRIVER&quot;,
+        &quot;association_strength&quot;: &quot;MEDIUM&quot;,
+        &quot;pattern&quot;: &quot;AIS or Spaces growth was disclosed in several positive-reaction events, including the two largest positive reactions, but the operating driver was not disclosed in every event and was not isolated from other results.&quot;,
+        &quot;causality_established&quot;: false,
+        &quot;evidence_ids&quot;: [
+          19895,
+          19904,
+          19905,
+          19907,
+          19918
+        ]
+      },
+      {
+        &quot;area&quot;: &quot;MARGIN&quot;,
+        &quot;association_strength&quot;: &quot;MEDIUM&quot;,
+        &quot;pattern&quot;: &quot;Margin expansion or mixed margin outcomes were present in both large positive and large negative reactions. This indicates association with reaction magnitude but not a consistent reaction direction.&quot;,
+        &quot;causality_established&quot;: false,
+        &quot;evidence_ids&quot;: [
+          19895,
+          19898,
+          19901,
+          19904,
+          19905,
+          19907,
+          19912,
+          19918
+        ]
+      },
+      {
+        &quot;area&quot;: &quot;REVENUE&quot;,
+        &quot;association_strength&quot;: &quot;MEDIUM&quot;,
+        &quot;pattern&quot;: &quot;Revenue growth or trajectory was reported in all events, but positive growth accompanied both strong gains and sharp declines. Revenue direction alone does not explain the reaction direction in this sample.&quot;,
+        &quot;causality_established&quot;: false,
+        &quot;evidence_ids&quot;: [
+          19895,
+          19898,
+          19901,
+          19904,
+          19905,
+          19907,
+          19912,
+          19918
+        ]
+      },
+      {
+        &quot;area&quot;: &quot;EPS&quot;,
+        &quot;association_strength&quot;: &quot;MEDIUM&quot;,
+        &quot;pattern&quot;: &quot;EPS improvement appeared in several large reactions, including both the January 2026 decline and October 2024 gain. EPS was not disclosed in every supplied excerpt, limiting comparison.&quot;,
+        &quot;causality_established&quot;: false,
+        &quot;evidence_ids&quot;: [
+          19898,
+          19901,
+          19904,
+          19912,
+          19918
+        ]
+      }
+    ],
+    &quot;current_driver_relevance&quot;: &quot;UNCLEAR&quot;,
+    &quot;historical_pattern&quot;: &quot;Deterministic historical reaction distribution: 5 of 8 events were positive, 3 were negative, and 0 were flat. The median stock reaction was +4.31%, the median relative reaction versus QQQ was +4.04 percentage points, No verified sector benchmark was available, so sector-relative historical performance was not computed. Raw reaction classification: MIXED. Historical filter: MIXED.&quot;,
+    &quot;historical_filter&quot;: &quot;MIXED&quot;,
+    &quot;historical_reaction_summary&quot;: &quot;The deterministic historical filter is MIXED. This distribution is used only as a confidence filter and is not an independent CALL/PUT signal. Interpretive associations between reactions and guidance, margins, platform execution, supply, revenue, EPS, or other drivers are reported separately in sensitivity_areas.&quot;,
+    &quot;limitations&quot;: [
+      &quot;Historical consensus, hurdle, and expectation-dispersion data are unavailable; no event can be classified as a beat or miss.&quot;,
+      &quot;Causality cannot be established from the release-and-reaction associations.&quot;,
+      &quot;Company guidance actions are not disclosed in the supplied historical excerpts, so guidance sensitivity cannot be assessed.&quot;,
+      &quot;Sector-relative reaction data are unavailable for all events.&quot;,
+      &quot;Several excerpts omit segment detail or EPS data, limiting cross-event comparability.&quot;,
+      &quot;The current dominant reaction driver is unresolved in the supplied pack, so historical relevance to a single current driver remains unclear.&quot;,
+      &quot;The pack does not contain same-target-period prior guidance comparisons, so historical guidance cannot be classified as raised, maintained, or lowered.&quot;
+    ],
+    &quot;evidence_ids&quot;: [
+      19895,
+      19898,
+      19901,
+      19904,
+      19905,
+      19907,
+      19912,
+      19918
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;input_tokens&quot;: 21767,
+    &quot;input_tokens_details&quot;: {
+      &quot;cache_write_tokens&quot;: 21764,
+      &quot;cached_tokens&quot;: 0
+    },
+    &quot;output_tokens&quot;: 5451,
+    &quot;output_tokens_details&quot;: {
+      &quot;reasoning_tokens&quot;: 3312
+    },
+    &quot;total_tokens&quot;: 27218
+  }
+}</pre>
                 </details>
 
               </div>
@@ -8691,14 +9571,14 @@ pre {
                 </span>
 
                 <span class="stage-status">
-                  PENDIENTE
+                  COMPLETADA
                 </span>
               </summary>
 
               <div class="stage-body">
 
                 <p class="stage-summary">
-                  No hay información estructurada suficiente para esta etapa.
+                  El entorno general de mercado se considera mixto. Crecimiento: viento a favor. Sector: no determinado. Tipos de interés: viento en contra. Amplitud de mercado: empeorando. El efecto final del entorno sobre la confianza es mixto. Este bloque tampoco genera CALL o PUT por sí solo.
                 </p>
 
                 <details class="technical">
@@ -8714,7 +9594,48 @@ pre {
                     leerlo para entender el análisis.
                   </p>
 
-                  <pre>Sin contenido</pre>
+                  <pre>{
+  &quot;ticker&quot;: &quot;AYI&quot;,
+  &quot;earnings_date&quot;: &quot;2026-10-01&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:53:09.664132+00:00&quot;,
+  &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
+  &quot;response_id&quot;: &quot;resp_0264b2f7bab20129016abdaeef86e487d1ae7d63aa030f6824&quot;,
+  &quot;pack_sha256&quot;: &quot;7d05078d6dff3507892b7b811774694bc0470e052632540780d881c66ab2e4b6&quot;,
+  &quot;result&quot;: {
+    &quot;assessment_status&quot;: &quot;LIMITED&quot;,
+    &quot;confidence&quot;: &quot;MEDIUM&quot;,
+    &quot;overall_regime&quot;: &quot;MIXED&quot;,
+    &quot;growth_regime&quot;: &quot;TAILWIND&quot;,
+    &quot;sector_regime&quot;: &quot;UNCLEAR&quot;,
+    &quot;volatility_regime&quot;: &quot;MIXED&quot;,
+    &quot;rates_regime&quot;: &quot;HEADWIND&quot;,
+    &quot;breadth_regime&quot;: &quot;WEAKENING&quot;,
+    &quot;dominant_driver_interaction&quot;: &quot;UNCLEAR&quot;,
+    &quot;market_regime_filter&quot;: &quot;MIXED&quot;,
+    &quot;novelty_gate_observed&quot;: &quot;FAIL&quot;,
+    &quot;offset_veto_gate_observed&quot;: &quot;UNCLEAR&quot;,
+    &quot;regime_reasoning&quot;: &quot;The pre-earnings backdrop is mixed. Broad-market performance was broadly stable over 20 days and positive over 60 days, while QQQ strongly outperformed SPY over 20 days, supporting a growth/technology tailwind. However, small caps materially underperformed, market breadth was weakening, and recent five-day equity performance was negative. No verified sector benchmark was supplied, so the sector regime is UNCLEAR rather than inferred. Volatility was at a normal absolute level but had risen over five days, supporting a MIXED rather than fully calm classification. Long-duration yields rose materially over 20 days, creating a rates headwind for valuation-sensitive growth and industrial technology exposure.&quot;,
+    &quot;driver_interaction_reasoning&quot;: &quot;The frozen dominant reaction driver is unresolved, so the regime cannot be judged as definitively supportive or adverse for that driver. The environment offers support from relative growth leadership but offsetting pressure from weakening breadth, rising rates, recent volatility increases, and weak small-cap performance. The frozen novelty gate is a FAIL, while the offset-veto gate is UNCLEAR and neither is changed by this assessment.&quot;,
+    &quot;limitations&quot;: [
+      &quot;No verified sector benchmark or sector-relative market data is available.&quot;,
+      &quot;The pack does not include the full macro-news calendar, Fed expectations, positioning, or valuation data.&quot;,
+      &quot;The dominant stock-reaction driver is unresolved, limiting driver-specific regime interpretation.&quot;,
+      &quot;The assessment is a confidence filter only and does not determine earnings direction or options positioning.&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;input_tokens&quot;: 6586,
+    &quot;input_tokens_details&quot;: {
+      &quot;cache_write_tokens&quot;: 6583,
+      &quot;cached_tokens&quot;: 0
+    },
+    &quot;output_tokens&quot;: 659,
+    &quot;output_tokens_details&quot;: {
+      &quot;reasoning_tokens&quot;: 256
+    },
+    &quot;total_tokens&quot;: 7245
+  }
+}</pre>
                 </details>
 
               </div>
@@ -8728,14 +9649,14 @@ pre {
                 </span>
 
                 <span class="stage-status">
-                  PENDIENTE
+                  COMPLETADA
                 </span>
               </summary>
 
               <div class="stage-body">
 
                 <p class="stage-summary">
-                  No hay información estructurada suficiente para esta etapa.
+                  Decisión final: SIN_SEÑAL. La confianza direccional es información insuficiente. La brecha frente a las expectativas reales del mercado es información insuficiente. No se genera señal porque: No existe novedad real suficiente; No están suficientemente resueltos los riesgos que podrían cambiar la reacción; No sabemos con suficiente seguridad qué variable decidirá la reacción. Por eso el sistema no inventa un 55/45 ni fuerza una dirección.
                 </p>
 
                 <details class="technical">
@@ -8751,7 +9672,40 @@ pre {
                     leerlo para entender el análisis.
                   </p>
 
-                  <pre>Sin contenido</pre>
+                  <pre>{
+  &quot;ticker&quot;: &quot;AYI&quot;,
+  &quot;earnings_date&quot;: &quot;2026-10-01&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:53:10.145004+00:00&quot;,
+  &quot;generation_mode&quot;: &quot;DETERMINISTIC_HARD_GATE&quot;,
+  &quot;model&quot;: null,
+  &quot;response_id&quot;: null,
+  &quot;pack_sha256&quot;: &quot;70f93d3078ec2dc620fcecbd6746f982d3504c432a070f8097f9bc684df92f63&quot;,
+  &quot;result&quot;: {
+    &quot;signal&quot;: &quot;SIN_SEÑAL&quot;,
+    &quot;signal_eligible&quot;: false,
+    &quot;directional_confidence&quot;: &quot;INSUFFICIENT&quot;,
+    &quot;call_probability&quot;: null,
+    &quot;put_probability&quot;: null,
+    &quot;thesis_move_low_pct&quot;: null,
+    &quot;thesis_move_high_pct&quot;: null,
+    &quot;expectation_gap&quot;: &quot;INSUFFICIENT&quot;,
+    &quot;novelty_gate&quot;: &quot;FAIL&quot;,
+    &quot;dominant_driver_identified&quot;: false,
+    &quot;offset_veto_gate&quot;: &quot;UNCLEAR&quot;,
+    &quot;prior_discount_state&quot;: &quot;ADVERSE_SCENARIO_MORE_DISCOUNTED&quot;,
+    &quot;prior_discount_effect&quot;: &quot;UNCLEAR&quot;,
+    &quot;historical_filter_effect&quot;: &quot;MIXED&quot;,
+    &quot;market_regime_effect&quot;: &quot;MIXED&quot;,
+    &quot;hard_blockers&quot;: [
+      &quot;NOVELTY_FAIL&quot;,
+      &quot;OFFSET_VETO_UNCLEAR&quot;,
+      &quot;DOMINANT_DRIVER_NOT_IDENTIFIED&quot;
+    ],
+    &quot;direction_summary&quot;: &quot;No directional signal is permitted because one or more mandatory hard gates failed. The system does not force CALL/PUT probabilities when predictability of surprise is insufficient.&quot;,
+    &quot;operability&quot;: &quot;NOT_ANALYZED&quot;
+  },
+  &quot;usage&quot;: null
+}</pre>
                 </details>
 
               </div>
@@ -10375,11 +11329,11 @@ pre {
   &quot;case_id&quot;: 20844,
   &quot;cohort&quot;: &quot;OOS&quot;,
   &quot;ruleset&quot;: &quot;oos-v1&quot;,
-  &quot;engine_commit&quot;: &quot;3ed9bb660fb6ffdb69cc2865b8cc7172e50bf99d&quot;,
+  &quot;engine_commit&quot;: &quot;f4dd286b246a40a9e7173a104e2bb3ee68a72661&quot;,
   &quot;analyzed_at&quot;: &quot;2026-09-30T08:45:37.390325+00:00&quot;,
-  &quot;locked_at&quot;: null,
-  &quot;frozen_at&quot;: null,
-  &quot;notes&quot;: &quot;OOS timing status: FUTURE_DATE.\nOOS partial technical restart at 2026-09-30T16:11:15.465533+00:00: 3d2c92d7a09b9c380f57fcc3976dd748d37e8f6d -&gt; 98c827e5760eb6c16e0f3caf9af06ec2d4472966; previous progress=6/12. Original analyzed_at preserved.\nOOS partial technical restart at 2026-09-30T18:24:52.657001+00:00: 98c827e5760eb6c16e0f3caf9af06ec2d4472966 -&gt; 3ed9bb660fb6ffdb69cc2865b8cc7172e50bf99d; previous progress=5/12. Original analyzed_at preserved.&quot;
+  &quot;locked_at&quot;: &quot;2026-10-01T00:53:10.145004+00:00&quot;,
+  &quot;frozen_at&quot;: &quot;2026-10-01T00:53:10.145004+00:00&quot;,
+  &quot;notes&quot;: &quot;OOS timing status: FUTURE_DATE.\nOOS partial technical restart at 2026-09-30T16:11:15.465533+00:00: 3d2c92d7a09b9c380f57fcc3976dd748d37e8f6d -&gt; 98c827e5760eb6c16e0f3caf9af06ec2d4472966; previous progress=6/12. Original analyzed_at preserved.\nOOS partial technical restart at 2026-09-30T18:24:52.657001+00:00: 98c827e5760eb6c16e0f3caf9af06ec2d4472966 -&gt; 3ed9bb660fb6ffdb69cc2865b8cc7172e50bf99d; previous progress=5/12. Original analyzed_at preserved.\nOOS partial technical restart at 2026-10-01T00:50:13.901002+00:00: 3ed9bb660fb6ffdb69cc2865b8cc7172e50bf99d -&gt; f4dd286b246a40a9e7173a104e2bb3ee68a72661; previous progress=5/12. Original analyzed_at preserved.&quot;
 }</pre>
             </details>
 
@@ -57195,7 +58149,7 @@ pre {
             Qué bloqueó la señal
           </h4>
 
-          <p class="verdict-empty">No hubo un bloqueo duro.</p>
+          <ul><li>Lo que esperábamos no aportaba una novedad suficientemente distinta de lo que el mercado ya conocía.</li></ul>
 
         </div>
 
@@ -57259,7 +58213,7 @@ pre {
               <div>
                 <span>Novedad</span>
                 <strong>
-                  <span class="badge neutral">-</span>
+                  <span class="badge bad">FALLA</span>
                 </strong>
               </div>
 
@@ -57319,8 +58273,8 @@ pre {
         <div>
           <span>Novedad real</span>
           <p>
-            <span class="badge neutral">-</span>
-            No está claro que exista una novedad real aprovechable. La fuerza de la novedad es -.
+            <span class="badge bad">FALLA</span>
+            Falla el filtro de novedad. No se ha demostrado que tengamos una información suficientemente distinta de lo que el mercado ya conoce o vigila. La fuerza de la novedad es ninguna. No se ha demostrado una segunda capa de sorpresa.
           </p>
         </div>
 
@@ -57518,9 +58472,9 @@ pre {
                   <pre>{
   &quot;ticker&quot;: &quot;PRGS&quot;,
   &quot;earnings_date&quot;: &quot;2026-09-30&quot;,
-  &quot;generated_at&quot;: &quot;2026-09-30T18:27:02.792849+00:00&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:53:30.320691+00:00&quot;,
   &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
-  &quot;response_id&quot;: &quot;resp_0040afdc66f03083016abd5461dc2c87d1b6188db4e2fada1c&quot;,
+  &quot;response_id&quot;: &quot;resp_013aab67b3bd8afa016abdaef9f41487d1be8dffd6581ce903&quot;,
   &quot;pack_sha256&quot;: &quot;cd82eab85c3759c693e21edcd034941778ead8760697f9ea5421e76ea58a4da6&quot;,
   &quot;allowed_evidence_ids&quot;: [
     19297,
@@ -57545,28 +58499,27 @@ pre {
     &quot;confidence&quot;: &quot;MEDIUM&quot;,
     &quot;overall_operating_view&quot;: &quot;STRONGER&quot;,
     &quot;revenue&quot;: {
-      &quot;estimate_basis&quot;: &quot;OPERATING_BUILD&quot;,
+      &quot;estimate_basis&quot;: &quot;MULTI_SOURCE_INFERENCE&quot;,
       &quot;trajectory&quot;: &quot;ACCELERATING&quot;,
-      &quot;estimated_revenue_low_usd_b&quot;: 0.258,
+      &quot;estimated_revenue_low_usd_b&quot;: 0.255,
       &quot;estimated_revenue_high_usd_b&quot;: 0.265,
-      &quot;estimated_yoy_low_pct&quot;: 6.0,
-      &quot;estimated_yoy_high_pct&quot;: 9.0,
-      &quot;reasoning&quot;: &quot;Q2 revenue was $253.5 million, up 6.8% year over year and 2.3% sequentially. Revenue growth was accelerating versus the prior year&#x27;s 4.1% growth rate, and management said Q2 revenue was ahead of expectations. Management subsequently reiterated that fiscal Q3 revenue would be within or above the high end of previously issued guidance. Using the Q2 revenue base, recent sequential growth, and the accelerating trend supports an estimated Q3 revenue range of approximately $258 million to $265 million, or roughly 6% to 9% year over year. The numerical range is an inference because the supplied pack does not include the actual dollar amounts of the Q3 guidance range.&quot;,
+      &quot;estimated_yoy_low_pct&quot;: null,
+      &quot;estimated_yoy_high_pct&quot;: null,
+      &quot;reasoning&quot;: &quot;The latest reported quarter generated $253.5 million of revenue, up 6.8% year over year and 2.3% sequentially. Management subsequently stated that fiscal Q3 revenue should be within or above the high end of previously issued guidance, but the numerical guidance range is not included in the research pack. A modest sequential increase from the latest reported level is therefore the most defensible estimate. The numerical range is inferred from the latest revenue run rate, improving reported growth, and the positive Q3 update rather than from explicit quarterly guidance.&quot;,
       &quot;evidence_ids&quot;: [
-        19292,
-        19293,
-        19291
+        19291,
+        19293
       ],
       &quot;uses_fundamentals&quot;: true
     },
     &quot;profitability&quot;: {
       &quot;estimate_basis&quot;: &quot;MULTI_SOURCE_INFERENCE&quot;,
       &quot;trajectory&quot;: &quot;IMPROVING&quot;,
-      &quot;estimated_non_gaap_eps_low&quot;: null,
-      &quot;estimated_non_gaap_eps_high&quot;: null,
-      &quot;reasoning&quot;: &quot;Profitability trends were favorable through Q2: operating income increased 17.1% year over year, net income increased 23.7%, and Q2 non-GAAP diluted EPS increased 16% year over year to $1.62. Q1 non-GAAP diluted EPS was $1.60, also up year over year. However, the pack does not provide numerical Q3 non-GAAP EPS guidance, share-count assumptions, or sufficient quarterly cost and tax detail to support a defensible Q3 EPS range. Accordingly, the numerical estimate is withheld.&quot;,
+      &quot;estimated_non_gaap_eps_low&quot;: 1.6,
+      &quot;estimated_non_gaap_eps_high&quot;: 1.68,
+      &quot;reasoning&quot;: &quot;Non-GAAP diluted EPS increased from $1.60 in Q1 to $1.62 in Q2, while the latest reported GAAP operating income increased 17.1% year over year against 6.8% revenue growth. Management also indicated that fiscal Q3 non-GAAP EPS should be within or above the high end of prior guidance, although the numerical guidance is unavailable. The estimate therefore assumes broadly stable-to-slightly improving earnings conversion from the recent $1.60-$1.62 range.&quot;,
       &quot;evidence_ids&quot;: [
-        19292,
+        19291,
         19293,
         19296
       ],
@@ -57574,31 +58527,30 @@ pre {
     },
     &quot;demand&quot;: {
       &quot;trajectory&quot;: &quot;STRENGTHENING&quot;,
-      &quot;reasoning&quot;: &quot;Management described broad-based demand and said Q2 outperformance was driven meaningfully by AI-powered product offerings. ARR growth was 2% and net retention was 100%, indicating stable recurring customer economics alongside improving reported revenue growth.&quot;,
+      &quot;reasoning&quot;: &quot;Management described Q2 demand as broad-based and said outperformance was driven meaningfully by AI-powered product offerings. Net retention was 100% and ARR growth was 2%, indicating stable existing-customer demand with incremental contribution from newer offerings.&quot;,
       &quot;evidence_ids&quot;: [
         19293
       ]
     },
     &quot;key_operating_driver&quot;: {
-      &quot;name&quot;: &quot;AI-powered product adoption and recurring ARR retention&quot;,
+      &quot;name&quot;: &quot;AI-powered product demand&quot;,
       &quot;trajectory&quot;: &quot;STRENGTHENING&quot;,
-      &quot;reasoning&quot;: &quot;The latest quarter&#x27;s outperformance was attributed meaningfully to AI-powered offerings, while ARR growth and 100% net retention provide support for the recurring revenue base. The late-September Domo acquisition is not assumed to contribute materially to the upcoming fiscal Q3 result because the transaction closed near the end of the quarter.&quot;,
+      &quot;reasoning&quot;: &quot;The company specifically attributed Q2 revenue outperformance meaningfully to AI-powered offerings and described continued customer momentum around AI and digital-transformation initiatives. The Domo transaction also expands the data-platform portfolio, although its precise near-term financial contribution is not provided.&quot;,
       &quot;evidence_ids&quot;: [
-        19293,
-        19290
+        19290,
+        19293
       ]
     },
-    &quot;probable_quarter_summary&quot;: &quot;The most probable fiscal Q3 outcome is continued moderate revenue growth, approximately $258 million to $265 million, with growth remaining in the mid-to-high single digits. Operating performance likely remains improved year over year, but the supplied evidence is insufficient to quantify non-GAAP EPS. The Q3 result should primarily reflect the existing Progress portfolio; the Domo transaction is a material uncertainty for subsequent periods rather than a significant assumed contributor to this quarter.&quot;,
+    &quot;probable_quarter_summary&quot;: &quot;The most probable upcoming-quarter result is revenue of approximately $255 million to $265 million with non-GAAP diluted EPS of roughly $1.60 to $1.68. The underlying business appears to be improving, supported by accelerating reported revenue growth, stronger operating-income growth, and demand for AI-powered offerings. Confidence is limited because the pack does not provide the numerical Q3 guidance range or a comparable prior-year Q3 revenue figure, and the timing and financial impact of the Domo acquisition are not quantified.&quot;,
     &quot;uncertainties&quot;: [
-      &quot;The supplied pack omits the dollar amounts for previously issued fiscal Q3 revenue and non-GAAP EPS guidance.&quot;,
-      &quot;No direct Q3 non-GAAP EPS guidance, share-count assumptions, or detailed expense and tax outlook is provided.&quot;,
-      &quot;Revenue conversion can vary with transaction timing, pipeline conversion, renewals, and license mix.&quot;,
-      &quot;The Domo acquisition closed on September 22, creating integration, transaction-cost, and reporting uncertainty, though it is expected to have limited effect on the quarter ending before that date.&quot;
+      &quot;The numerical fiscal Q3 revenue and non-GAAP EPS guidance ranges are not included in the supplied excerpts.&quot;,
+      &quot;A comparable prior-year fiscal Q3 revenue figure is not provided, so a defensible year-over-year revenue estimate cannot be calculated.&quot;,
+      &quot;The near-term revenue, cost, and integration effects of the Domo acquisition are not quantified.&quot;,
+      &quot;The company notes that pipeline conversion, transaction timing, renewals, and acquisition-related costs can affect quarterly results.&quot;
     ],
     &quot;evidence_ids&quot;: [
       19290,
       19291,
-      19292,
       19293,
       19296
     ]
@@ -57609,11 +58561,11 @@ pre {
       &quot;cache_write_tokens&quot;: 23398,
       &quot;cached_tokens&quot;: 0
     },
-    &quot;output_tokens&quot;: 2110,
+    &quot;output_tokens&quot;: 1800,
     &quot;output_tokens_details&quot;: {
-      &quot;reasoning_tokens&quot;: 1286
+      &quot;reasoning_tokens&quot;: 1034
     },
-    &quot;total_tokens&quot;: 25511
+    &quot;total_tokens&quot;: 25201
   }
 }</pre>
                 </details>
@@ -57656,9 +58608,9 @@ pre {
   &quot;ticker&quot;: &quot;PRGS&quot;,
   &quot;earnings_date&quot;: &quot;2026-09-30&quot;,
   &quot;research_cutoff&quot;: &quot;2026-09-29&quot;,
-  &quot;generated_at&quot;: &quot;2026-09-30T18:27:16.508844+00:00&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:53:42.579091+00:00&quot;,
   &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
-  &quot;response_id&quot;: &quot;resp_0e09b55794b151c6016abd5479095087d1a0941240779822f7&quot;,
+  &quot;response_id&quot;: &quot;resp_0d8cba8858d994a0016abdaf0c34e887d18c81e2e915e957ab&quot;,
   &quot;pack_sha256&quot;: &quot;46527282c2e2b6fa0012563b17352e40821e272a6f27151adc11cdc5f2a2b0ab&quot;,
   &quot;market_source_count&quot;: 0,
   &quot;evidence_strength_normalization&quot;: {
@@ -57680,7 +58632,7 @@ pre {
       &quot;revenue_usd_b&quot;: null,
       &quot;non_gaap_eps&quot;: null,
       &quot;dispersion&quot;: &quot;UNKNOWN&quot;,
-      &quot;reasoning&quot;: &quot;No analyst consensus, consensus aggregator, or other market-expectation document is included in the hurdle pack.&quot;,
+      &quot;reasoning&quot;: &quot;No market-expectation documents or published consensus figures are included in the hurdle pack.&quot;,
       &quot;evidence_ids&quot;: []
     },
     &quot;company_guidance&quot;: {
@@ -57689,7 +58641,7 @@ pre {
       &quot;non_gaap_eps_low&quot;: 0.02,
       &quot;non_gaap_eps_high&quot;: 0.02,
       &quot;non_gaap_operating_margin_pct&quot;: null,
-      &quot;reasoning&quot;: &quot;The company disclosed approximate fiscal Q3 2026 GAAP and non-GAAP diluted EPS of $0.02. The supplied text does not preserve a verifiable Q3 revenue range or Q3 non-GAAP operating-margin figure. Separately, the company later reiterated that Q3 revenue and non-GAAP EPS should be within or above the high end of previously issued guidance.&quot;,
+      &quot;reasoning&quot;: &quot;Progress stated that fiscal Q3 2026 non-GAAP diluted EPS was approximately $0.02. The company also said results were expected to be within or above the high end of previously issued guidance, but the numerical revenue range and prior guidance high end are not available in the supplied evidence.&quot;,
       &quot;evidence_ids&quot;: [
         19291,
         19293
@@ -57698,28 +58650,10 @@ pre {
     &quot;market_expectation_layer&quot;: {
       &quot;revenue_bar&quot;: &quot;UNCLEAR&quot;,
       &quot;eps_bar&quot;: &quot;UNCLEAR&quot;,
-      &quot;kpi_expectations&quot;: [
-        {
-          &quot;kpi&quot;: &quot;ARR growth&quot;,
-          &quot;expectation&quot;: &quot;No market threshold is supplied. Company-reported context was 2% ARR growth in Q2.&quot;,
-          &quot;importance&quot;: &quot;MEDIUM&quot;,
-          &quot;evidence_ids&quot;: [
-            19293
-          ]
-        },
-        {
-          &quot;kpi&quot;: &quot;Net retention rate&quot;,
-          &quot;expectation&quot;: &quot;No market threshold is supplied. Company-reported context was a 100% net retention rate in Q2.&quot;,
-          &quot;importance&quot;: &quot;MEDIUM&quot;,
-          &quot;evidence_ids&quot;: [
-            19293
-          ]
-        }
-      ],
-      &quot;qualitative_bar&quot;: &quot;No market-derived qualitative bar can be established because the pack contains no analyst or investor expectation evidence. The only available qualitative statement is company guidance that Q3 revenue and non-GAAP EPS should be within or above the high end of prior guidance.&quot;,
+      &quot;kpi_expectations&quot;: [],
+      &quot;qualitative_bar&quot;: &quot;No independently sourced market bar is available. The only qualitative reference is the company&#x27;s statement that Q3 revenue and non-GAAP EPS were expected to be within or above the high end of prior guidance.&quot;,
       &quot;evidence_ids&quot;: [
-        19291,
-        19293
+        19291
       ]
     },
     &quot;real_hurdle&quot;: {
@@ -57729,19 +58663,19 @@ pre {
       &quot;non_gaap_eps_high&quot;: null,
       &quot;numeric_hurdle_directly_sourced&quot;: false,
       &quot;revenue_beat_alone_likely_sufficient&quot;: &quot;UNCLEAR&quot;,
-      &quot;critical_kpi&quot;: &quot;No specific KPI hurdle is directly sourced; ARR growth and net retention rate are the most relevant disclosed operating metrics, but no market thresholds are provided.&quot;,
-      &quot;qualitative_hurdle&quot;: &quot;The real hurdle cannot be quantified from the supplied pack. The available evidence supports only a qualitative requirement to perform at or above the high end of company guidance, with no independent market consensus or KPI bar available to determine whether revenue and EPS alone would be sufficient.&quot;,
-      &quot;reasoning&quot;: &quot;The explicit_numeric_hurdles field is empty, so numerical real-hurdle fields must remain null. Company guidance and reported operating metrics provide context but do not establish the market&#x27;s required threshold.&quot;,
+      &quot;critical_kpi&quot;: &quot;Q3 revenue and non-GAAP EPS relative to the high end of prior guidance; no separately sourced market KPI threshold is documented.&quot;,
+      &quot;qualitative_hurdle&quot;: &quot;A genuine surprise would likely require performance at or above the high end of the previously issued Q3 guidance, but the market&#x27;s independent numerical or qualitative requirement cannot be reconstructed from the supplied pack.&quot;,
+      &quot;reasoning&quot;: &quot;The explicit_numeric_hurdles field is empty, so all numerical real-hurdle fields must remain null. Company guidance and the company&#x27;s reiteration of guidance do not establish the market&#x27;s actual hurdle. There is no evidence to determine whether a revenue beat alone would be sufficient or whether ARR, net retention, margins, or another KPI carried a higher market bar.&quot;,
       &quot;evidence_ids&quot;: [
         19291,
         19293
       ]
     },
     &quot;uncertainties&quot;: [
-      &quot;No analyst consensus or investor-expectation documents are included.&quot;,
-      &quot;The Q3 revenue guidance range is not recoverable from the supplied document text.&quot;,
-      &quot;The supplied text does not provide a verifiable Q3 non-GAAP operating-margin target.&quot;,
-      &quot;No explicit market thresholds for ARR growth or net retention rate are available.&quot;
+      &quot;No analyst consensus or market-expectation documents were supplied.&quot;,
+      &quot;The numerical revenue guidance and prior guidance high end are not visible in the supplied evidence.&quot;,
+      &quot;No explicit numeric hurdle was provided.&quot;,
+      &quot;The supplied ARR growth and net retention figures describe the prior quarter&#x27;s reported results, not a documented Q3 market expectation.&quot;
     ],
     &quot;evidence_ids&quot;: [
       19291,
@@ -57754,11 +58688,11 @@ pre {
       &quot;cache_write_tokens&quot;: 3486,
       &quot;cached_tokens&quot;: 1106
     },
-    &quot;output_tokens&quot;: 1166,
+    &quot;output_tokens&quot;: 1089,
     &quot;output_tokens_details&quot;: {
-      &quot;reasoning_tokens&quot;: 490
+      &quot;reasoning_tokens&quot;: 516
     },
-    &quot;total_tokens&quot;: 5761
+    &quot;total_tokens&quot;: 5684
   }
 }</pre>
                 </details>
@@ -57781,7 +58715,7 @@ pre {
               <div class="stage-body">
 
                 <p class="stage-summary">
-                  La información disponible sobre las previsiones futuras es limitado. El tono esperado es mejorando. Ingresos anuales: no determinado. EPS anual: no determinado. Márgenes: mejorando. Demanda: mejorando.
+                  La información disponible sobre las previsiones futuras es limitado. El tono esperado es mejorando. Ingresos anuales: no determinado. EPS anual: no determinado. Márgenes: estable. Demanda: mejorando.
                 </p>
 
                 <details class="technical">
@@ -57800,10 +58734,10 @@ pre {
                   <pre>{
   &quot;ticker&quot;: &quot;PRGS&quot;,
   &quot;earnings_date&quot;: &quot;2026-09-30&quot;,
-  &quot;generated_at&quot;: &quot;2026-09-30T18:27:35.809258+00:00&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:54:01.945418+00:00&quot;,
   &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
-  &quot;response_id&quot;: &quot;resp_01ec24b1ca6ae0ee016abd5486d1d487d18b9f8c3db6b860a2&quot;,
-  &quot;pack_sha256&quot;: &quot;0bb5a6a7b0a6b18794c438f802b495723a49e86148b480edaf6a2a559e0e7fcc&quot;,
+  &quot;response_id&quot;: &quot;resp_0ea92e735a65a3e8016abdaf187c7c87d18639dd7f51a9eb9d&quot;,
+  &quot;pack_sha256&quot;: &quot;ead14be2def31ae2d60fba8aa1a0290f0254e4a6a2894d339f59974b4be5baf6&quot;,
   &quot;allowed_evidence_ids&quot;: [
     19457,
     19464,
@@ -57830,7 +58764,7 @@ pre {
       &quot;estimated_high_usd_b&quot;: null,
       &quot;numeric_basis&quot;: &quot;INSUFFICIENT&quot;,
       &quot;uses_probable_result&quot;: false,
-      &quot;reasoning&quot;: &quot;Management had previously described its outlook as increased and reiterated that Q3 revenue would be within or above the high end of prior guidance. However, the supplied company evidence does not show an explicit full-year revenue range or clearly identify a full-year revenue action for the upcoming release.&quot;,
+      &quot;reasoning&quot;: &quot;Progress had previously updated fiscal-year guidance, but the supplied excerpt does not include the explicit full-year revenue range or enough information to reconstruct it. The Q3 update indicates revenue should be within or above the high end of prior guidance, but that does not establish a specific full-year action.&quot;,
       &quot;evidence_ids&quot;: [
         19291,
         19293
@@ -57842,30 +58776,33 @@ pre {
       &quot;estimated_high&quot;: null,
       &quot;numeric_basis&quot;: &quot;INSUFFICIENT&quot;,
       &quot;uses_probable_result&quot;: false,
-      &quot;reasoning&quot;: &quot;The pack references full-year GAAP and non-GAAP EPS guidance, but the extracted evidence does not provide a reliable full-year EPS range or establish whether management would raise, maintain, or lower it. The broad statement regarding increased guidance is not sufficiently specific to EPS.&quot;,
+      &quot;reasoning&quot;: &quot;The company previously issued fiscal-year EPS guidance, but the supplied material does not provide a reliable, complete numerical range. Q3 performance was expected to be within or above the high end of prior guidance, which supports a stable-to-positive tone but not a defensible full-year EPS revision.&quot;,
       &quot;evidence_ids&quot;: [
+        19291,
         19293
       ]
     },
     &quot;key_operating_driver_outlook&quot;: {
-      &quot;name&quot;: &quot;AI-powered product adoption and ARR/net retention&quot;,
-      &quot;expected_action&quot;: &quot;UNCLEAR&quot;,
+      &quot;name&quot;: &quot;AI-powered product demand&quot;,
+      &quot;expected_action&quot;: &quot;MAINTAIN&quot;,
       &quot;trajectory&quot;: &quot;STRENGTHENING&quot;,
-      &quot;reasoning&quot;: &quot;Q2 outperformance was attributed largely to several AI-powered product offerings, while ARR growth was 2% and net retention was 100%. These indicators support a strengthening forward operating backdrop, but the supplied guidance documents do not state a specific forward guidance action for this driver.&quot;,
+      &quot;reasoning&quot;: &quot;Management attributed Q2 revenue outperformance largely to AI-powered product offerings and described a positive outlook. The planned Domo acquisition further expands the AI-ready data-platform portfolio, although its near-term contribution is not quantified.&quot;,
       &quot;evidence_ids&quot;: [
+        19291,
         19293
       ]
     },
     &quot;margin_outlook&quot;: {
-      &quot;trajectory&quot;: &quot;IMPROVING&quot;,
-      &quot;reasoning&quot;: &quot;Management cited a positive outlook and increased guidance, while the supplied FY outlook includes non-GAAP operating margin guidance. The evidence supports continued margin improvement in the operating trajectory, but does not clearly establish a new margin range or a specific upcoming change.&quot;,
+      &quot;trajectory&quot;: &quot;STABLE&quot;,
+      &quot;reasoning&quot;: &quot;The supplied evidence indicates a positive outlook and updated company guidance, but it does not provide enough complete margin detail to support a specific forward margin expansion estimate. Domo-related transaction and integration costs remain a potential offset.&quot;,
       &quot;evidence_ids&quot;: [
+        19291,
         19293
       ]
     },
     &quot;demand_outlook&quot;: {
       &quot;trajectory&quot;: &quot;STRENGTHENING&quot;,
-      &quot;reasoning&quot;: &quot;Management reported Q2 revenue ahead of expectations, with outperformance driven meaningfully by AI-powered offerings. The reiteration that Q3 revenue should be within or above the high end of prior guidance further supports strengthening demand.&quot;,
+      &quot;reasoning&quot;: &quot;Q2 revenue outperformance was driven meaningfully by AI-powered offerings, while ARR growth was 2% and net retention was 100%. Management also reiterated that Q3 revenue should be within or above the high end of prior guidance, supporting a strengthening demand outlook.&quot;,
       &quot;evidence_ids&quot;: [
         19291,
         19293
@@ -57877,19 +58814,18 @@ pre {
       &quot;non_gaap_eps_low&quot;: null,
       &quot;non_gaap_eps_high&quot;: null,
       &quot;numeric_basis&quot;: &quot;INSUFFICIENT&quot;,
-      &quot;reasoning&quot;: &quot;Management stated that Q3 revenue and non-GAAP EPS would be within or above the high end of previously issued guidance, but the actual prior dollar ranges are not supplied. A numerical next-period range therefore cannot be reproduced without false precision.&quot;,
+      &quot;reasoning&quot;: &quot;The pack provides prior Q3 guidance and a reaffirmation that Q3 should be within or above its high end, but it does not provide support for a numerical Q4 or subsequent-period guidance range. A next-period range should not be derived as a full-year residual.&quot;,
       &quot;evidence_ids&quot;: [
         19291,
         19293
       ]
     },
-    &quot;expected_guidance_summary&quot;: &quot;The most likely communication is a constructive or reaffirming outlook, supported by Q2 outperformance and AI-related demand. Management had already indicated that Q3 revenue and non-GAAP EPS should land within or above the high end of prior guidance, but the supplied pack does not support a precise new full-year revenue or EPS range or a definitive component-specific raise/maintain/lower call.&quot;,
+    &quot;expected_guidance_summary&quot;: &quot;Management was most likely to communicate a stable-to-positive forward message: reaffirming the previously updated fiscal-year framework where possible, emphasizing that Q3 revenue and EPS were tracking within or above the high end of prior guidance, and highlighting strengthening AI-powered product demand. A specific full-year revenue or EPS raise cannot be supported from the supplied excerpts, and no numerical next-period range is available.&quot;,
     &quot;uncertainties&quot;: [
-      &quot;The supplied evidence omits the numerical full-year revenue range.&quot;,
-      &quot;The supplied evidence does not provide a reliable full-year EPS range or clearly specify the EPS guidance action.&quot;,
-      &quot;The prior Q3 revenue and non-GAAP EPS ranges are not shown, preventing a numerical next-period estimate.&quot;,
-      &quot;Domo transaction timing, integration, transaction costs, and potential synergies create uncertainty for subsequent periods.&quot;,
-      &quot;Revenue conversion remains sensitive to transaction timing, renewals, pipeline conversion, license mix, and foreign exchange.&quot;
+      &quot;The explicit full-year revenue and EPS guidance ranges are not fully visible in the supplied SEC excerpt.&quot;,
+      &quot;The timing and financial contribution of the Domo acquisition are not quantified; closing is expected in fiscal Q4 2026.&quot;,
+      &quot;Transaction, integration, renewal, pipeline-conversion, and foreign-exchange effects could alter the eventual full-year outlook.&quot;,
+      &quot;The evidence supports a positive operating trajectory but does not establish whether management would formally raise, maintain, or lower the full-year numerical guidance ranges.&quot;
     ],
     &quot;evidence_ids&quot;: [
       19291,
@@ -57897,16 +58833,16 @@ pre {
     ]
   },
   &quot;usage&quot;: {
-    &quot;input_tokens&quot;: 9291,
+    &quot;input_tokens&quot;: 9239,
     &quot;input_tokens_details&quot;: {
-      &quot;cache_write_tokens&quot;: 7849,
+      &quot;cache_write_tokens&quot;: 7797,
       &quot;cached_tokens&quot;: 1439
     },
-    &quot;output_tokens&quot;: 1785,
+    &quot;output_tokens&quot;: 2103,
     &quot;output_tokens_details&quot;: {
-      &quot;reasoning_tokens&quot;: 1003
+      &quot;reasoning_tokens&quot;: 1312
     },
-    &quot;total_tokens&quot;: 11076
+    &quot;total_tokens&quot;: 11342
   }
 }</pre>
                 </details>
@@ -57948,10 +58884,10 @@ pre {
                   <pre>{
   &quot;ticker&quot;: &quot;PRGS&quot;,
   &quot;earnings_date&quot;: &quot;2026-09-30&quot;,
-  &quot;generated_at&quot;: &quot;2026-09-30T18:27:48.853158+00:00&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:54:13.322778+00:00&quot;,
   &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
-  &quot;response_id&quot;: &quot;resp_02ced7b9084eb06f016abd549a2a2c87d182ebed01caab9967&quot;,
-  &quot;pack_sha256&quot;: &quot;6ef80e4c3eda31f870718e227042de195d3748ddf79bf641355c57ed98de956d&quot;,
+  &quot;response_id&quot;: &quot;resp_0c1b2a2d8c20fbfd016abdaf2c1b6c87d189a33698f8578b1a&quot;,
+  &quot;pack_sha256&quot;: &quot;f03544cdcc44cb5c899a90f168cd9d5242338026c158bbeaad622b2e8728658e&quot;,
   &quot;allowed_evidence_ids&quot;: [
     19292,
     19293,
@@ -57964,14 +58900,14 @@ pre {
     &quot;assessment_status&quot;: &quot;SUFFICIENT&quot;,
     &quot;confidence&quot;: &quot;MEDIUM&quot;,
     &quot;primary_kpi&quot;: {
-      &quot;name&quot;: &quot;AI-powered product adoption and resulting AI-offering revenue momentum&quot;,
+      &quot;name&quot;: &quot;AI-powered product demand&quot;,
       &quot;category&quot;: &quot;AI&quot;,
       &quot;predictiveness&quot;: &quot;HIGH&quot;,
       &quot;current_signal&quot;: &quot;STRENGTHENING&quot;,
-      &quot;causal_chain&quot;: &quot;Customer adoption of AI-powered offerings drives product demand and transaction activity, which supports near-term revenue outperformance; sustained adoption also strengthens management&#x27;s confidence in customer spending and supports constructive forward guidance.&quot;,
-      &quot;why_predictive&quot;: &quot;Management explicitly attributed Q2 revenue outperformance largely to the success of several AI-powered product offerings and said Q2 revenue was ahead of expectations. Management also cited continued momentum in AI offerings and a positive outlook reflected in increased guidance, creating a direct link from this KPI to revenue and guidance.&quot;,
+      &quot;causal_chain&quot;: &quot;Customer demand for AI-powered offerings drives new bookings, expansion and product adoption; those sales contribute to recurring revenue and quarterly revenue performance, improve earnings conversion through operating leverage, and support management&#x27;s forward guidance and outlook.&quot;,
+      &quot;why_predictive&quot;: &quot;Management directly attributed Q2 revenue outperformance largely to the success of several AI-powered product offerings, described broad-based demand and continued momentum, and linked the positive outlook and increased guidance to that performance. The probable-result assessment also identifies AI-powered product demand as the key operating driver for the upcoming quarter.&quot;,
       &quot;linked_to_revenue&quot;: true,
-      &quot;linked_to_profitability&quot;: false,
+      &quot;linked_to_profitability&quot;: true,
       &quot;linked_to_guidance&quot;: true,
       &quot;evidence_ids&quot;: [
         19293
@@ -57982,52 +58918,54 @@ pre {
         &quot;name&quot;: &quot;Annualized recurring revenue growth&quot;,
         &quot;predictiveness&quot;: &quot;MEDIUM&quot;,
         &quot;current_signal&quot;: &quot;STABLE&quot;,
-        &quot;why_relevant&quot;: &quot;ARR growth of 2% supports the durability of the recurring revenue base and provides a forward indicator for revenue continuity, although its growth rate was less dynamic than the AI-driven outperformance.&quot;,
+        &quot;why_relevant&quot;: &quot;ARR reflects the health of the recurring-revenue base and helps reduce quarter-to-quarter revenue volatility. Growth was solid but modest at 2%, making it a useful supporting indicator of demand rather than the primary acceleration signal.&quot;,
         &quot;evidence_ids&quot;: [
-          19293
+          19293,
+          19292
         ]
       },
       {
         &quot;name&quot;: &quot;Net retention rate&quot;,
         &quot;predictiveness&quot;: &quot;MEDIUM&quot;,
         &quot;current_signal&quot;: &quot;STABLE&quot;,
-        &quot;why_relevant&quot;: &quot;A 100% net retention rate indicates that the existing customer cohort was broadly maintained, supporting recurring revenue stability and reducing downside risk to forward revenue.&quot;,
+        &quot;why_relevant&quot;: &quot;A 100% net retention rate indicates that the existing-customer base was maintained overall, supporting revenue durability and limiting downside to forward guidance. It does not by itself capture incremental new demand from AI offerings.&quot;,
         &quot;evidence_ids&quot;: [
           19293
         ]
       },
       {
-        &quot;name&quot;: &quot;Operating margin and operating income&quot;,
-        &quot;predictiveness&quot;: &quot;LOW&quot;,
+        &quot;name&quot;: &quot;Revenue growth trend&quot;,
+        &quot;predictiveness&quot;: &quot;MEDIUM&quot;,
         &quot;current_signal&quot;: &quot;STRENGTHENING&quot;,
-        &quot;why_relevant&quot;: &quot;Improving operating performance can translate revenue momentum into earnings growth, but the supplied direct evidence provides less detail on how AI adoption specifically affects upcoming-quarter margins.&quot;,
+        &quot;why_relevant&quot;: &quot;Reported revenue growth accelerated to 6.8% year over year from 4.1% previously, providing confirmation that the demand improvement is translating into reported revenue.&quot;,
         &quot;evidence_ids&quot;: [
           19293
         ]
       }
     ],
-    &quot;predictive_chain_summary&quot;: &quot;AI-powered product adoption is the strongest predictive KPI because management directly identified AI offerings as a major source of recent revenue outperformance and linked continued momentum to its positive outlook and increased guidance. ARR growth and net retention provide supporting evidence that the broader recurring revenue base remains stable, while profitability is a secondary consequence rather than the clearest leading indicator in the supplied evidence.&quot;,
+    &quot;predictive_chain_summary&quot;: &quot;The strongest predictive chain is AI-powered product demand -&gt; customer adoption and expansion -&gt; revenue outperformance and recurring-revenue growth -&gt; operating leverage and earnings conversion -&gt; stronger forward outlook. ARR and net retention provide supporting evidence on the durability of the demand signal, while accelerating reported revenue confirms recent conversion into financial results.&quot;,
     &quot;limitations&quot;: [
-      &quot;The pack does not provide a quantified AI-specific adoption, bookings, or revenue metric.&quot;,
-      &quot;The evidence is primarily based on one recent quarter and management commentary, limiting precision for the upcoming result.&quot;,
-      &quot;The supplied guidance evidence does not include numerical revenue or EPS ranges, so the KPI&#x27;s guidance linkage is directional rather than quantitatively testable.&quot;,
-      &quot;AI adoption is directly linked to revenue and guidance in the evidence, but not directly to near-term profitability.&quot;
+      &quot;The pack does not provide a standalone quantitative revenue, bookings or ARR contribution from AI-powered offerings.&quot;,
+      &quot;The numerical quarterly and full-year guidance ranges are not included, limiting precision regarding the effect on guidance.&quot;,
+      &quot;The timing and near-term financial contribution of the Domo acquisition are not quantified.&quot;,
+      &quot;AI demand may not translate into revenue immediately because pipeline conversion, transaction timing and renewals can affect quarterly results.&quot;
     ],
     &quot;evidence_ids&quot;: [
-      19293
+      19293,
+      19292
     ]
   },
   &quot;usage&quot;: {
-    &quot;input_tokens&quot;: 10677,
+    &quot;input_tokens&quot;: 10624,
     &quot;input_tokens_details&quot;: {
-      &quot;cache_write_tokens&quot;: 10674,
+      &quot;cache_write_tokens&quot;: 10621,
       &quot;cached_tokens&quot;: 0
     },
-    &quot;output_tokens&quot;: 960,
+    &quot;output_tokens&quot;: 876,
     &quot;output_tokens_details&quot;: {
-      &quot;reasoning_tokens&quot;: 398
+      &quot;reasoning_tokens&quot;: 308
     },
-    &quot;total_tokens&quot;: 11637
+    &quot;total_tokens&quot;: 11500
   }
 }</pre>
                 </details>
@@ -58043,7 +58981,7 @@ pre {
                 </span>
 
                 <span class="stage-status">
-                  PENDIENTE
+                  COMPLETADA
                 </span>
               </summary>
 
@@ -58069,24 +59007,24 @@ pre {
                   <pre>{
   &quot;ticker&quot;: &quot;PRGS&quot;,
   &quot;earnings_date&quot;: &quot;2026-09-30&quot;,
-  &quot;generated_at&quot;: &quot;2026-09-30T16:27:51.954449+00:00&quot;,
+  &quot;generated_at&quot;: &quot;2026-10-01T00:54:42.822451+00:00&quot;,
   &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
-  &quot;response_id&quot;: &quot;resp_0429f25d619dc4aa016abd38649ebc87d0829f90644cc15154&quot;,
-  &quot;pack_sha256&quot;: &quot;c03f458b03f27b1790ae8c4525d780effa539e80f0339ebbc3bbb895cb307367&quot;,
+  &quot;response_id&quot;: &quot;resp_0277cbc5f5ef1ee7016abdaf372df087d1b6e2e4373292a5b5&quot;,
+  &quot;pack_sha256&quot;: &quot;d466c261727d1d496534eb07c0f5ad6ade644c2720fe87f3c0ee2c5c150af5e9&quot;,
   &quot;allowed_evidence_ids&quot;: [
     19292,
     19293
   ],
   &quot;result&quot;: {
-    &quot;assessment_status&quot;: &quot;INSUFFICIENT&quot;,
+    &quot;assessment_status&quot;: &quot;LIMITED&quot;,
     &quot;confidence&quot;: &quot;MEDIUM&quot;,
-    &quot;primary_kpi&quot;: &quot;ARR growth&quot;,
+    &quot;primary_kpi&quot;: &quot;AI-powered product demand&quot;,
     &quot;market_awareness&quot;: {
       &quot;directly_disclosed&quot;: &quot;YES&quot;,
       &quot;widely_discussed&quot;: &quot;UNCLEAR&quot;,
       &quot;easy_to_reconstruct&quot;: &quot;PARTIAL&quot;,
-      &quot;awareness_level&quot;: &quot;UNCLEAR&quot;,
-      &quot;reasoning&quot;: &quot;Q2 ARR of $868 million and 2% year-over-year growth were explicitly disclosed in the company’s public earnings release. Thus, the primary KPI itself was not novel. The historical KPI is easy to reconstruct, but the pack provides no direct evidence of how broadly analysts or investors discussed it, and no Q3 ARR figure or expectation is supplied.&quot;,
+      &quot;awareness_level&quot;: &quot;MEDIUM&quot;,
+      &quot;reasoning&quot;: &quot;Progress had already publicly attributed Q2 revenue outperformance meaningfully to momentum in AI-powered offerings and described broad-based demand. The direction of the signal was therefore available before earnings. However, no standalone AI revenue, bookings, ARR contribution, analyst commentary, or independent market-expectation documents are supplied. The market could reconstruct the qualitative signal, but not its magnitude or precise financial conversion.&quot;,
       &quot;evidence_ids&quot;: [
         19293
       ]
@@ -58094,34 +59032,38 @@ pre {
     &quot;second_layer&quot;: {
       &quot;exists&quot;: false,
       &quot;layer_type&quot;: &quot;NONE&quot;,
-      &quot;description&quot;: &quot;No defensible non-obvious conversion from ARR to an unexpected Q3 margin, profit outcome, guidance action, or KPI-versus-hurdle result can be established.&quot;,
-      &quot;why_not_fully_obvious&quot;: &quot;The available ARR data were already company-disclosed, while the pack contains no independently sourced market hurdle, Q3 ARR expectation, analyst consensus, or numerical guidance range against which an unexpected conversion could be measured. The available financial and operating metrics were also disclosed together in the Q2 release.&quot;,
-      &quot;depends_on_inference&quot;: false,
+      &quot;description&quot;: &quot;No defensible unexpected conversion from AI demand into margin, profit, guidance, or a measurable hurdle result can be established. The supplied material already links AI demand to Q2 revenue outperformance and a positive outlook, while the probable EPS and revenue ranges are inferred from reported results rather than compared with an independently sourced market bar.&quot;,
+      &quot;why_not_fully_obvious&quot;: &quot;Potential margin and earnings conversion are not new findings: Q2 operating income, operating margins, EPS, and management&#x27;s AI attribution were already disclosed. Numerical consensus, guidance ranges, and a market hurdle are unavailable, so no unexpected second layer can be demonstrated.&quot;,
+      &quot;depends_on_inference&quot;: true,
       &quot;evidence_ids&quot;: [
         19293
       ]
     },
     &quot;surprise_candidates&quot;: [
       {
-        &quot;area&quot;: &quot;Q3 revenue conversion from recurring-revenue momentum&quot;,
-        &quot;our_pre_earnings_view&quot;: &quot;Revenue was inferred at approximately $258 million to $266 million, with mid-single- to high-single-digit year-over-year growth.&quot;,
-        &quot;known_market_view&quot;: &quot;Unavailable; no analyst consensus or market-expectation evidence is supplied.&quot;,
+        &quot;area&quot;: &quot;AI-powered product demand&quot;,
+        &quot;our_pre_earnings_view&quot;: &quot;AI-powered product demand is strengthening and should support modest sequential revenue growth.&quot;,
+        &quot;known_market_view&quot;: &quot;No independently sourced market view is available, but the company had already disclosed that AI offerings meaningfully drove Q2 outperformance and customer momentum.&quot;,
         &quot;difference&quot;: &quot;UNCLEAR&quot;,
         &quot;novelty_strength&quot;: &quot;NONE&quot;,
-        &quot;evidence_ids&quot;: []
+        &quot;evidence_ids&quot;: [
+          19293
+        ]
       },
       {
-        &quot;area&quot;: &quot;Q3 non-GAAP EPS conversion&quot;,
-        &quot;our_pre_earnings_view&quot;: &quot;Non-GAAP diluted EPS was inferred at approximately $1.60 to $1.70.&quot;,
-        &quot;known_market_view&quot;: &quot;Unavailable; no independently sourced EPS hurdle is supplied.&quot;,
+        &quot;area&quot;: &quot;AI demand to profit conversion&quot;,
+        &quot;our_pre_earnings_view&quot;: &quot;Revenue and non-GAAP EPS should remain around or modestly above recent levels, implying stable-to-slightly improving earnings conversion.&quot;,
+        &quot;known_market_view&quot;: &quot;No independent market hurdle is supplied. Q2 revenue, operating income, operating margins, and EPS were already publicly reported, including 40% non-GAAP operating margin and $1.62 non-GAAP EPS.&quot;,
         &quot;difference&quot;: &quot;UNCLEAR&quot;,
         &quot;novelty_strength&quot;: &quot;NONE&quot;,
-        &quot;evidence_ids&quot;: []
+        &quot;evidence_ids&quot;: [
+          19293
+        ]
       },
       {
-        &quot;area&quot;: &quot;ARR growth itself&quot;,
-        &quot;our_pre_earnings_view&quot;: &quot;ARR momentum was expected to remain stable rather than provide a clearly new acceleration signal.&quot;,
-        &quot;known_market_view&quot;: &quot;Unavailable; the pack does not show whether analysts had a differentiated ARR expectation.&quot;,
+        &quot;area&quot;: &quot;Forward guidance conversion&quot;,
+        &quot;our_pre_earnings_view&quot;: &quot;Management should communicate a stable-to-positive outlook, with Q3 performance within or above the high end of prior guidance where possible.&quot;,
+        &quot;known_market_view&quot;: &quot;The company had already stated that Q3 revenue and EPS were expected to be within or above the high end of prior guidance, but the numerical guidance and independent market expectation are unavailable.&quot;,
         &quot;difference&quot;: &quot;UNCLEAR&quot;,
         &quot;novelty_strength&quot;: &quot;NONE&quot;,
         &quot;evidence_ids&quot;: [
@@ -58131,29 +59073,29 @@ pre {
     ],
     &quot;novelty_strength&quot;: &quot;NONE&quot;,
     &quot;novelty_gate&quot;: &quot;FAIL&quot;,
-    &quot;novelty_summary&quot;: &quot;The primary KPI was already publicly disclosed, and no defensible second layer is available. The pack lacks market-consensus evidence, a numerical hurdle, or a new Q3 KPI disclosure needed to show that ARR would convert into an unexpected revenue, profit, margin, or guidance outcome.&quot;,
+    &quot;novelty_summary&quot;: &quot;The primary KPI was already qualitatively disclosed by the company, and its financial linkage to revenue and earnings was also partly visible in the reported Q2 results. Because the pack contains no independent market expectations, analyst focus, numerical guidance ranges, or real hurdle, it does not support a genuinely non-obvious second layer. The evidence therefore fails the novelty gate.&quot;,
     &quot;limitations&quot;: [
-      &quot;No analyst consensus or market-expectation documents are supplied.&quot;,
-      &quot;No Q3 ARR, net-retention, or other KPI expectation is provided.&quot;,
-      &quot;The supplied SEC release discloses Q2 ARR and financial results but does not establish how widely the market discussed them.&quot;,
-      &quot;The Q3 revenue and EPS ranges are analytical inferences rather than independently sourced market hurdles.&quot;,
-      &quot;The supplied extract does not provide a complete numerical guidance framework against which to identify a surprise.&quot;
+      &quot;No analyst consensus or market-expectation documents are supplied; market source count is zero.&quot;,
+      &quot;The numerical Q3 revenue and EPS guidance ranges are unavailable, preventing a direct hurdle comparison.&quot;,
+      &quot;No standalone quantitative contribution from AI-powered offerings is provided.&quot;,
+      &quot;The latest disclosed AI signal is qualitative and was already included in the prior Q2 results release.&quot;,
+      &quot;The timing and financial impact of the Domo acquisition are not quantified.&quot;
     ],
     &quot;evidence_ids&quot;: [
       19293
     ]
   },
   &quot;usage&quot;: {
-    &quot;input_tokens&quot;: 8710,
+    &quot;input_tokens&quot;: 8659,
     &quot;input_tokens_details&quot;: {
-      &quot;cache_write_tokens&quot;: 8707,
+      &quot;cache_write_tokens&quot;: 8656,
       &quot;cached_tokens&quot;: 0
     },
-    &quot;output_tokens&quot;: 3114,
+    &quot;output_tokens&quot;: 3127,
     &quot;output_tokens_details&quot;: {
-      &quot;reasoning_tokens&quot;: 2446
+      &quot;reasoning_tokens&quot;: 2351
     },
-    &quot;total_tokens&quot;: 11824
+    &quot;total_tokens&quot;: 11786
   }
 }</pre>
                 </details>
@@ -60191,11 +61133,11 @@ pre {
   &quot;case_id&quot;: 20197,
   &quot;cohort&quot;: &quot;OOS&quot;,
   &quot;ruleset&quot;: &quot;oos-v1&quot;,
-  &quot;engine_commit&quot;: &quot;3ed9bb660fb6ffdb69cc2865b8cc7172e50bf99d&quot;,
+  &quot;engine_commit&quot;: &quot;f4dd286b246a40a9e7173a104e2bb3ee68a72661&quot;,
   &quot;analyzed_at&quot;: &quot;2026-09-29T19:47:19.418239+00:00&quot;,
   &quot;locked_at&quot;: null,
   &quot;frozen_at&quot;: null,
-  &quot;notes&quot;: &quot;OOS timing status: FUTURE_DATE.\nOOS partial technical restart at 2026-09-30T00:44:50.402919+00:00: 35c9d709b4b9c0cf857ef739b64732b8e8c9cfa7 -&gt; 79c5f1cdc8d2738b95e5953c14cd64a58391c692; previous progress=6/12. Original analyzed_at preserved.\nOOS partial technical restart at 2026-09-30T09:40:26.626465+00:00: 79c5f1cdc8d2738b95e5953c14cd64a58391c692 -&gt; 3d2c92d7a09b9c380f57fcc3976dd748d37e8f6d; previous progress=6/12. Original analyzed_at preserved.\nOOS partial technical restart at 2026-09-30T16:26:10.978312+00:00: 3d2c92d7a09b9c380f57fcc3976dd748d37e8f6d -&gt; 98c827e5760eb6c16e0f3caf9af06ec2d4472966; previous progress=6/12. Original analyzed_at preserved.\nOOS partial technical restart at 2026-09-30T18:26:37.792889+00:00: 98c827e5760eb6c16e0f3caf9af06ec2d4472966 -&gt; 3ed9bb660fb6ffdb69cc2865b8cc7172e50bf99d; previous progress=6/12. Original analyzed_at preserved.&quot;
+  &quot;notes&quot;: &quot;OOS timing status: FUTURE_DATE.\nOOS partial technical restart at 2026-09-30T00:44:50.402919+00:00: 35c9d709b4b9c0cf857ef739b64732b8e8c9cfa7 -&gt; 79c5f1cdc8d2738b95e5953c14cd64a58391c692; previous progress=6/12. Original analyzed_at preserved.\nOOS partial technical restart at 2026-09-30T09:40:26.626465+00:00: 79c5f1cdc8d2738b95e5953c14cd64a58391c692 -&gt; 3d2c92d7a09b9c380f57fcc3976dd748d37e8f6d; previous progress=6/12. Original analyzed_at preserved.\nOOS partial technical restart at 2026-09-30T16:26:10.978312+00:00: 3d2c92d7a09b9c380f57fcc3976dd748d37e8f6d -&gt; 98c827e5760eb6c16e0f3caf9af06ec2d4472966; previous progress=6/12. Original analyzed_at preserved.\nOOS partial technical restart at 2026-09-30T18:26:37.792889+00:00: 98c827e5760eb6c16e0f3caf9af06ec2d4472966 -&gt; 3ed9bb660fb6ffdb69cc2865b8cc7172e50bf99d; previous progress=6/12. Original analyzed_at preserved.\nOOS partial technical restart at 2026-10-01T00:53:10.905877+00:00: 3ed9bb660fb6ffdb69cc2865b8cc7172e50bf99d -&gt; f4dd286b246a40a9e7173a104e2bb3ee68a72661; previous progress=5/12. Original analyzed_at preserved.&quot;
 }</pre>
             </details>
 

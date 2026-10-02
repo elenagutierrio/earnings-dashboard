@@ -105,8 +105,207 @@ main {
   font-size: 25px;
 }
 
-.panel {
+.decision-panel {
   background: var(--card);
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 22px;
+}
+
+.decision-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.decision-header h2 {
+  margin: 0 0 6px;
+  font-size: 28px;
+}
+
+.decision-header p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 850px;
+}
+
+.decision-kicker {
+  display: block;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.decision-rule {
+  min-width: 230px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 13px 15px;
+  background: var(--soft);
+}
+
+.decision-rule strong,
+.decision-rule span {
+  display: block;
+}
+
+.decision-rule strong {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 5px;
+}
+
+.decision-rule span {
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.decision-metrics {
+  margin-bottom: 16px;
+}
+
+.decision-guide {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.decision-guide > div {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 13px;
+  background: var(--soft);
+}
+
+.decision-guide strong,
+.decision-guide span {
+  display: block;
+}
+
+.decision-guide strong {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.decision-guide span {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.decision-updated {
+  margin-bottom: 12px;
+}
+
+.decision-table {
+  min-width: 1050px;
+}
+
+.decision-table caption {
+  text-align: left;
+  padding: 0 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.decision-table th[scope="row"] {
+  min-width: 150px;
+}
+
+.decision-table th[scope="row"] small {
+  display: block;
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+.decision-open {
+  border: 1px solid var(--primary);
+  background: var(--card);
+  color: var(--primary);
+  border-radius: 8px;
+  padding: 7px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.decision-open:hover {
+  background: var(--info-bg);
+}
+
+.decision-muted {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.decision-note {
+  margin: 15px 0 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--soft);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.research-drawer {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  margin: 22px 0;
+  overflow: hidden;
+}
+
+.research-drawer > summary {
+  cursor: pointer;
+  padding: 18px 20px;
+  font-weight: 800;
+  color: var(--primary);
+  list-style-position: inside;
+}
+
+.research-drawer > summary span {
+  color: var(--muted);
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.research-drawer > .research-content {
+  padding: 0 0 2px;
+}
+
+.research-drawer > .research-content > .panel {
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .decision-header {
+    flex-direction: column;
+  }
+
+  .decision-rule {
+    width: 100%;
+  }
+
+  .decision-guide {
+    grid-template-columns: 1fr;
+  }
+}
+
   border: 1px solid var(--border);
   border-radius: 15px;
   padding: 22px;
@@ -115,6 +314,18 @@ main {
 
 .panel h2 {
   margin-top: 0;
+}
+.panel {
+  background: var(--card);
+
+
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 22px;
+  margin-bottom: 20px;
 }
 
 .filters {
@@ -768,1377 +979,50 @@ pre {
 </header>
 
 
-<section class="panel">
+<section class="decision-panel">
 
-  <h2>
-    Universo seleccionado
-  </h2>
+  <div class="decision-header">
 
-  <p class="verdict-empty">
-    Registro longitudinal de las empresas elegidas
-    expresamente para seguimiento. La inclusión no
-    crea una señal ni permite reconstruir una
-    predicción después del resultado.
-  </p>
+    <div>
+      <span class="decision-kicker">
+        Vista diaria
+      </span>
 
-  <section class="metrics">
+      <h2>
+        Centro de decisiones
+      </h2>
 
-    <div class="metric">
-      <span>Seleccionadas</span>
-      <strong>9</strong>
+      <p>
+        Esta es la primera pantalla que debes mirar.
+        Aquí solo aparecen las variables necesarias
+        para decidir si existe una señal antes del
+        earnings. El detalle técnico completo sigue
+        disponible debajo.
+      </p>
     </div>
 
-    <div class="metric">
-      <span>Casos vinculados</span>
-      <strong>8</strong>
+    <div class="decision-rule">
+      <strong>
+        Regla de lectura
+      </strong>
+
+      <span>
+        Dirección → Novedad → Driver → Offset
+      </span>
     </div>
-
-    <div class="metric">
-      <span>Congelados</span>
-      <strong>8</strong>
-    </div>
-
-    <div class="metric">
-      <span>Audits post-earnings</span>
-      <strong>2</strong>
-    </div>
-
-  </section>
-
-  <p class="filter-status">
-    Selección: Selección 29-30 septiembre 2026
-    · Fecha de selección:
-    2026-09-29
-  </p>
-
-  <p class="filter-status">
-    Universo elegido por la usuaria para seguimiento. Estar incluido en esta lista no implica elegibilidad pre-earnings, señal direccional ni que el caso pueda analizarse retrospectivamente.
-  </p>
-
-  <p class="filter-status">
-    NO DISPONIBLE en Review pre-earnings significa
-    que no existe un registro v1 congelado para ese
-    caso. Nunca se reconstruye retrospectivamente.
-  </p>
-
-  <div class="table-wrap">
-
-    <table>
-
-      <thead>
-        <tr>
-          <th>Fecha objetivo</th>
-          <th>Ticker</th>
-          <th>Empresa</th>
-          <th>Caso</th>
-          <th>Decisión</th>
-          <th>Freeze</th>
-          <th>Review pre-earnings</th>
-          <th>Bottleneck</th>
-          <th>Recovery</th>
-          <th>Evidencia nueva</th>
-          <th>Reacción 16h ES</th>
-          <th>Reacción oficial</th>
-          <th>Causal review</th>
-          <th>Opportunity audit</th>
-          <th>Learning</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-        <tr>
-          <td>2026-09-29</td>
-          <td><button class="ticker-link" onclick="openCase('18205')">AIR</button></td>
-          <td>AAR</td>
-          <td>2026-09-29</td>
-          <td><span class="badge neutral">SIN_SEÑAL</span></td>
-          <td><span class="badge good">Sí</span></td>
-          <td>NO DISPONIBLE</td>
-          <td>-</td>
-          <td>CASO SIN REGISTRO V1</td>
-          <td>-</td>
-          <td>-0.15% (PUT)</td>
-          <td>-4.95% (PUT)</td>
-          <td>-</td>
-          <td>ESPERANDO CAUSAL REVIEW</td>
-          <td><span class="badge neutral">-</span></td>
-        </tr>
-
-        <tr>
-          <td>2026-09-29</td>
-          <td><button class="ticker-link" onclick="openCase('7954')">IDT</button></td>
-          <td>IDT</td>
-          <td>2026-09-28</td>
-          <td><span class="badge neutral">SIN_SEÑAL</span></td>
-          <td><span class="badge good">Sí</span></td>
-          <td>NO DISPONIBLE</td>
-          <td>-</td>
-          <td>CASO SIN REGISTRO V1</td>
-          <td>-</td>
-          <td>PENDIENTE</td>
-          <td>+8.63% (CALL)</td>
-          <td>ABSTENTION_REASON_SUPPORTED</td>
-          <td>DATA_GAP</td>
-          <td><span class="badge bad">NO</span></td>
-        </tr>
-
-        <tr>
-          <td>2026-09-29</td>
-          <td><button class="ticker-link" onclick="openCase('14251')">CNXC</button></td>
-          <td>Concentrix</td>
-          <td>2026-09-29</td>
-          <td><span class="badge neutral">SIN_SEÑAL</span></td>
-          <td><span class="badge good">Sí</span></td>
-          <td>NO DISPONIBLE</td>
-          <td>-</td>
-          <td>CASO SIN REGISTRO V1</td>
-          <td>-</td>
-          <td>+0.80% (CALL)</td>
-          <td>+0.28% (CALL)</td>
-          <td>-</td>
-          <td>ESPERANDO CAUSAL REVIEW</td>
-          <td><span class="badge neutral">-</span></td>
-        </tr>
-
-        <tr>
-          <td>2026-09-29</td>
-          <td><strong>NSRCF</strong></td>
-          <td>NextSource Materials</td>
-          <td>-</td>
-          <td><span class="badge info">SIN CASO OOS</span></td>
-          <td><span class="badge bad">NO</span></td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>+0.80% (CALL)</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td><span class="badge neutral">-</span></td>
-        </tr>
-
-        <tr>
-          <td>2026-09-30</td>
-          <td><button class="ticker-link" onclick="openCase('18710')">JBL</button></td>
-          <td>Jabil</td>
-          <td>2026-09-30</td>
-          <td><span class="badge neutral">SIN_SEÑAL</span></td>
-          <td><span class="badge good">Sí</span></td>
-          <td>NO DISPONIBLE</td>
-          <td>-</td>
-          <td>CASO SIN REGISTRO V1</td>
-          <td>-</td>
-          <td>-4.50% (PUT)</td>
-          <td>-10.03% (PUT)</td>
-          <td>-</td>
-          <td>ESPERANDO CAUSAL REVIEW</td>
-          <td><span class="badge neutral">-</span></td>
-        </tr>
-
-        <tr>
-          <td>2026-09-30</td>
-          <td><button class="ticker-link" onclick="openCase('19342')">FDS</button></td>
-          <td>FactSet Research</td>
-          <td>2026-09-30</td>
-          <td><span class="badge neutral">SIN_SEÑAL</span></td>
-          <td><span class="badge good">Sí</span></td>
-          <td>NO DISPONIBLE</td>
-          <td>-</td>
-          <td>CASO SIN REGISTRO V1</td>
-          <td>-</td>
-          <td>PENDIENTE</td>
-          <td>PENDIENTE</td>
-          <td>-</td>
-          <td>ESPERANDO RESULTADO</td>
-          <td><span class="badge neutral">-</span></td>
-        </tr>
-
-        <tr>
-          <td>2026-09-30</td>
-          <td><button class="ticker-link" onclick="openCase('18844')">CAG</button></td>
-          <td>Conagra Brands</td>
-          <td>2026-09-30</td>
-          <td><span class="badge neutral">SIN_SEÑAL</span></td>
-          <td><span class="badge good">Sí</span></td>
-          <td>NO DISPONIBLE</td>
-          <td>-</td>
-          <td>CASO SIN REGISTRO V1</td>
-          <td>-</td>
-          <td>-0.78% (PUT)</td>
-          <td>-4.88% (PUT)</td>
-          <td>DATA_GAP</td>
-          <td>GOOD_ABSTENTION</td>
-          <td><span class="badge bad">NO</span></td>
-        </tr>
-
-        <tr>
-          <td>2026-09-30</td>
-          <td><button class="ticker-link" onclick="openCase('19046')">CALM</button></td>
-          <td>Cal-Maine</td>
-          <td>2026-09-30</td>
-          <td><span class="badge neutral">SIN_SEÑAL</span></td>
-          <td><span class="badge good">Sí</span></td>
-          <td>NO DISPONIBLE</td>
-          <td>-</td>
-          <td>CASO SIN REGISTRO V1</td>
-          <td>-</td>
-          <td>PENDIENTE</td>
-          <td>PENDIENTE</td>
-          <td>-</td>
-          <td>ESPERANDO RESULTADO</td>
-          <td><span class="badge neutral">-</span></td>
-        </tr>
-
-        <tr>
-          <td>2026-09-30</td>
-          <td><button class="ticker-link" onclick="openCase('19526')">YRD</button></td>
-          <td>Yiren Digital</td>
-          <td>2026-09-30</td>
-          <td><span class="badge neutral">SIN_SEÑAL</span></td>
-          <td><span class="badge good">Sí</span></td>
-          <td>NO DISPONIBLE</td>
-          <td>-</td>
-          <td>CASO SIN REGISTRO V1</td>
-          <td>-</td>
-          <td>PENDIENTE</td>
-          <td>PENDIENTE</td>
-          <td>-</td>
-          <td>ESPERANDO RESULTADO</td>
-          <td><span class="badge neutral">-</span></td>
-        </tr>
-
-      </tbody>
-
-    </table>
 
   </div>
 
-</section>
-
-
-
-<section class="panel">
-
-  <h2>
-    Próximos earnings
-  </h2>
-
-  <p>
-    Calendario descubierto automáticamente.
-    Nasdaq se usa solo para encontrar candidatos;
-    la verificación independiente sigue siendo
-    obligatoria antes de crear un caso OOS.
-  </p>
-
-  <p class="filter-status">
-    Inicio: 2026-10-01
-    · Candidatos: 55
-    · BMO: 7
-    · AMC: 12
-    · Timing desconocido: 36
-    · Actualizado: 2026-10-01T18:46:19.237605+00:00
-  </p>
-
-  <div class="table-wrap">
-
-    <table>
-
-      <thead>
-        <tr>
-          <th>Fecha detectada</th>
-          <th>Ticker</th>
-          <th>Empresa</th>
-          <th>Timing</th>
-          <th>Fecha verificada</th>
-          <th>Verificación</th>
-          <th>Estado análisis</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>ACN</strong></td>
-          <td>Accenture plc</td>
-          <td>BMO</td>
-          <td>2026-10-01</td>
-          <td>
-            <span class="badge good">
-              VERIFICADO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              SIN_SEÑAL
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>AYI</strong></td>
-          <td>Acuity Inc.</td>
-          <td>BMO</td>
-          <td>2026-10-01</td>
-          <td>
-            <span class="badge good">
-              VERIFICADO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              SIN_SEÑAL
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>MKC</strong></td>
-          <td>McCormick &amp; Company, Incorporated</td>
-          <td>BMO</td>
-          <td>2026-10-01</td>
-          <td>
-            <span class="badge good">
-              VERIFICADO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              SIN_SEÑAL
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>NAMM</strong></td>
-          <td>Namib Minerals</td>
-          <td>BMO</td>
-          <td>2026-10-01</td>
-          <td>
-            <span class="badge good">
-              VERIFICADO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              LISTO PARA ANALIZAR
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>NKE</strong></td>
-          <td>Nike, Inc.</td>
-          <td>AMC</td>
-          <td>2026-10-01</td>
-          <td>
-            <span class="badge good">
-              VERIFICADO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              SIN_SEÑAL
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>ALAR</strong></td>
-          <td>Alarum Technologies Ltd.</td>
-          <td>UNKNOWN</td>
-          <td>2026-12-01</td>
-          <td>
-            <span class="badge bad">
-              DATE_HINT_MISMATCH
-            </span>
-          </td>
-          <td>
-            <span class="badge bad">
-              BLOQUEADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>BTTC</strong></td>
-          <td>Black Titan Corp</td>
-          <td>UNKNOWN</td>
-          <td>2026-11-16</td>
-          <td>
-            <span class="badge bad">
-              DATE_HINT_MISMATCH
-            </span>
-          </td>
-          <td>
-            <span class="badge bad">
-              BLOQUEADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>CMMB</strong></td>
-          <td>Chemomab Therapeutics Ltd.</td>
-          <td>UNKNOWN</td>
-          <td>2026-11-06</td>
-          <td>
-            <span class="badge bad">
-              DATE_HINT_MISMATCH
-            </span>
-          </td>
-          <td>
-            <span class="badge bad">
-              BLOQUEADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>DAVA</strong></td>
-          <td>Endava plc</td>
-          <td>UNKNOWN</td>
-          <td>2026-11-02</td>
-          <td>
-            <span class="badge bad">
-              DATE_HINT_MISMATCH
-            </span>
-          </td>
-          <td>
-            <span class="badge bad">
-              BLOQUEADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>EONR</strong></td>
-          <td>EON Resources Inc.</td>
-          <td>UNKNOWN</td>
-          <td>2026-11-23</td>
-          <td>
-            <span class="badge bad">
-              DATE_HINT_MISMATCH
-            </span>
-          </td>
-          <td>
-            <span class="badge bad">
-              BLOQUEADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>HUBG</strong></td>
-          <td>Hub Group, Inc.</td>
-          <td>UNKNOWN</td>
-          <td>2026-10-22</td>
-          <td>
-            <span class="badge bad">
-              DATE_HINT_MISMATCH
-            </span>
-          </td>
-          <td>
-            <span class="badge bad">
-              BLOQUEADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>IPST</strong></td>
-          <td>IP Strategy Holdings, Inc.</td>
-          <td>UNKNOWN</td>
-          <td>2026-12-02</td>
-          <td>
-            <span class="badge bad">
-              DATE_HINT_MISMATCH
-            </span>
-          </td>
-          <td>
-            <span class="badge bad">
-              BLOQUEADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>ITP</strong></td>
-          <td>IT Tech Packaging, Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge bad">
-              CALENDAR_UNRESOLVED
-            </span>
-          </td>
-          <td>
-            <span class="badge bad">
-              BLOQUEADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>SMXT</strong></td>
-          <td>Solarmax Technology Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge bad">
-              CALENDAR_UNRESOLVED
-            </span>
-          </td>
-          <td>
-            <span class="badge bad">
-              BLOQUEADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>VFS</strong></td>
-          <td>VinFast Auto Ltd.</td>
-          <td>UNKNOWN</td>
-          <td>2026-10-01</td>
-          <td>
-            <span class="badge good">
-              VERIFICADO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              SIN_SEÑAL
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-01</td>
-          <td><strong>VRAX</strong></td>
-          <td>Virax Biolabs Group Limited</td>
-          <td>UNKNOWN</td>
-          <td>2026-10-01</td>
-          <td>
-            <span class="badge good">
-              VERIFICADO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              SIN_SEÑAL
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-02</td>
-          <td><strong>CELU</strong></td>
-          <td>Celularity Inc.</td>
-          <td>UNKNOWN</td>
-          <td>2026-11-13</td>
-          <td>
-            <span class="badge bad">
-              DATE_HINT_MISMATCH
-            </span>
-          </td>
-          <td>
-            <span class="badge bad">
-              BLOQUEADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-02</td>
-          <td><strong>ENLV</strong></td>
-          <td>Enlivex Ltd.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge bad">
-              CALENDAR_UNRESOLVED
-            </span>
-          </td>
-          <td>
-            <span class="badge bad">
-              BLOQUEADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-02</td>
-          <td><strong>LNAI</strong></td>
-          <td>Lunai Bioworks Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge bad">
-              CALENDAR_UNRESOLVED
-            </span>
-          </td>
-          <td>
-            <span class="badge bad">
-              BLOQUEADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-05</td>
-          <td><strong>RELL</strong></td>
-          <td>Richardson Electronics, Ltd.</td>
-          <td>AMC</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-05</td>
-          <td><strong>AEHR</strong></td>
-          <td>Aehr Test Systems</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-05</td>
-          <td><strong>AIV</strong></td>
-          <td>Apartment Investment and Management Company</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-05</td>
-          <td><strong>CBAT</strong></td>
-          <td>CBAK Energy Technology Limited</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-05</td>
-          <td><strong>CHRN</strong></td>
-          <td>ChronoScale Holdings Corporation</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-05</td>
-          <td><strong>CURR</strong></td>
-          <td>Currenc Group Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-05</td>
-          <td><strong>FRGT</strong></td>
-          <td>Freight Technologies, Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-05</td>
-          <td><strong>GRFS</strong></td>
-          <td>Grifols, S.A.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-05</td>
-          <td><strong>MSS</strong></td>
-          <td>Maison Solutions Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-05</td>
-          <td><strong>NCPL</strong></td>
-          <td>Netcapital Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>APOG</strong></td>
-          <td>Apogee Enterprises, Inc.</td>
-          <td>BMO</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>LW</strong></td>
-          <td>Lamb Weston Holdings, Inc.</td>
-          <td>BMO</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>RPM</strong></td>
-          <td>RPM International Inc.</td>
-          <td>BMO</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>AXIL</strong></td>
-          <td>AXIL Brands, Inc.</td>
-          <td>AMC</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>NEOG</strong></td>
-          <td>Neogen Corporation</td>
-          <td>AMC</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>PENG</strong></td>
-          <td>Penguin Solutions, Inc.</td>
-          <td>AMC</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>SAR</strong></td>
-          <td>Saratoga Investment Corp</td>
-          <td>AMC</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>STZ</strong></td>
-          <td>Constellation Brands Inc</td>
-          <td>AMC</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>WS</strong></td>
-          <td>Worthington Steel, Inc.</td>
-          <td>AMC</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>AAME</strong></td>
-          <td>Atlantic American Corporation</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>ALPS</strong></td>
-          <td>ALPS Group Inc</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>AREC</strong></td>
-          <td>American Resources Corporation</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>ARTW</strong></td>
-          <td>Art&#x27;s-Way Manufacturing Co., Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>BRLS</strong></td>
-          <td>Borealis Foods Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>BRTX</strong></td>
-          <td>BioRestorative Therapies, Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>ELME</strong></td>
-          <td>Elme Communities</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>GTEN</strong></td>
-          <td>Gores Holdings X, Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>SEGG</strong></td>
-          <td>Sports Entertainment Gaming Global Corporation</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-06</td>
-          <td><strong>VLGEA</strong></td>
-          <td>Village Super Market, Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-07</td>
-          <td><strong>APLD</strong></td>
-          <td>Applied Digital Corporation</td>
-          <td>AMC</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-07</td>
-          <td><strong>LEVI</strong></td>
-          <td>Levi Strauss &amp; Co.</td>
-          <td>AMC</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-07</td>
-          <td><strong>LFS</strong></td>
-          <td>LEIFRAS Co., Ltd.</td>
-          <td>AMC</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-07</td>
-          <td><strong>RGP</strong></td>
-          <td>Resources Connection, Inc.</td>
-          <td>AMC</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-07</td>
-          <td><strong>SXTC</strong></td>
-          <td>China SXT Pharmaceuticals, Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-07</td>
-          <td><strong>TAYD</strong></td>
-          <td>Taylor Devices, Inc.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2026-10-07</td>
-          <td><strong>TORO</strong></td>
-          <td>Toro Corp.</td>
-          <td>UNKNOWN</td>
-          <td>-</td>
-          <td>
-            <span class="badge neutral">
-              DESCUBIERTO
-            </span>
-          </td>
-          <td>
-            <span class="badge neutral">
-              AÚN NO VERIFICADO
-            </span>
-          </td>
-        </tr>
-
-      </tbody>
-
-    </table>
-
-  </div>
-
-</section>
-
-
-
-
-<section class="panel">
-
-  <h2>
-    Backtest histórico congelado
-  </h2>
-
-  <p class="verdict-empty">
-    Muestra histórica cerrada. Sus resultados no se
-    mezclan con la validación prospectiva nueva.
-  </p>
-
-  <section class="metrics">
+  <section class="metrics decision-metrics">
 
     <div class="metric">
-      <span>Señales</span>
-      <strong>21</strong>
+      <span>Próximos</span>
+      <strong>55</strong>
     </div>
 
     <div class="metric">
-      <span>Compañías</span>
-      <strong>13</strong>
-    </div>
-
-    <div class="metric">
-      <span>CALL</span>
-      <strong>
-        13
-        · 11 aciertos
-      </strong>
-    </div>
-
-    <div class="metric">
-      <span>PUT</span>
-      <strong>
-        8
-        · 7 aciertos
-      </strong>
-    </div>
-
-    <div class="metric">
-      <span>Total acertadas</span>
-      <strong>
-        18
-        / 21
-      </strong>
-    </div>
-
-    <div class="metric">
-      <span>Acierto congelado</span>
-      <strong>
-        85.7%
-      </strong>
-    </div>
-
-  </section>
-
-</section>
-
-
-<section class="panel">
-
-  <h2>
-    Validación OOS nueva
-  </h2>
-
-  <p class="verdict-empty">
-    Casos prospectivos analizados con el motor actual.
-    SIN SEÑAL es un resultado válido y no se cuenta
-    como CALL o PUT. PENDIENTE identifica un caso
-    OOS todavía no cerrado. FALLO TÉCNICO identifica
-    un caso terminado sin decisión direccional válida
-    y queda fuera de la métrica de aciertos.
-  </p>
-
-  <section class="metrics">
-
-    <div class="metric">
-      <span>Casos OOS</span>
-      <strong>72</strong>
+      <span>Con señal</span>
+      <strong>0</strong>
     </div>
 
     <div class="metric">
@@ -2153,1045 +1037,367 @@ pre {
 
     <div class="metric">
       <span>SIN SEÑAL</span>
-      <strong>61</strong>
-    </div>
-
-    <div class="metric">
-      <span>PENDIENTE</span>
       <strong>6</strong>
     </div>
 
     <div class="metric">
-      <span>FALLO TÉCNICO</span>
-      <strong>
-        5
-      </strong>
-    </div>
-
-    <div class="metric">
-      <span>Señales OOS</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Señales evaluadas</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Señales pendientes</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Acierto OOS</span>
-      <strong>-</strong>
-    </div>
-
-  </section>
-
-  <p class="verdict-empty">
-    Base activa: 78 casos totales ·
-    4 de validación técnica ·
-    1 evento(s) excluido(s).
-  </p>
-
-</section>
-
-
-<section class="panel">
-
-  <h2>
-    Investigación Shadow · SIN SEÑAL
-  </h2>
-
-  <p class="verdict-empty">
-    Direcciones binarias experimentales congeladas
-    antes del earnings para casos cuya decisión
-    oficial fue SIN SEÑAL. Esta capa no modifica
-    Direction, no convierte una abstención en señal
-    y no entra en el hit rate oficial ni en el
-    backtest congelado.
-  </p>
-
-  <section class="metrics">
-
-    <div class="metric">
-      <span>Shadows</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Shadow CALL</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Shadow PUT</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Con resultado</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Evaluados direccionalmente</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>HIT</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>MISS</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>FLAT</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
       <span>Pendientes</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Acierto Shadow</span>
-      <strong>-</strong>
-    </div>
-
-    <div class="metric">
-      <span>Confianza media</span>
-      <strong>-</strong>
-    </div>
-
-    <div class="metric">
-      <span>Causal reviews</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>HIT direccional revisado</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>HIT causal limpio</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>HIT causal parcial</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>HIT tesis equivocada</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>MISS price translation</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>HIT causal limpio / HIT dir.</span>
-      <strong>-</strong>
-    </div>
-
-    <div class="metric">
-      <span>Causal ≥ parcial / HIT dir.</span>
-      <strong>-</strong>
+      <strong>49</strong>
     </div>
 
   </section>
 
-  <p class="verdict-empty">
-    El porcentaje Shadow usa únicamente
-    HIT / (HIT + MISS). Los resultados FLAT
-    se muestran aparte y no entran en el
-    denominador.
-  </p>
-
-  <details>
-    <summary>
-      Ver casos Shadow
-    </summary>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Empresa</th>
-            <th>Earnings</th>
-            <th>Oficial</th>
-            <th>Shadow</th>
-            <th>Confianza</th>
-            <th>Motivo principal</th>
-            <th>Factor invalidante</th>
-            <th>Etapas de soporte</th>
-            <th>Dirección real</th>
-            <th>Reacción</th>
-            <th>Resultado Shadow</th>
-            <th>Clasificación causal</th>
-            <th>Crédito causal</th>
-            <th>Primer problema causal</th>
-          </tr>
-        </thead>
-        <tbody>
-
-      <tr>
-        <td colspan="14">
-          Todavía no hay forced-direction shadows
-          prospectivos registrados.
-        </td>
-      </tr>
-
-        </tbody>
-      </table>
-    </div>
-  </details>
-
-</section>
-
-
-<section class="panel">
-
-  <h2>
-    Learning Lab · Shadow causal
-  </h2>
-
-  <p class="verdict-empty">
-    Hipótesis de aprendizaje derivadas únicamente
-    de Shadow causal reviews congelados. Son
-    candidatos de investigación: no modifican el
-    motor, no cambian señales históricas y ningún
-    estado de esta sección equivale a VALIDATED.
-  </p>
-
-  <section class="metrics">
-
-    <div class="metric">
-      <span>Candidatos activos</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>CANDIDATE</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>VALIDATING</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Promotion review</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>REJECTED</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Eventos SUPPORT</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Eventos CONTRADICTION</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Eventos DIAGNOSTIC</span>
-      <strong>0</strong>
-    </div>
-
-  </section>
-
-  <p class="verdict-empty">
-    CANDIDATE = evidencia inicial. VALIDATING exige
-    al menos 2 soportes comparables en 2 compañías.
-    Promotion review exige al menos 3 soportes del
-    mismo scope, 2 compañías, 2 fechas y como máximo
-    1 contradicción comparable. Las contradicciones
-    fuera del scope se muestran, pero no bloquean.
-    La promoción al motor sigue prohibida hasta una
-    revisión separada.
-  </p>
-
-  <details>
-    <summary>
-      Ver learning candidates
-    </summary>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Candidate</th>
-            <th>Nombre</th>
-            <th>Hipótesis</th>
-            <th>Área</th>
-            <th>Estado</th>
-            <th>Support comparable</th>
-            <th>Contradictions comparables</th>
-            <th>Diagnostic comparable</th>
-            <th>Support global</th>
-            <th>Contradictions globales</th>
-            <th>Contradicciones fuera de scope</th>
-            <th>Nº scopes</th>
-            <th>Scope activo</th>
-            <th>Tickers support</th>
-            <th>Tickers contra</th>
-            <th>Dossier</th>
-            <th>Validated</th>
-          </tr>
-        </thead>
-        <tbody>
-
-      <tr>
-        <td colspan="17">
-          Todavía no hay learning candidates
-          con soporte causal suficiente para
-          entrar en el registro activo.
-        </td>
-      </tr>
-
-        </tbody>
-      </table>
-    </div>
-  </details>
-
-</section>
-
-
-<section class="panel">
-
-  <h2>
-    Promotion Review · Learning Candidates
-  </h2>
-
-  <p class="verdict-empty">
-    Expedientes congelados únicamente cuando un
-    candidato alcanzó ELIGIBLE_FOR_PROMOTION_REVIEW
-    dentro de un scope comparable. El expediente
-    propone un cambio exacto, pero no modifica
-    ninguna regla ni equivale a VALIDATED.
-  </p>
-
-  <section class="metrics">
-
-    <div class="metric">
-      <span>Expedientes congelados</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Elegibles ahora</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Elegibles sin expediente</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Decisiones humanas</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Aprobados para experimento</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Rechazados</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Necesita más evidencia</span>
-      <strong>0</strong>
-    </div>
-
-  </section>
-
-  <details>
-    <summary>
-      Ver expedientes de promotion review
-    </summary>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Candidate</th>
-            <th>Nombre</th>
-            <th>Estado al review</th>
-            <th>Estado actual</th>
-            <th>Scope congelado</th>
-            <th>Support comparable</th>
-            <th>Contradictions comparables</th>
-            <th>Contradicciones fuera de scope</th>
-            <th>Tipo de cambio</th>
-            <th>Etapa objetivo</th>
-            <th>Condición propuesta</th>
-            <th>Efecto propuesto</th>
-            <th>Riesgo de regresión</th>
-            <th>Tests obligatorios</th>
-            <th>Decisión humana</th>
-            <th>Reviewer</th>
-            <th>Rationale</th>
-            <th>Experimento autorizado</th>
-            <th>Validated</th>
-          </tr>
-        </thead>
-        <tbody>
-
-      <tr>
-        <td colspan="20">
-          Todavía no existe ningún expediente
-          congelado de promotion review.
-        </td>
-      </tr>
-
-        </tbody>
-      </table>
-    </div>
-  </details>
-
-  <p class="verdict-empty">
-    Un expediente permanece histórico aunque nueva
-    evidencia cambie después el estado del candidato.
-    La decisión humana se congela por dossier.
-    APPROVE_FOR_EXPERIMENT sólo autoriza una rama
-    experimental: no modifica main, no valida la
-    regla y no altera señales históricas.
-  </p>
-
-</section>
-
-
-<section class="panel">
-
-  <h2>
-    Experimental Engine · CURRENT vs EXPERIMENT
-  </h2>
-
-  <p class="verdict-empty">
-    Sólo contiene reglas previamente aprobadas por
-    el human gate. DEVELOPMENT y
-    RETROSPECTIVE_REPLAY son diagnósticos. La única
-    validación admisible es PROSPECTIVE_HOLDOUT,
-    congelado antes del earnings. Ningún resultado
-    experimental modifica el motor oficial.
-  </p>
-
-  <section class="metrics">
-
-    <div class="metric">
-      <span>Experimentos</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Ejecutables</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Bloqueados por feature</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Prospective holdouts</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Holdouts evaluados</span>
-      <strong>0</strong>
-    </div>
-
-  </section>
-
-  <details>
-    <summary>
-      Ver comparación por experimento
-    </summary>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Candidate</th>
-            <th>Execution</th>
-            <th>Policy</th>
-            <th>Missing features</th>
-            <th>Replay N</th>
-            <th>Replay triggers</th>
-            <th>Replay CURRENT HR</th>
-            <th>Replay EXP HR</th>
-            <th>Holdout N</th>
-            <th>Holdout eval.</th>
-            <th>Holdout triggers</th>
-            <th>Holdout CURRENT HR</th>
-            <th>Holdout EXP HR</th>
-            <th>Δ señales</th>
-            <th>Misses evitados</th>
-            <th>Hits eliminados</th>
-            <th>Valor selección neto</th>
-            <th>Review status</th>
-            <th>Review blockers</th>
-            <th>Compañías</th>
-            <th>Scopes</th>
-            <th>Conclusión</th>
-            <th>Validated</th>
-          </tr>
-        </thead>
-        <tbody>
-
-      <tr>
-        <td colspan="25">
-          Todavía no existe ningún experimento
-          autorizado por el human gate.
-        </td>
-      </tr>
-
-        </tbody>
-      </table>
-    </div>
-  </details>
-
-  <details>
-    <summary>
-      Ver casos CURRENT vs EXPERIMENT
-    </summary>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Experiment</th>
-            <th>Ticker</th>
-            <th>Fecha</th>
-            <th>Rol</th>
-            <th>CURRENT</th>
-            <th>EXPERIMENT</th>
-            <th>Rule triggered</th>
-            <th>Real</th>
-            <th>Reacción</th>
-            <th>CURRENT result</th>
-            <th>EXPERIMENT result</th>
-          </tr>
-        </thead>
-        <tbody>
-
-      <tr>
-        <td colspan="11">
-          Todavía no hay predicciones experimentales
-          congeladas.
-        </td>
-      </tr>
-
-        </tbody>
-      </table>
-    </div>
-  </details>
-
-  <p class="verdict-empty">
-    Una mejora en replay histórico nunca valida una
-    regla. Si faltan features prospectivos, el
-    experimento queda bloqueado en vez de reconstruir
-    esos datos después del resultado.
-  </p>
-
-  <p class="verdict-empty">
-    <strong>Experiment Review v1:</strong>
-    READY_FOR_HUMAN_REVIEW sólo significa que el
-    experimento ha alcanzado los gates objetivos de
-    evidencia. No significa VALIDATED ni PROMOTE.
-    La siguiente decisión requiere un segundo human
-    gate independiente.
-  </p>
-
-</section>
-
-
-<section class="panel">
-
-  <h2>
-    Experiment Review · Evidence Gate
-  </h2>
-
-  <section class="metrics">
-
-    <div class="metric">
-      <span>Reviews</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Ready for human review</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Insuficiente</span>
-      <strong>0</strong>
-    </div>
-
-  </section>
-
-  <p class="verdict-empty">
-    Gates v1: mínimo 8 holdouts evaluados, 5
-    compañías distintas y 2 scopes distintos para
-    el candidato; el hit rate experimental no puede
-    deteriorar más de 2 puntos porcentuales frente
-    a CURRENT y el valor de selección neto debe ser
-    no negativo. Los umbrales quedan congelados en
-    cada review.
-  </p>
-
-  <details>
-    <summary>
-      Ver evidencia y blockers
-    </summary>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Review</th>
-            <th>Experiment</th>
-            <th>Candidate</th>
-            <th>Status</th>
-            <th>Holdouts</th>
-            <th>Companies</th>
-            <th>Scopes</th>
-            <th>CURRENT HR</th>
-            <th>EXPERIMENT HR</th>
-            <th>Δ HR pp</th>
-            <th>Misses evitados</th>
-            <th>Hits eliminados</th>
-            <th>Net selection</th>
-            <th>Blockers</th>
-            <th>Second human gate</th>
-            <th>Validated</th>
-          </tr>
-        </thead>
-        <tbody>
-
-              <tr>
-                <td colspan="16">
-                  Todavía no existe ningún review de
-                  evidencia prospectiva.
-                </td>
-              </tr>
-
-        </tbody>
-      </table>
-    </div>
-  </details>
-
-  <p class="verdict-empty">
-    Este panel prepara el expediente para un segundo
-    human gate. No puede autorizar cambios del motor,
-    no convierte el experimento en VALIDATED y no
-    modifica las señales oficiales.
-  </p>
-
-</section>
-
-
-<section class="panel">
-
-  <h2>
-    Production Proposal Gate · v1
-  </h2>
-
-  <section class="metrics">
-
-    <div class="metric">
-      <span>Gate reviews</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Ready for second human</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>No elegibles</span>
-      <strong>0</strong>
-    </div>
-
-    <div class="metric">
-      <span>Propuestas registradas</span>
-      <strong>0</strong>
-    </div>
-
-  </section>
-
-  <p class="verdict-empty">
-    Este gate es deliberadamente más estricto que
-    Experiment Review v1: exige al menos 12 holdouts
-    evaluados, 8 compañías, 3 scopes, hit rate no
-    inferior a CURRENT, al menos 2 misses evitados y
-    net selection &gt;= 2. El scope debe seguir siendo
-    elegible y el dossier original debe coincidir.
-  </p>
-
-  <p class="verdict-empty">
-    <strong>Importante:</strong> READY_FOR_SECOND_HUMAN_GATE
-    no significa VALIDATED ni PROMOTE. El segundo humano
-    sólo puede registrar PROPOSE_FOR_PRODUCTION si
-    supera el gate y utiliza una identidad distinta de
-    la primera aprobación humana. La propuesta obliga a
-    un PR hacia <code>main</code>; este módulo nunca
-    modifica <code>main</code> ni crea el PR automáticamente.
-  </p>
-
-  <details>
-    <summary>
-      Ver gates, evidencia y decisiones
-    </summary>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Gate</th>
-            <th>Experiment</th>
-            <th>Candidate</th>
-            <th>Scope</th>
-            <th>Status</th>
-            <th>Holdouts</th>
-            <th>Companies</th>
-            <th>Scopes</th>
-            <th>CURRENT HR</th>
-            <th>EXP HR</th>
-            <th>Δ HR pp</th>
-            <th>Misses evitados</th>
-            <th>Hits eliminados</th>
-            <th>Net selection</th>
-            <th>Blockers</th>
-            <th>Decision</th>
-            <th>Reviewer</th>
-          </tr>
-        </thead>
-        <tbody>
-
-              <tr>
-                <td colspan="17">
-                  Todavía no existe ningún Production
-                  Proposal Gate review.
-                </td>
-              </tr>
-
-        </tbody>
-      </table>
-    </div>
-  </details>
-
-  <p class="verdict-empty">
-    La salida final de este gate es un expediente
-    auditable para una eventual propuesta de código.
-    No existe ninguna ruta de auto-promoción a
-    <code>main</code>.
-  </p>
-
-</section>
-
-
-<section class="panel">
-
-  <h2>
-    Auditoría de oportunidades · SIN SEÑAL
-  </h2>
-
-  <p class="verdict-empty">
-    Revisión post-earnings de abstenciones OOS ya
-    congeladas. Esta auditoría es diagnóstica:
-    no convierte SIN SEÑAL en CALL o PUT, no lo
-    puntúa como acierto o fallo y no modifica la
-    decisión prospectiva original.
-  </p>
-
-  <section class="metrics">
-
-    <div class="metric">
-      <span>SIN SEÑAL OOS</span>
-      <strong>
-        61
-      </strong>
-    </div>
-
-    <div class="metric">
-      <span>Causal review listo</span>
-      <strong>
-        12
-      </strong>
-    </div>
-
-    <div class="metric">
-      <span>Audits completados</span>
-      <strong>
-        12
-      </strong>
-    </div>
-
-    <div class="metric">
-      <span>Pendientes de audit</span>
-      <strong>
-        0
-      </strong>
-    </div>
-
-    <div class="metric">
-      <span>Esperando causal review</span>
-      <strong>
-        49
-      </strong>
-    </div>
-
-    <div class="metric">
-      <span>Learning candidates</span>
-      <strong>
-        0
-      </strong>
-    </div>
-
-    <div class="metric">
-      <span>Fail-closed</span>
-      <strong>
-        5
-      </strong>
-    </div>
-
-  </section>
-
-  <h3>
-    Estado de los audits completados
-  </h3>
-
-  <section class="metrics">
-
-    <div class="metric">
-      <span>SUFFICIENT</span>
-      <strong>
-        1
-      </strong>
-    </div>
-
-    <div class="metric">
-      <span>LIMITED</span>
-      <strong>
-        5
-      </strong>
-    </div>
-
-    <div class="metric">
-      <span>INSUFFICIENT</span>
-      <strong>
-        6
-      </strong>
-    </div>
-
-  </section>
-
-  <details>
-
-    <summary>
-      Ver clasificación diagnóstica
-    </summary>
-
-    <div class="table-wrap">
-
-      <table>
-
-        <thead>
-          <tr>
-            <th>Clasificación</th>
-            <th>Casos</th>
-          </tr>
-        </thead>
-
-        <tbody>
-
-          <tr>
-            <td>GOOD_ABSTENTION</td>
-            <td>
-              6
-            </td>
-          </tr>
-
-          <tr>
-            <td>MISSED_DETECTABLE_SIGNAL</td>
-            <td>
-              0
-            </td>
-          </tr>
-
-          <tr>
-            <td>OVERLY_CONSERVATIVE_GATE</td>
-            <td>
-              0
-            </td>
-          </tr>
-
-          <tr>
-            <td>WRONG_DOMINANT_DRIVER</td>
-            <td>
-              0
-            </td>
-          </tr>
-
-          <tr>
-            <td>OFFSET_MISS</td>
-            <td>
-              0
-            </td>
-          </tr>
-
-          <tr>
-            <td>UNPREDICTABLE_SURPRISE</td>
-            <td>
-              0
-            </td>
-          </tr>
-
-          <tr>
-            <td>DATA_GAP</td>
-            <td>
-              6
-            </td>
-          </tr>
-
-          <tr>
-            <td>UNCLEAR</td>
-            <td>
-              0
-            </td>
-          </tr>
-
-        </tbody>
-
-      </table>
-
-    </div>
-
-  </details>
-
-  <p class="verdict-empty">
-    Un learning candidate identifica únicamente
-    material para revisión posterior. Un caso
-    individual no cambia las reglas del motor y
-    nunca genera una dirección retrospectiva.
-  </p>
-
-</section>
-
-
-<details class="glossary">
-
-  <summary>
-    ¿Qué significa cada término?
-  </summary>
-
-  <div class="glossary-grid">
+  <div class="decision-guide">
 
     <div>
-      <strong>Prospectivo</strong>
-      <p>
-        Análisis realizado antes de que la empresa
-        publique resultados. Después se congela y
-        no se modifica.
-      </p>
+      <strong>1. Dirección</strong>
+      <span>CALL / PUT / SIN SEÑAL</span>
     </div>
 
     <div>
-      <strong>Validación técnica</strong>
-      <p>
-        Caso utilizado para probar o depurar el
-        motor. No cuenta como nueva prueba
-        prospectiva.
-      </p>
+      <strong>2. Novedad</strong>
+      <span>
+        ¿Hay algo que el mercado todavía no tenga
+        totalmente descontado?
+      </span>
     </div>
 
     <div>
-      <strong>Novedad</strong>
-      <p>
-        Comprueba si tenemos algo relevante que
-        probablemente el mercado todavía no tenga
-        totalmente incorporado.
-      </p>
-    </div>
-
-    <div>
-      <strong>Variable dominante</strong>
-      <p>
-        El dato que probablemente decidirá
-        realmente la reacción de la acción.
-      </p>
-    </div>
-
-    <div>
-      <strong>Veto de riesgos</strong>
-      <p>
-        Busca factores independientes capaces de
-        girar la reacción aunque nuestra previsión
-        operativa fuese correcta.
-      </p>
-    </div>
-
-    <div>
-      <strong>Brecha de expectativas</strong>
-      <p>
-        Diferencia entre lo que probablemente
-        publique la empresa y lo que el mercado
-        necesita realmente para sorprenderse.
-      </p>
-    </div>
-
-    <div>
-      <strong>Congelado</strong>
-      <p>
-        El análisis ya no puede modificarse una vez
-        finalizado.
-      </p>
-    </div>
-
-    <div>
-      <strong>SIN SEÑAL</strong>
-      <p>
-        No significa empresa buena o mala.
-        Significa que no existe suficiente ventaja
-        para anticipar CALL o PUT.
-      </p>
+      <strong>3. Driver + Offset</strong>
+      <span>
+        ¿Sabemos qué moverá la acción y no existe
+        un factor que pueda girar la tesis?
+      </span>
     </div>
 
   </div>
 
-</details>
+  <p class="filter-status decision-updated">
+    Snapshot de earnings: 2026-10-02T01:03:11.295341+00:00
+    · Mostrando hasta 15 próximos candidatos
+  </p>
+
+  <div class="table-wrap">
+
+    <table class="decision-table">
+
+      <caption>
+        Decisiones y estado de análisis de los próximos
+        earnings
+      </caption>
+
+      <thead>
+        <tr>
+          <th scope="col">Empresa</th>
+          <th scope="col">Earnings</th>
+          <th scope="col">Dirección</th>
+          <th scope="col">Probabilidad</th>
+          <th scope="col">Novedad</th>
+          <th scope="col">Driver</th>
+          <th scope="col">Offset</th>
+          <th scope="col">Expectation gap</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Detalle</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+            <tr>
+              <th scope="row">
+                <strong>ACN</strong>
+                <small>Accenture plc</small>
+              </th>
+              <td>2026-10-01</td>
+              <td><span class="badge neutral">SIN_SEÑAL</span></td>
+              <td>-</td>
+              <td><span class="badge bad">FALLA</span></td>
+              <td>no determinada</td>
+              <td><span class="badge neutral">NO DETERMINADO</span></td>
+              <td><span class="badge neutral">INFORMACIÓN INSUFICIENTE</span></td>
+              <td><span class="badge info">SIN SEÑAL</span></td>
+              <td>
+            <button
+              class="decision-open"
+              type="button"
+              onclick="openCase('20794')"
+            >
+              Ver análisis
+            </button>
+            </td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>AYI</strong>
+                <small>Acuity Inc.</small>
+              </th>
+              <td>2026-10-01</td>
+              <td><span class="badge neutral">SIN_SEÑAL</span></td>
+              <td>-</td>
+              <td><span class="badge bad">FALLA</span></td>
+              <td>no determinada</td>
+              <td><span class="badge neutral">NO DETERMINADO</span></td>
+              <td><span class="badge neutral">INFORMACIÓN INSUFICIENTE</span></td>
+              <td><span class="badge info">SIN SEÑAL</span></td>
+              <td>
+            <button
+              class="decision-open"
+              type="button"
+              onclick="openCase('20844')"
+            >
+              Ver análisis
+            </button>
+            </td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>MKC</strong>
+                <small>McCormick &amp; Company, Incorporated</small>
+              </th>
+              <td>2026-10-01</td>
+              <td><span class="badge neutral">SIN_SEÑAL</span></td>
+              <td>-</td>
+              <td><span class="badge bad">FALLA</span></td>
+              <td>no determinada</td>
+              <td><span class="badge good">PASA</span></td>
+              <td><span class="badge neutral">INFORMACIÓN INSUFICIENTE</span></td>
+              <td><span class="badge info">SIN SEÑAL</span></td>
+              <td>
+            <button
+              class="decision-open"
+              type="button"
+              onclick="openCase('21009')"
+            >
+              Ver análisis
+            </button>
+            </td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>NAMM</strong>
+                <small>Namib Minerals</small>
+              </th>
+              <td>2026-10-01</td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td><span class="decision-muted">Pendiente</span></td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>NKE</strong>
+                <small>Nike, Inc.</small>
+              </th>
+              <td>2026-10-01</td>
+              <td><span class="badge neutral">SIN_SEÑAL</span></td>
+              <td>-</td>
+              <td><span class="badge bad">FALLA</span></td>
+              <td>márgenes</td>
+              <td><span class="badge good">PASA</span></td>
+              <td><span class="badge neutral">INFORMACIÓN INSUFICIENTE</span></td>
+              <td><span class="badge info">SIN SEÑAL</span></td>
+              <td>
+            <button
+              class="decision-open"
+              type="button"
+              onclick="openCase('21116')"
+            >
+              Ver análisis
+            </button>
+            </td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>ALAR</strong>
+                <small>Alarum Technologies Ltd.</small>
+              </th>
+              <td>2026-12-01</td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td><span class="decision-muted">Pendiente</span></td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>BTTC</strong>
+                <small>Black Titan Corp</small>
+              </th>
+              <td>2026-11-16</td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td><span class="decision-muted">Pendiente</span></td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>CMMB</strong>
+                <small>Chemomab Therapeutics Ltd.</small>
+              </th>
+              <td>2026-11-06</td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td><span class="decision-muted">Pendiente</span></td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>DAVA</strong>
+                <small>Endava plc</small>
+              </th>
+              <td>2026-10-01</td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td><span class="decision-muted">Pendiente</span></td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>EONR</strong>
+                <small>EON Resources Inc.</small>
+              </th>
+              <td>2026-11-23</td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td><span class="decision-muted">Pendiente</span></td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>HUBG</strong>
+                <small>Hub Group, Inc.</small>
+              </th>
+              <td>2026-10-22</td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td><span class="decision-muted">Pendiente</span></td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>IPST</strong>
+                <small>IP Strategy Holdings, Inc.</small>
+              </th>
+              <td>2026-12-02</td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td><span class="decision-muted">Pendiente</span></td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>ITP</strong>
+                <small>IT Tech Packaging, Inc.</small>
+              </th>
+              <td>2026-10-01</td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td><span class="decision-muted">Pendiente</span></td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>SMXT</strong>
+                <small>Solarmax Technology Inc.</small>
+              </th>
+              <td>2026-10-01</td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td>-</td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge neutral">-</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td><span class="decision-muted">Pendiente</span></td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>VFS</strong>
+                <small>VinFast Auto Ltd.</small>
+              </th>
+              <td>2026-10-01</td>
+              <td><span class="badge neutral">SIN_SEÑAL</span></td>
+              <td>-</td>
+              <td><span class="badge bad">FALLA</span></td>
+              <td>no determinada</td>
+              <td><span class="badge bad">FALLA</span></td>
+              <td><span class="badge neutral">INFORMACIÓN INSUFICIENTE</span></td>
+              <td><span class="badge info">SIN SEÑAL</span></td>
+              <td>
+            <button
+              class="decision-open"
+              type="button"
+              onclick="openCase('21298')"
+            >
+              Ver análisis
+            </button>
+            </td>
+            </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <p class="decision-note">
+    <strong>Importante:</strong>
+    SIN SEÑAL no significa que la empresa sea buena
+    o mala. Significa que el motor no considera que
+    exista suficiente ventaja para escoger CALL o PUT.
+    La operabilidad con opciones se evalúa por separado.
+  </p>
+
+</section>
 
 
 <section class="panel">
@@ -5661,6 +3867,8 @@ pre {
   </div>
 
 </section>
+
+
 
 
 <h2 id="cases-title">
@@ -260379,6 +258587,2450 @@ pre {
         </details>
 
 </div>
+
+<details class="research-drawer">
+
+  <summary>
+    Investigación y auditoría
+    <span>
+      Backtest · OOS · Shadow · Learning · Experimentos · Auditoría
+    </span>
+  </summary>
+
+  <div class="research-content">
+
+
+<section class="panel">
+
+  <h2>
+    Universo seleccionado
+  </h2>
+
+  <p class="verdict-empty">
+    Registro longitudinal de las empresas elegidas
+    expresamente para seguimiento. La inclusión no
+    crea una señal ni permite reconstruir una
+    predicción después del resultado.
+  </p>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>Seleccionadas</span>
+      <strong>9</strong>
+    </div>
+
+    <div class="metric">
+      <span>Casos vinculados</span>
+      <strong>8</strong>
+    </div>
+
+    <div class="metric">
+      <span>Congelados</span>
+      <strong>8</strong>
+    </div>
+
+    <div class="metric">
+      <span>Audits post-earnings</span>
+      <strong>2</strong>
+    </div>
+
+  </section>
+
+  <p class="filter-status">
+    Selección: Selección 29-30 septiembre 2026
+    · Fecha de selección:
+    2026-09-29
+  </p>
+
+  <p class="filter-status">
+    Universo elegido por la usuaria para seguimiento. Estar incluido en esta lista no implica elegibilidad pre-earnings, señal direccional ni que el caso pueda analizarse retrospectivamente.
+  </p>
+
+  <p class="filter-status">
+    NO DISPONIBLE en Review pre-earnings significa
+    que no existe un registro v1 congelado para ese
+    caso. Nunca se reconstruye retrospectivamente.
+  </p>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Fecha objetivo</th>
+          <th>Ticker</th>
+          <th>Empresa</th>
+          <th>Caso</th>
+          <th>Decisión</th>
+          <th>Freeze</th>
+          <th>Review pre-earnings</th>
+          <th>Bottleneck</th>
+          <th>Recovery</th>
+          <th>Evidencia nueva</th>
+          <th>Reacción 16h ES</th>
+          <th>Reacción oficial</th>
+          <th>Causal review</th>
+          <th>Opportunity audit</th>
+          <th>Learning</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>2026-09-29</td>
+          <td><button class="ticker-link" onclick="openCase('18205')">AIR</button></td>
+          <td>AAR</td>
+          <td>2026-09-29</td>
+          <td><span class="badge neutral">SIN_SEÑAL</span></td>
+          <td><span class="badge good">Sí</span></td>
+          <td>NO DISPONIBLE</td>
+          <td>-</td>
+          <td>CASO SIN REGISTRO V1</td>
+          <td>-</td>
+          <td>-0.15% (PUT)</td>
+          <td>-4.95% (PUT)</td>
+          <td>-</td>
+          <td>ESPERANDO CAUSAL REVIEW</td>
+          <td><span class="badge neutral">-</span></td>
+        </tr>
+
+        <tr>
+          <td>2026-09-29</td>
+          <td><button class="ticker-link" onclick="openCase('7954')">IDT</button></td>
+          <td>IDT</td>
+          <td>2026-09-28</td>
+          <td><span class="badge neutral">SIN_SEÑAL</span></td>
+          <td><span class="badge good">Sí</span></td>
+          <td>NO DISPONIBLE</td>
+          <td>-</td>
+          <td>CASO SIN REGISTRO V1</td>
+          <td>-</td>
+          <td>PENDIENTE</td>
+          <td>+8.63% (CALL)</td>
+          <td>ABSTENTION_REASON_SUPPORTED</td>
+          <td>DATA_GAP</td>
+          <td><span class="badge bad">NO</span></td>
+        </tr>
+
+        <tr>
+          <td>2026-09-29</td>
+          <td><button class="ticker-link" onclick="openCase('14251')">CNXC</button></td>
+          <td>Concentrix</td>
+          <td>2026-09-29</td>
+          <td><span class="badge neutral">SIN_SEÑAL</span></td>
+          <td><span class="badge good">Sí</span></td>
+          <td>NO DISPONIBLE</td>
+          <td>-</td>
+          <td>CASO SIN REGISTRO V1</td>
+          <td>-</td>
+          <td>+0.80% (CALL)</td>
+          <td>+0.28% (CALL)</td>
+          <td>-</td>
+          <td>ESPERANDO CAUSAL REVIEW</td>
+          <td><span class="badge neutral">-</span></td>
+        </tr>
+
+        <tr>
+          <td>2026-09-29</td>
+          <td><strong>NSRCF</strong></td>
+          <td>NextSource Materials</td>
+          <td>-</td>
+          <td><span class="badge info">SIN CASO OOS</span></td>
+          <td><span class="badge bad">NO</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td><span class="badge neutral">-</span></td>
+        </tr>
+
+        <tr>
+          <td>2026-09-30</td>
+          <td><button class="ticker-link" onclick="openCase('18710')">JBL</button></td>
+          <td>Jabil</td>
+          <td>2026-09-30</td>
+          <td><span class="badge neutral">SIN_SEÑAL</span></td>
+          <td><span class="badge good">Sí</span></td>
+          <td>NO DISPONIBLE</td>
+          <td>-</td>
+          <td>CASO SIN REGISTRO V1</td>
+          <td>-</td>
+          <td>-4.50% (PUT)</td>
+          <td>-10.03% (PUT)</td>
+          <td>-</td>
+          <td>ESPERANDO CAUSAL REVIEW</td>
+          <td><span class="badge neutral">-</span></td>
+        </tr>
+
+        <tr>
+          <td>2026-09-30</td>
+          <td><button class="ticker-link" onclick="openCase('19342')">FDS</button></td>
+          <td>FactSet Research</td>
+          <td>2026-09-30</td>
+          <td><span class="badge neutral">SIN_SEÑAL</span></td>
+          <td><span class="badge good">Sí</span></td>
+          <td>NO DISPONIBLE</td>
+          <td>-</td>
+          <td>CASO SIN REGISTRO V1</td>
+          <td>-</td>
+          <td>PENDIENTE</td>
+          <td>PENDIENTE</td>
+          <td>-</td>
+          <td>ESPERANDO RESULTADO</td>
+          <td><span class="badge neutral">-</span></td>
+        </tr>
+
+        <tr>
+          <td>2026-09-30</td>
+          <td><button class="ticker-link" onclick="openCase('18844')">CAG</button></td>
+          <td>Conagra Brands</td>
+          <td>2026-09-30</td>
+          <td><span class="badge neutral">SIN_SEÑAL</span></td>
+          <td><span class="badge good">Sí</span></td>
+          <td>NO DISPONIBLE</td>
+          <td>-</td>
+          <td>CASO SIN REGISTRO V1</td>
+          <td>-</td>
+          <td>-0.78% (PUT)</td>
+          <td>-4.88% (PUT)</td>
+          <td>DATA_GAP</td>
+          <td>GOOD_ABSTENTION</td>
+          <td><span class="badge bad">NO</span></td>
+        </tr>
+
+        <tr>
+          <td>2026-09-30</td>
+          <td><button class="ticker-link" onclick="openCase('19046')">CALM</button></td>
+          <td>Cal-Maine</td>
+          <td>2026-09-30</td>
+          <td><span class="badge neutral">SIN_SEÑAL</span></td>
+          <td><span class="badge good">Sí</span></td>
+          <td>NO DISPONIBLE</td>
+          <td>-</td>
+          <td>CASO SIN REGISTRO V1</td>
+          <td>-</td>
+          <td>PENDIENTE</td>
+          <td>PENDIENTE</td>
+          <td>-</td>
+          <td>ESPERANDO RESULTADO</td>
+          <td><span class="badge neutral">-</span></td>
+        </tr>
+
+        <tr>
+          <td>2026-09-30</td>
+          <td><button class="ticker-link" onclick="openCase('19526')">YRD</button></td>
+          <td>Yiren Digital</td>
+          <td>2026-09-30</td>
+          <td><span class="badge neutral">SIN_SEÑAL</span></td>
+          <td><span class="badge good">Sí</span></td>
+          <td>NO DISPONIBLE</td>
+          <td>-</td>
+          <td>CASO SIN REGISTRO V1</td>
+          <td>-</td>
+          <td>PENDIENTE</td>
+          <td>PENDIENTE</td>
+          <td>-</td>
+          <td>ESPERANDO RESULTADO</td>
+          <td><span class="badge neutral">-</span></td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</section>
+
+
+
+<section class="panel">
+
+  <h2>
+    Próximos earnings
+  </h2>
+
+  <p>
+    Calendario descubierto automáticamente.
+    Nasdaq se usa solo para encontrar candidatos;
+    la verificación independiente sigue siendo
+    obligatoria antes de crear un caso OOS.
+  </p>
+
+  <p class="filter-status">
+    Inicio: 2026-10-01
+    · Candidatos: 55
+    · BMO: 7
+    · AMC: 12
+    · Timing desconocido: 36
+    · Actualizado: 2026-10-02T01:03:11.295341+00:00
+  </p>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Fecha detectada</th>
+          <th>Ticker</th>
+          <th>Empresa</th>
+          <th>Timing</th>
+          <th>Fecha verificada</th>
+          <th>Verificación</th>
+          <th>Estado análisis</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>ACN</strong></td>
+          <td>Accenture plc</td>
+          <td>BMO</td>
+          <td>2026-10-01</td>
+          <td>
+            <span class="badge good">
+              VERIFICADO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              SIN_SEÑAL
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>AYI</strong></td>
+          <td>Acuity Inc.</td>
+          <td>BMO</td>
+          <td>2026-10-01</td>
+          <td>
+            <span class="badge good">
+              VERIFICADO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              SIN_SEÑAL
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>MKC</strong></td>
+          <td>McCormick &amp; Company, Incorporated</td>
+          <td>BMO</td>
+          <td>2026-10-01</td>
+          <td>
+            <span class="badge good">
+              VERIFICADO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              SIN_SEÑAL
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>NAMM</strong></td>
+          <td>Namib Minerals</td>
+          <td>BMO</td>
+          <td>2026-10-01</td>
+          <td>
+            <span class="badge good">
+              VERIFICADO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              LISTO PARA ANALIZAR
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>NKE</strong></td>
+          <td>Nike, Inc.</td>
+          <td>AMC</td>
+          <td>2026-10-01</td>
+          <td>
+            <span class="badge good">
+              VERIFICADO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              SIN_SEÑAL
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>ALAR</strong></td>
+          <td>Alarum Technologies Ltd.</td>
+          <td>UNKNOWN</td>
+          <td>2026-12-01</td>
+          <td>
+            <span class="badge bad">
+              DATE_HINT_MISMATCH
+            </span>
+          </td>
+          <td>
+            <span class="badge bad">
+              BLOQUEADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>BTTC</strong></td>
+          <td>Black Titan Corp</td>
+          <td>UNKNOWN</td>
+          <td>2026-11-16</td>
+          <td>
+            <span class="badge bad">
+              DATE_HINT_MISMATCH
+            </span>
+          </td>
+          <td>
+            <span class="badge bad">
+              BLOQUEADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>CMMB</strong></td>
+          <td>Chemomab Therapeutics Ltd.</td>
+          <td>UNKNOWN</td>
+          <td>2026-11-06</td>
+          <td>
+            <span class="badge bad">
+              DATE_HINT_MISMATCH
+            </span>
+          </td>
+          <td>
+            <span class="badge bad">
+              BLOQUEADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>DAVA</strong></td>
+          <td>Endava plc</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge bad">
+              CALENDAR_UNRESOLVED
+            </span>
+          </td>
+          <td>
+            <span class="badge bad">
+              BLOQUEADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>EONR</strong></td>
+          <td>EON Resources Inc.</td>
+          <td>UNKNOWN</td>
+          <td>2026-11-23</td>
+          <td>
+            <span class="badge bad">
+              DATE_HINT_MISMATCH
+            </span>
+          </td>
+          <td>
+            <span class="badge bad">
+              BLOQUEADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>HUBG</strong></td>
+          <td>Hub Group, Inc.</td>
+          <td>UNKNOWN</td>
+          <td>2026-10-22</td>
+          <td>
+            <span class="badge bad">
+              DATE_HINT_MISMATCH
+            </span>
+          </td>
+          <td>
+            <span class="badge bad">
+              BLOQUEADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>IPST</strong></td>
+          <td>IP Strategy Holdings, Inc.</td>
+          <td>UNKNOWN</td>
+          <td>2026-12-02</td>
+          <td>
+            <span class="badge bad">
+              DATE_HINT_MISMATCH
+            </span>
+          </td>
+          <td>
+            <span class="badge bad">
+              BLOQUEADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>ITP</strong></td>
+          <td>IT Tech Packaging, Inc.</td>
+          <td>UNKNOWN</td>
+          <td>2026-10-01</td>
+          <td>
+            <span class="badge good">
+              VERIFICADO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              LISTO PARA ANALIZAR
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>SMXT</strong></td>
+          <td>Solarmax Technology Inc.</td>
+          <td>UNKNOWN</td>
+          <td>2026-10-01</td>
+          <td>
+            <span class="badge good">
+              VERIFICADO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              LISTO PARA ANALIZAR
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>VFS</strong></td>
+          <td>VinFast Auto Ltd.</td>
+          <td>UNKNOWN</td>
+          <td>2026-10-01</td>
+          <td>
+            <span class="badge good">
+              VERIFICADO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              SIN_SEÑAL
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-01</td>
+          <td><strong>VRAX</strong></td>
+          <td>Virax Biolabs Group Limited</td>
+          <td>UNKNOWN</td>
+          <td>2026-10-01</td>
+          <td>
+            <span class="badge good">
+              VERIFICADO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              SIN_SEÑAL
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-02</td>
+          <td><strong>CELU</strong></td>
+          <td>Celularity Inc.</td>
+          <td>UNKNOWN</td>
+          <td>2026-11-13</td>
+          <td>
+            <span class="badge bad">
+              DATE_HINT_MISMATCH
+            </span>
+          </td>
+          <td>
+            <span class="badge bad">
+              BLOQUEADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-02</td>
+          <td><strong>ENLV</strong></td>
+          <td>Enlivex Ltd.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge bad">
+              CALENDAR_UNRESOLVED
+            </span>
+          </td>
+          <td>
+            <span class="badge bad">
+              BLOQUEADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-02</td>
+          <td><strong>LNAI</strong></td>
+          <td>Lunai Bioworks Inc.</td>
+          <td>UNKNOWN</td>
+          <td>2026-11-13</td>
+          <td>
+            <span class="badge bad">
+              DATE_HINT_MISMATCH
+            </span>
+          </td>
+          <td>
+            <span class="badge bad">
+              BLOQUEADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-05</td>
+          <td><strong>RELL</strong></td>
+          <td>Richardson Electronics, Ltd.</td>
+          <td>AMC</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-05</td>
+          <td><strong>AEHR</strong></td>
+          <td>Aehr Test Systems</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-05</td>
+          <td><strong>AIV</strong></td>
+          <td>Apartment Investment and Management Company</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-05</td>
+          <td><strong>CBAT</strong></td>
+          <td>CBAK Energy Technology Limited</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-05</td>
+          <td><strong>CHRN</strong></td>
+          <td>ChronoScale Holdings Corporation</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-05</td>
+          <td><strong>CURR</strong></td>
+          <td>Currenc Group Inc.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-05</td>
+          <td><strong>FRGT</strong></td>
+          <td>Freight Technologies, Inc.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-05</td>
+          <td><strong>GRFS</strong></td>
+          <td>Grifols, S.A.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-05</td>
+          <td><strong>MSS</strong></td>
+          <td>Maison Solutions Inc.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-05</td>
+          <td><strong>NCPL</strong></td>
+          <td>Netcapital Inc.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>APOG</strong></td>
+          <td>Apogee Enterprises, Inc.</td>
+          <td>BMO</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>LW</strong></td>
+          <td>Lamb Weston Holdings, Inc.</td>
+          <td>BMO</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>RPM</strong></td>
+          <td>RPM International Inc.</td>
+          <td>BMO</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>AXIL</strong></td>
+          <td>AXIL Brands, Inc.</td>
+          <td>AMC</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>NEOG</strong></td>
+          <td>Neogen Corporation</td>
+          <td>AMC</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>PENG</strong></td>
+          <td>Penguin Solutions, Inc.</td>
+          <td>AMC</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>SAR</strong></td>
+          <td>Saratoga Investment Corp</td>
+          <td>AMC</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>STZ</strong></td>
+          <td>Constellation Brands Inc</td>
+          <td>AMC</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>WS</strong></td>
+          <td>Worthington Steel, Inc.</td>
+          <td>AMC</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>AAME</strong></td>
+          <td>Atlantic American Corporation</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>ALPS</strong></td>
+          <td>ALPS Group Inc</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>AREC</strong></td>
+          <td>American Resources Corporation</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>ARTW</strong></td>
+          <td>Art&#x27;s-Way Manufacturing Co., Inc.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>BRLS</strong></td>
+          <td>Borealis Foods Inc.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>BRTX</strong></td>
+          <td>BioRestorative Therapies, Inc.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>ELME</strong></td>
+          <td>Elme Communities</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>GTEN</strong></td>
+          <td>Gores Holdings X, Inc.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>SEGG</strong></td>
+          <td>Sports Entertainment Gaming Global Corporation</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-06</td>
+          <td><strong>VLGEA</strong></td>
+          <td>Village Super Market, Inc.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-07</td>
+          <td><strong>APLD</strong></td>
+          <td>Applied Digital Corporation</td>
+          <td>AMC</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-07</td>
+          <td><strong>LEVI</strong></td>
+          <td>Levi Strauss &amp; Co.</td>
+          <td>AMC</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-07</td>
+          <td><strong>LFS</strong></td>
+          <td>LEIFRAS Co., Ltd.</td>
+          <td>AMC</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-07</td>
+          <td><strong>RGP</strong></td>
+          <td>Resources Connection, Inc.</td>
+          <td>AMC</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-07</td>
+          <td><strong>SXTC</strong></td>
+          <td>China SXT Pharmaceuticals, Inc.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-07</td>
+          <td><strong>TAYD</strong></td>
+          <td>Taylor Devices, Inc.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2026-10-07</td>
+          <td><strong>TORO</strong></td>
+          <td>Toro Corp.</td>
+          <td>UNKNOWN</td>
+          <td>-</td>
+          <td>
+            <span class="badge neutral">
+              DESCUBIERTO
+            </span>
+          </td>
+          <td>
+            <span class="badge neutral">
+              AÚN NO VERIFICADO
+            </span>
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</section>
+
+
+
+
+<section class="panel">
+
+  <h2>
+    Backtest histórico congelado
+  </h2>
+
+  <p class="verdict-empty">
+    Muestra histórica cerrada. Sus resultados no se
+    mezclan con la validación prospectiva nueva.
+  </p>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>Señales</span>
+      <strong>21</strong>
+    </div>
+
+    <div class="metric">
+      <span>Compañías</span>
+      <strong>13</strong>
+    </div>
+
+    <div class="metric">
+      <span>CALL</span>
+      <strong>
+        13
+        · 11 aciertos
+      </strong>
+    </div>
+
+    <div class="metric">
+      <span>PUT</span>
+      <strong>
+        8
+        · 7 aciertos
+      </strong>
+    </div>
+
+    <div class="metric">
+      <span>Total acertadas</span>
+      <strong>
+        18
+        / 21
+      </strong>
+    </div>
+
+    <div class="metric">
+      <span>Acierto congelado</span>
+      <strong>
+        85.7%
+      </strong>
+    </div>
+
+  </section>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>
+    Validación OOS nueva
+  </h2>
+
+  <p class="verdict-empty">
+    Casos prospectivos analizados con el motor actual.
+    SIN SEÑAL es un resultado válido y no se cuenta
+    como CALL o PUT. PENDIENTE identifica un caso
+    OOS todavía no cerrado. FALLO TÉCNICO identifica
+    un caso terminado sin decisión direccional válida
+    y queda fuera de la métrica de aciertos.
+  </p>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>Casos OOS</span>
+      <strong>72</strong>
+    </div>
+
+    <div class="metric">
+      <span>CALL</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>PUT</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>SIN SEÑAL</span>
+      <strong>61</strong>
+    </div>
+
+    <div class="metric">
+      <span>PENDIENTE</span>
+      <strong>6</strong>
+    </div>
+
+    <div class="metric">
+      <span>FALLO TÉCNICO</span>
+      <strong>
+        5
+      </strong>
+    </div>
+
+    <div class="metric">
+      <span>Señales OOS</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Señales evaluadas</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Señales pendientes</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Acierto OOS</span>
+      <strong>-</strong>
+    </div>
+
+  </section>
+
+  <p class="verdict-empty">
+    Base activa: 78 casos totales ·
+    4 de validación técnica ·
+    1 evento(s) excluido(s).
+  </p>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>
+    Investigación Shadow · SIN SEÑAL
+  </h2>
+
+  <p class="verdict-empty">
+    Direcciones binarias experimentales congeladas
+    antes del earnings para casos cuya decisión
+    oficial fue SIN SEÑAL. Esta capa no modifica
+    Direction, no convierte una abstención en señal
+    y no entra en el hit rate oficial ni en el
+    backtest congelado.
+  </p>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>Shadows</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Shadow CALL</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Shadow PUT</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Con resultado</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Evaluados direccionalmente</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>HIT</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>MISS</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>FLAT</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Pendientes</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Acierto Shadow</span>
+      <strong>-</strong>
+    </div>
+
+    <div class="metric">
+      <span>Confianza media</span>
+      <strong>-</strong>
+    </div>
+
+    <div class="metric">
+      <span>Causal reviews</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>HIT direccional revisado</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>HIT causal limpio</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>HIT causal parcial</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>HIT tesis equivocada</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>MISS price translation</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>HIT causal limpio / HIT dir.</span>
+      <strong>-</strong>
+    </div>
+
+    <div class="metric">
+      <span>Causal ≥ parcial / HIT dir.</span>
+      <strong>-</strong>
+    </div>
+
+  </section>
+
+  <p class="verdict-empty">
+    El porcentaje Shadow usa únicamente
+    HIT / (HIT + MISS). Los resultados FLAT
+    se muestran aparte y no entran en el
+    denominador.
+  </p>
+
+  <details>
+    <summary>
+      Ver casos Shadow
+    </summary>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Empresa</th>
+            <th>Earnings</th>
+            <th>Oficial</th>
+            <th>Shadow</th>
+            <th>Confianza</th>
+            <th>Motivo principal</th>
+            <th>Factor invalidante</th>
+            <th>Etapas de soporte</th>
+            <th>Dirección real</th>
+            <th>Reacción</th>
+            <th>Resultado Shadow</th>
+            <th>Clasificación causal</th>
+            <th>Crédito causal</th>
+            <th>Primer problema causal</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td colspan="14">
+          Todavía no hay forced-direction shadows
+          prospectivos registrados.
+        </td>
+      </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>
+    Learning Lab · Shadow causal
+  </h2>
+
+  <p class="verdict-empty">
+    Hipótesis de aprendizaje derivadas únicamente
+    de Shadow causal reviews congelados. Son
+    candidatos de investigación: no modifican el
+    motor, no cambian señales históricas y ningún
+    estado de esta sección equivale a VALIDATED.
+  </p>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>Candidatos activos</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>CANDIDATE</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>VALIDATING</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Promotion review</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>REJECTED</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Eventos SUPPORT</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Eventos CONTRADICTION</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Eventos DIAGNOSTIC</span>
+      <strong>0</strong>
+    </div>
+
+  </section>
+
+  <p class="verdict-empty">
+    CANDIDATE = evidencia inicial. VALIDATING exige
+    al menos 2 soportes comparables en 2 compañías.
+    Promotion review exige al menos 3 soportes del
+    mismo scope, 2 compañías, 2 fechas y como máximo
+    1 contradicción comparable. Las contradicciones
+    fuera del scope se muestran, pero no bloquean.
+    La promoción al motor sigue prohibida hasta una
+    revisión separada.
+  </p>
+
+  <details>
+    <summary>
+      Ver learning candidates
+    </summary>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Candidate</th>
+            <th>Nombre</th>
+            <th>Hipótesis</th>
+            <th>Área</th>
+            <th>Estado</th>
+            <th>Support comparable</th>
+            <th>Contradictions comparables</th>
+            <th>Diagnostic comparable</th>
+            <th>Support global</th>
+            <th>Contradictions globales</th>
+            <th>Contradicciones fuera de scope</th>
+            <th>Nº scopes</th>
+            <th>Scope activo</th>
+            <th>Tickers support</th>
+            <th>Tickers contra</th>
+            <th>Dossier</th>
+            <th>Validated</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td colspan="17">
+          Todavía no hay learning candidates
+          con soporte causal suficiente para
+          entrar en el registro activo.
+        </td>
+      </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>
+    Promotion Review · Learning Candidates
+  </h2>
+
+  <p class="verdict-empty">
+    Expedientes congelados únicamente cuando un
+    candidato alcanzó ELIGIBLE_FOR_PROMOTION_REVIEW
+    dentro de un scope comparable. El expediente
+    propone un cambio exacto, pero no modifica
+    ninguna regla ni equivale a VALIDATED.
+  </p>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>Expedientes congelados</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Elegibles ahora</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Elegibles sin expediente</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Decisiones humanas</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Aprobados para experimento</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Rechazados</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Necesita más evidencia</span>
+      <strong>0</strong>
+    </div>
+
+  </section>
+
+  <details>
+    <summary>
+      Ver expedientes de promotion review
+    </summary>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Candidate</th>
+            <th>Nombre</th>
+            <th>Estado al review</th>
+            <th>Estado actual</th>
+            <th>Scope congelado</th>
+            <th>Support comparable</th>
+            <th>Contradictions comparables</th>
+            <th>Contradicciones fuera de scope</th>
+            <th>Tipo de cambio</th>
+            <th>Etapa objetivo</th>
+            <th>Condición propuesta</th>
+            <th>Efecto propuesto</th>
+            <th>Riesgo de regresión</th>
+            <th>Tests obligatorios</th>
+            <th>Decisión humana</th>
+            <th>Reviewer</th>
+            <th>Rationale</th>
+            <th>Experimento autorizado</th>
+            <th>Validated</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td colspan="20">
+          Todavía no existe ningún expediente
+          congelado de promotion review.
+        </td>
+      </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <p class="verdict-empty">
+    Un expediente permanece histórico aunque nueva
+    evidencia cambie después el estado del candidato.
+    La decisión humana se congela por dossier.
+    APPROVE_FOR_EXPERIMENT sólo autoriza una rama
+    experimental: no modifica main, no valida la
+    regla y no altera señales históricas.
+  </p>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>
+    Experimental Engine · CURRENT vs EXPERIMENT
+  </h2>
+
+  <p class="verdict-empty">
+    Sólo contiene reglas previamente aprobadas por
+    el human gate. DEVELOPMENT y
+    RETROSPECTIVE_REPLAY son diagnósticos. La única
+    validación admisible es PROSPECTIVE_HOLDOUT,
+    congelado antes del earnings. Ningún resultado
+    experimental modifica el motor oficial.
+  </p>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>Experimentos</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Ejecutables</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Bloqueados por feature</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Prospective holdouts</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Holdouts evaluados</span>
+      <strong>0</strong>
+    </div>
+
+  </section>
+
+  <details>
+    <summary>
+      Ver comparación por experimento
+    </summary>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Candidate</th>
+            <th>Execution</th>
+            <th>Policy</th>
+            <th>Missing features</th>
+            <th>Replay N</th>
+            <th>Replay triggers</th>
+            <th>Replay CURRENT HR</th>
+            <th>Replay EXP HR</th>
+            <th>Holdout N</th>
+            <th>Holdout eval.</th>
+            <th>Holdout triggers</th>
+            <th>Holdout CURRENT HR</th>
+            <th>Holdout EXP HR</th>
+            <th>Δ señales</th>
+            <th>Misses evitados</th>
+            <th>Hits eliminados</th>
+            <th>Valor selección neto</th>
+            <th>Review status</th>
+            <th>Review blockers</th>
+            <th>Compañías</th>
+            <th>Scopes</th>
+            <th>Conclusión</th>
+            <th>Validated</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td colspan="25">
+          Todavía no existe ningún experimento
+          autorizado por el human gate.
+        </td>
+      </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      Ver casos CURRENT vs EXPERIMENT
+    </summary>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Experiment</th>
+            <th>Ticker</th>
+            <th>Fecha</th>
+            <th>Rol</th>
+            <th>CURRENT</th>
+            <th>EXPERIMENT</th>
+            <th>Rule triggered</th>
+            <th>Real</th>
+            <th>Reacción</th>
+            <th>CURRENT result</th>
+            <th>EXPERIMENT result</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td colspan="11">
+          Todavía no hay predicciones experimentales
+          congeladas.
+        </td>
+      </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <p class="verdict-empty">
+    Una mejora en replay histórico nunca valida una
+    regla. Si faltan features prospectivos, el
+    experimento queda bloqueado en vez de reconstruir
+    esos datos después del resultado.
+  </p>
+
+  <p class="verdict-empty">
+    <strong>Experiment Review v1:</strong>
+    READY_FOR_HUMAN_REVIEW sólo significa que el
+    experimento ha alcanzado los gates objetivos de
+    evidencia. No significa VALIDATED ni PROMOTE.
+    La siguiente decisión requiere un segundo human
+    gate independiente.
+  </p>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>
+    Experiment Review · Evidence Gate
+  </h2>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>Reviews</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Ready for human review</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Insuficiente</span>
+      <strong>0</strong>
+    </div>
+
+  </section>
+
+  <p class="verdict-empty">
+    Gates v1: mínimo 8 holdouts evaluados, 5
+    compañías distintas y 2 scopes distintos para
+    el candidato; el hit rate experimental no puede
+    deteriorar más de 2 puntos porcentuales frente
+    a CURRENT y el valor de selección neto debe ser
+    no negativo. Los umbrales quedan congelados en
+    cada review.
+  </p>
+
+  <details>
+    <summary>
+      Ver evidencia y blockers
+    </summary>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Review</th>
+            <th>Experiment</th>
+            <th>Candidate</th>
+            <th>Status</th>
+            <th>Holdouts</th>
+            <th>Companies</th>
+            <th>Scopes</th>
+            <th>CURRENT HR</th>
+            <th>EXPERIMENT HR</th>
+            <th>Δ HR pp</th>
+            <th>Misses evitados</th>
+            <th>Hits eliminados</th>
+            <th>Net selection</th>
+            <th>Blockers</th>
+            <th>Second human gate</th>
+            <th>Validated</th>
+          </tr>
+        </thead>
+        <tbody>
+
+              <tr>
+                <td colspan="16">
+                  Todavía no existe ningún review de
+                  evidencia prospectiva.
+                </td>
+              </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <p class="verdict-empty">
+    Este panel prepara el expediente para un segundo
+    human gate. No puede autorizar cambios del motor,
+    no convierte el experimento en VALIDATED y no
+    modifica las señales oficiales.
+  </p>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>
+    Production Proposal Gate · v1
+  </h2>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>Gate reviews</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Ready for second human</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>No elegibles</span>
+      <strong>0</strong>
+    </div>
+
+    <div class="metric">
+      <span>Propuestas registradas</span>
+      <strong>0</strong>
+    </div>
+
+  </section>
+
+  <p class="verdict-empty">
+    Este gate es deliberadamente más estricto que
+    Experiment Review v1: exige al menos 12 holdouts
+    evaluados, 8 compañías, 3 scopes, hit rate no
+    inferior a CURRENT, al menos 2 misses evitados y
+    net selection &gt;= 2. El scope debe seguir siendo
+    elegible y el dossier original debe coincidir.
+  </p>
+
+  <p class="verdict-empty">
+    <strong>Importante:</strong> READY_FOR_SECOND_HUMAN_GATE
+    no significa VALIDATED ni PROMOTE. El segundo humano
+    sólo puede registrar PROPOSE_FOR_PRODUCTION si
+    supera el gate y utiliza una identidad distinta de
+    la primera aprobación humana. La propuesta obliga a
+    un PR hacia <code>main</code>; este módulo nunca
+    modifica <code>main</code> ni crea el PR automáticamente.
+  </p>
+
+  <details>
+    <summary>
+      Ver gates, evidencia y decisiones
+    </summary>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Gate</th>
+            <th>Experiment</th>
+            <th>Candidate</th>
+            <th>Scope</th>
+            <th>Status</th>
+            <th>Holdouts</th>
+            <th>Companies</th>
+            <th>Scopes</th>
+            <th>CURRENT HR</th>
+            <th>EXP HR</th>
+            <th>Δ HR pp</th>
+            <th>Misses evitados</th>
+            <th>Hits eliminados</th>
+            <th>Net selection</th>
+            <th>Blockers</th>
+            <th>Decision</th>
+            <th>Reviewer</th>
+          </tr>
+        </thead>
+        <tbody>
+
+              <tr>
+                <td colspan="17">
+                  Todavía no existe ningún Production
+                  Proposal Gate review.
+                </td>
+              </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <p class="verdict-empty">
+    La salida final de este gate es un expediente
+    auditable para una eventual propuesta de código.
+    No existe ninguna ruta de auto-promoción a
+    <code>main</code>.
+  </p>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>
+    Auditoría de oportunidades · SIN SEÑAL
+  </h2>
+
+  <p class="verdict-empty">
+    Revisión post-earnings de abstenciones OOS ya
+    congeladas. Esta auditoría es diagnóstica:
+    no convierte SIN SEÑAL en CALL o PUT, no lo
+    puntúa como acierto o fallo y no modifica la
+    decisión prospectiva original.
+  </p>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>SIN SEÑAL OOS</span>
+      <strong>
+        61
+      </strong>
+    </div>
+
+    <div class="metric">
+      <span>Causal review listo</span>
+      <strong>
+        13
+      </strong>
+    </div>
+
+    <div class="metric">
+      <span>Audits completados</span>
+      <strong>
+        13
+      </strong>
+    </div>
+
+    <div class="metric">
+      <span>Pendientes de audit</span>
+      <strong>
+        0
+      </strong>
+    </div>
+
+    <div class="metric">
+      <span>Esperando causal review</span>
+      <strong>
+        48
+      </strong>
+    </div>
+
+    <div class="metric">
+      <span>Learning candidates</span>
+      <strong>
+        0
+      </strong>
+    </div>
+
+    <div class="metric">
+      <span>Fail-closed</span>
+      <strong>
+        5
+      </strong>
+    </div>
+
+  </section>
+
+  <h3>
+    Estado de los audits completados
+  </h3>
+
+  <section class="metrics">
+
+    <div class="metric">
+      <span>SUFFICIENT</span>
+      <strong>
+        1
+      </strong>
+    </div>
+
+    <div class="metric">
+      <span>LIMITED</span>
+      <strong>
+        6
+      </strong>
+    </div>
+
+    <div class="metric">
+      <span>INSUFFICIENT</span>
+      <strong>
+        6
+      </strong>
+    </div>
+
+  </section>
+
+  <details>
+
+    <summary>
+      Ver clasificación diagnóstica
+    </summary>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Clasificación</th>
+            <th>Casos</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>GOOD_ABSTENTION</td>
+            <td>
+              7
+            </td>
+          </tr>
+
+          <tr>
+            <td>MISSED_DETECTABLE_SIGNAL</td>
+            <td>
+              0
+            </td>
+          </tr>
+
+          <tr>
+            <td>OVERLY_CONSERVATIVE_GATE</td>
+            <td>
+              0
+            </td>
+          </tr>
+
+          <tr>
+            <td>WRONG_DOMINANT_DRIVER</td>
+            <td>
+              0
+            </td>
+          </tr>
+
+          <tr>
+            <td>OFFSET_MISS</td>
+            <td>
+              0
+            </td>
+          </tr>
+
+          <tr>
+            <td>UNPREDICTABLE_SURPRISE</td>
+            <td>
+              0
+            </td>
+          </tr>
+
+          <tr>
+            <td>DATA_GAP</td>
+            <td>
+              6
+            </td>
+          </tr>
+
+          <tr>
+            <td>UNCLEAR</td>
+            <td>
+              0
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </details>
+
+  <p class="verdict-empty">
+    Un learning candidate identifica únicamente
+    material para revisión posterior. Un caso
+    individual no cambia las reglas del motor y
+    nunca genera una dirección retrospectiva.
+  </p>
+
+</section>
+
+
+<details class="glossary">
+
+  <summary>
+    ¿Qué significa cada término?
+  </summary>
+
+  <div class="glossary-grid">
+
+    <div>
+      <strong>Prospectivo</strong>
+      <p>
+        Análisis realizado antes de que la empresa
+        publique resultados. Después se congela y
+        no se modifica.
+      </p>
+    </div>
+
+    <div>
+      <strong>Validación técnica</strong>
+      <p>
+        Caso utilizado para probar o depurar el
+        motor. No cuenta como nueva prueba
+        prospectiva.
+      </p>
+    </div>
+
+    <div>
+      <strong>Novedad</strong>
+      <p>
+        Comprueba si tenemos algo relevante que
+        probablemente el mercado todavía no tenga
+        totalmente incorporado.
+      </p>
+    </div>
+
+    <div>
+      <strong>Variable dominante</strong>
+      <p>
+        El dato que probablemente decidirá
+        realmente la reacción de la acción.
+      </p>
+    </div>
+
+    <div>
+      <strong>Veto de riesgos</strong>
+      <p>
+        Busca factores independientes capaces de
+        girar la reacción aunque nuestra previsión
+        operativa fuese correcta.
+      </p>
+    </div>
+
+    <div>
+      <strong>Brecha de expectativas</strong>
+      <p>
+        Diferencia entre lo que probablemente
+        publique la empresa y lo que el mercado
+        necesita realmente para sorprenderse.
+      </p>
+    </div>
+
+    <div>
+      <strong>Congelado</strong>
+      <p>
+        El análisis ya no puede modificarse una vez
+        finalizado.
+      </p>
+    </div>
+
+    <div>
+      <strong>SIN SEÑAL</strong>
+      <p>
+        No significa empresa buena o mala.
+        Significa que no existe suficiente ventaja
+        para anticipar CALL o PUT.
+      </p>
+    </div>
+
+  </div>
+
+</details>
+
+
+
+
+  </div>
+
+</details>
 
 
 </main>

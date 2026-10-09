@@ -105,6 +105,154 @@ main {
   font-size: 25px;
 }
 
+.operator-panel {
+  background: var(--card);
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.operator-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.operator-header h2 {
+  margin: 0 0 6px;
+  font-size: 28px;
+}
+
+.operator-header p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 900px;
+}
+
+.operator-date {
+  min-width: 150px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 12px 14px;
+  background: var(--soft);
+}
+
+.operator-date strong,
+.operator-date span {
+  display: block;
+}
+
+.operator-date strong {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.operator-date span {
+  margin-top: 4px;
+  font-weight: 800;
+}
+
+.operator-subpanel {
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 18px;
+  margin-top: 14px;
+}
+
+.operator-subheader {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.operator-subheader h3 {
+  margin: 0 0 5px;
+  font-size: 17px;
+}
+
+.operator-subheader p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.operator-date-pill,
+.operator-target-badge {
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.operator-date-pill {
+  background: var(--soft);
+  color: var(--muted);
+}
+
+.operator-target-panel {
+  border: 2px solid var(--primary);
+  background: #fbfdff;
+}
+
+.operator-target-badge {
+  background: var(--info-bg);
+  color: var(--primary);
+}
+
+.operator-selection-meta {
+  color: var(--muted);
+  font-size: 11px;
+  margin: 0 0 10px;
+}
+
+.operator-table {
+  min-width: 900px;
+}
+
+.operator-table th[scope="row"] {
+  min-width: 90px;
+}
+
+.operator-ticker,
+.operator-target-ticker {
+  font-weight: 850;
+}
+
+.operator-muted {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.operator-empty {
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 15px;
+  color: var(--muted);
+  background: var(--soft);
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .operator-header,
+  .operator-subheader {
+    flex-direction: column;
+  }
+
+  .operator-date {
+    width: 100%;
+  }
+}
+
 .decision-panel {
   background: var(--card);
   border: 2px solid var(--primary);
@@ -964,6 +1112,135 @@ pre {
 <body>
 
 <main>
+
+
+<section class="operator-panel">
+  <div class="operator-header">
+    <div>
+      <span class="decision-kicker">OPERADOR DIARIO · MADRID</span>
+      <h2>Lo que tengo que mirar hoy</h2>
+      <p>
+        Primero: qué pasó con los earnings de ayer y qué aprendemos.
+        Después: mis empresas TARGETED y su análisis congelado.
+      </p>
+    </div>
+    <div class="operator-date">
+      <strong>Hoy</strong>
+      <span>2026-10-09</span>
+    </div>
+  </div>
+
+  <section class="operator-subpanel">
+    <div class="operator-subheader">
+      <div>
+        <h3>1 · RESULTADOS DE AYER</h3>
+        <p>
+          La primera valoración no se modifica. Shadow se evalúa aparte.
+          El resultado oficial solo cuenta al cierre de la primera sesión completa post-earnings.
+        </p>
+      </div>
+      <span class="operator-date-pill">Earnings · 2026-10-08</span>
+    </div>
+
+        <div class="table-wrap">
+          <table class="operator-table">
+            <thead>
+              <tr>
+                <th>Empresa</th>
+                <th>Valoración oficial</th>
+                <th>Shadow</th>
+                <th>Resultado Shadow</th>
+                <th>Reacción oficial</th>
+                <th>Diagnóstico causal</th>
+                <th>Primer punto problemático</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row"><button class="ticker-link operator-ticker" onclick="openCase('23569')">ANGO</button></th>
+              <td><span class="badge neutral">SIN_SEÑAL</span></td>
+              <td><span class="badge good">CALL</span> <span class="operator-muted">54%</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>PENDIENTE</td>
+              <td><span class="badge neutral">PENDIENTE CAUSAL</span></td>
+              <td>- · -</td>
+            </tr>
+
+            <tr>
+              <th scope="row"><button class="ticker-link operator-ticker" onclick="openCase('25242')">BYRN</button></th>
+              <td><span class="badge neutral">SIN_SEÑAL</span></td>
+              <td><span class="badge good">CALL</span> <span class="operator-muted">53%</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>PENDIENTE</td>
+              <td><span class="badge neutral">PENDIENTE CAUSAL</span></td>
+              <td>- · -</td>
+            </tr>
+
+            <tr>
+              <th scope="row"><button class="ticker-link operator-ticker" onclick="openCase('25046')">HELE</button></th>
+              <td><span class="badge neutral">SIN_SEÑAL</span></td>
+              <td><span class="badge bad">PUT</span> <span class="operator-muted">55%</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>PENDIENTE</td>
+              <td><span class="badge neutral">PENDIENTE CAUSAL</span></td>
+              <td>- · -</td>
+            </tr>
+
+            <tr>
+              <th scope="row"><button class="ticker-link operator-ticker" onclick="openCase('24882')">NG</button></th>
+              <td><span class="badge neutral">SIN_SEÑAL</span></td>
+              <td><span class="badge good">CALL</span> <span class="operator-muted">53%</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>PENDIENTE</td>
+              <td><span class="badge neutral">PENDIENTE CAUSAL</span></td>
+              <td>- · -</td>
+            </tr>
+
+            <tr>
+              <th scope="row"><button class="ticker-link operator-ticker" onclick="openCase('23827')">PEP</button></th>
+              <td><span class="badge neutral">SIN_SEÑAL</span></td>
+              <td><span class="badge good">CALL</span> <span class="operator-muted">54%</span></td>
+              <td><span class="badge info">HIT</span></td>
+              <td>+3.73% (CALL)</td>
+              <td><span class="badge neutral">PENDIENTE CAUSAL</span></td>
+              <td>- · -</td>
+            </tr>
+
+            <tr>
+              <th scope="row"><button class="ticker-link operator-ticker" onclick="openCase('24039')">PKE</button></th>
+              <td><span class="badge neutral">SIN_SEÑAL</span></td>
+              <td><span class="badge good">CALL</span> <span class="operator-muted">53%</span></td>
+              <td><span class="badge info">PENDIENTE</span></td>
+              <td>PENDIENTE</td>
+              <td><span class="badge neutral">PENDIENTE CAUSAL</span></td>
+              <td>- · -</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+  </section>
+
+  <section class="operator-subpanel operator-target-panel">
+    <div class="operator-subheader">
+      <div>
+        <h3>2 · MIS TARGETED</h3>
+        <p>
+          Selección introducida manualmente por Elena. Se mantiene separada del universo automático.
+        </p>
+      </div>
+      <span class="operator-target-badge">TARGETED</span>
+    </div>
+    <p class="operator-selection-meta">Sin selección manual</p>
+
+        <div class="operator-empty">
+          Todavía no se ha guardado ninguna selección TARGETED.
+          Cuando ejecutes el modo targeted, esta zona quedará marcada como MIS TARGETED.
+        </div>
+
+  </section>
+</section>
+
 
 <header class="page-header">
 
@@ -332028,14 +332305,14 @@ pre {
 <section class="panel">
 
   <h2>
-    Universo seleccionado
+    Universo seleccionado · histórico
   </h2>
 
   <p class="verdict-empty">
-    Registro longitudinal de las empresas elegidas
-    expresamente para seguimiento. La inclusión no
-    crea una señal ni permite reconstruir una
-    predicción después del resultado.
+    Registro longitudinal de selecciones anteriores para auditoría.
+    Para la selección manual actual utiliza el bloque <strong>MIS TARGETED</strong>
+    de la parte superior. La inclusión no crea una señal ni permite reconstruir
+    una predicción después del resultado.
   </p>
 
   <section class="metrics">

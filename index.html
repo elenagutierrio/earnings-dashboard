@@ -105,6 +105,52 @@ main {
   font-size: 25px;
 }
 
+.dashboard-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  gap: 6px;
+  margin: 0 0 20px;
+  padding: 6px;
+  background: rgba(244, 246, 248, .96);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.dashboard-tab-button {
+  flex: 1;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  padding: 11px 16px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.dashboard-tab-button:hover {
+  background: var(--soft);
+  color: var(--text);
+}
+
+.dashboard-tab-button.active {
+  background: var(--card);
+  border-color: var(--border);
+  color: var(--primary);
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+
+.dashboard-tab {
+  display: none;
+}
+
+.dashboard-tab.active {
+  display: block;
+}
+
 .operator-panel {
   background: var(--card);
   border: 2px solid var(--primary);
@@ -204,6 +250,18 @@ main {
   background: #fbfdff;
 }
 
+.operator-early-panel {
+  border-left: 4px solid var(--primary);
+}
+
+.operator-aux-note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
 .operator-target-badge {
   background: var(--info-bg);
   color: var(--primary);
@@ -243,6 +301,15 @@ main {
 }
 
 @media (max-width: 900px) {
+  .dashboard-tabs {
+    position: static;
+  }
+
+  .dashboard-tab-button {
+    font-size: 12px;
+    padding: 10px 8px;
+  }
+
   .operator-header,
   .operator-subheader {
     flex-direction: column;
@@ -1112,178 +1179,6 @@ pre {
 <body>
 
 <main>
-
-
-<section class="operator-panel">
-  <div class="operator-header">
-    <div>
-      <span class="decision-kicker">OPERADOR DIARIO · MADRID</span>
-      <h2>Lo que tengo que mirar hoy</h2>
-      <p>
-        Primero: qué pasó con los earnings de ayer y qué aprendemos.
-        Después: mis empresas TARGETED y su análisis congelado.
-      </p>
-    </div>
-    <div class="operator-date">
-      <strong>Hoy</strong>
-      <span>2026-10-13</span>
-    </div>
-  </div>
-
-  <section class="operator-subpanel">
-    <div class="operator-subheader">
-      <div>
-        <h3>1 · RESULTADOS DE AYER</h3>
-        <p>
-          La primera valoración no se modifica. Shadow se evalúa aparte.
-          El resultado oficial solo cuenta al cierre de la primera sesión completa post-earnings.
-        </p>
-      </div>
-      <span class="operator-date-pill">Earnings · 2026-10-12</span>
-    </div>
-
-        <div class="table-wrap">
-          <table class="operator-table">
-            <thead>
-              <tr>
-                <th>Empresa</th>
-                <th>Valoración oficial</th>
-                <th>Shadow</th>
-                <th>Resultado Shadow</th>
-                <th>Reacción oficial</th>
-                <th>Diagnóstico causal</th>
-                <th>Primer punto problemático</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <th scope="row"><button class="ticker-link operator-ticker" onclick="openCase('25522')">MSS</button></th>
-              <td><span class="badge neutral">SIN_SEÑAL</span></td>
-              <td><span class="badge bad">PUT</span> <span class="operator-muted">53%</span></td>
-              <td><span class="badge info">PENDIENTE</span></td>
-              <td>PENDIENTE</td>
-              <td><span class="badge neutral">PENDIENTE CAUSAL</span></td>
-              <td>- · -</td>
-            </tr>
-
-            <tr>
-              <th scope="row"><button class="ticker-link operator-ticker" onclick="openCase('25602')">RMCF</button></th>
-              <td><span class="badge neutral">SIN_SEÑAL</span></td>
-              <td><span class="badge bad">PUT</span> <span class="operator-muted">54%</span></td>
-              <td><span class="badge info">PENDIENTE</span></td>
-              <td>PENDIENTE</td>
-              <td><span class="badge neutral">PENDIENTE CAUSAL</span></td>
-              <td>- · -</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-
-  </section>
-
-  <section class="operator-subpanel operator-target-panel">
-    <div class="operator-subheader">
-      <div>
-        <h3>2 · MIS TARGETED</h3>
-        <p>
-          Selección introducida manualmente por Elena. Se mantiene separada del universo automático.
-        </p>
-      </div>
-      <span class="operator-target-badge">TARGETED</span>
-    </div>
-    <p class="operator-selection-meta">ÚLTIMA SELECCIÓN MANUAL · 2026-10-07T15:51:47Z</p>
-
-        <div class="table-wrap">
-          <table class="operator-table operator-target-table">
-            <thead>
-              <tr>
-                <th>Empresa</th>
-                <th>Fecha earnings</th>
-                <th>Estado</th>
-                <th>Probabilidad</th>
-                <th>Resultado</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <th scope="row"><button class="ticker-link operator-target-ticker" onclick="openCase('23471')">LEVI</button></th>
-              <td>2026-10-07</td>
-              <td><span class="badge neutral">SIN_SEÑAL</span></td>
-              <td>-</td>
-              <td>-</td>
-            </tr>
-
-            <tr>
-              <th scope="row"><button class="ticker-link operator-target-ticker" onclick="openCase('23231')">APLD</button></th>
-              <td>2026-10-07</td>
-              <td><span class="badge neutral">SIN_SEÑAL</span></td>
-              <td>-</td>
-              <td>-</td>
-            </tr>
-
-            <tr>
-              <th scope="row"><button class="ticker-link operator-target-ticker" onclick="openCase('24389')">RELL</button></th>
-              <td>2026-10-07</td>
-              <td><span class="badge neutral">SIN_SEÑAL</span></td>
-              <td>-</td>
-              <td>-</td>
-            </tr>
-
-            <tr>
-              <th scope="row"><button class="ticker-link operator-target-ticker" onclick="openCase('24593')">RGP</button></th>
-              <td>2026-10-07</td>
-              <td><span class="badge neutral">SIN_SEÑAL</span></td>
-              <td>-</td>
-              <td>-</td>
-            </tr>
-
-            <tr>
-              <th scope="row"><button class="ticker-link operator-target-ticker" onclick="openCase('23827')">PEP</button></th>
-              <td>2026-10-08</td>
-              <td><span class="badge neutral">SIN_SEÑAL</span></td>
-              <td>-</td>
-              <td>+3.73% (CALL)</td>
-            </tr>
-
-            <tr>
-              <th scope="row"><button class="ticker-link operator-target-ticker" onclick="openCase('24882')">NG</button></th>
-              <td>2026-10-08</td>
-              <td><span class="badge neutral">SIN_SEÑAL</span></td>
-              <td>-</td>
-              <td>-</td>
-            </tr>
-
-            <tr>
-              <th scope="row"><button class="ticker-link operator-target-ticker" onclick="openCase('23569')">ANGO</button></th>
-              <td>2026-10-08</td>
-              <td><span class="badge neutral">SIN_SEÑAL</span></td>
-              <td>-</td>
-              <td>-</td>
-            </tr>
-
-            <tr>
-              <th scope="row"><button class="ticker-link operator-target-ticker" onclick="openCase('25046')">HELE</button></th>
-              <td>2026-10-08</td>
-              <td><span class="badge neutral">SIN_SEÑAL</span></td>
-              <td>-</td>
-              <td>-</td>
-            </tr>
-
-            <tr>
-              <th scope="row"><button class="ticker-link operator-target-ticker" onclick="openCase('25242')">BYRN</button></th>
-              <td>2026-10-08</td>
-              <td><span class="badge neutral">SIN_SEÑAL</span></td>
-              <td>-</td>
-              <td>-</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-
-  </section>
-</section>
-
-
 <header class="page-header">
 
   <h1>
@@ -1296,6 +1191,210 @@ pre {
   </p>
 
 </header>
+
+<nav class="dashboard-tabs" role="tablist" aria-label="Vistas del dashboard">
+  <button
+    type="button"
+    class="dashboard-tab-button active"
+    id="tab-button-today"
+    role="tab"
+    aria-selected="true"
+    aria-controls="tab-today"
+    onclick="showDashboardTab('today')"
+  >
+    HOY · OPERADOR
+  </button>
+
+  <button
+    type="button"
+    class="dashboard-tab-button"
+    id="tab-button-research"
+    role="tab"
+    aria-selected="false"
+    aria-controls="tab-research"
+    onclick="showDashboardTab('research')"
+  >
+    TODO · INVESTIGACIÓN
+  </button>
+</nav>
+
+<section
+  id="tab-today"
+  class="dashboard-tab active"
+  role="tabpanel"
+  aria-labelledby="tab-button-today"
+>
+
+<section class="operator-panel">
+
+  <div class="operator-header">
+    <div>
+      <span class="decision-kicker">OPERADOR DIARIO · MADRID</span>
+      <h2>Lo que tengo que mirar hoy</h2>
+      <p>
+        Una sola pantalla para seguir el ciclo diario:
+        resultados de ayer, reacción temprana de hoy y TARGETED para mañana.
+      </p>
+    </div>
+
+    <div class="operator-date">
+      <strong>Hoy</strong>
+      <span>2026-10-13</span>
+    </div>
+  </div>
+
+  <section class="operator-subpanel">
+    <div class="operator-subheader">
+      <div>
+        <h3>1 · RESULTADOS DE AYER</h3>
+        <p>
+          La valoración original permanece congelada. Shadow se analiza aparte.
+          El resultado oficial cuenta al cierre de la primera sesión completa.
+        </p>
+      </div>
+      <span class="operator-date-pill">
+        Earnings · 2026-10-12
+      </span>
+    </div>
+
+
+        <div class="table-wrap">
+          <table class="operator-table">
+            <thead>
+              <tr>
+                <th>Empresa</th>
+                <th>Mi valoración</th>
+                <th>Shadow</th>
+                <th>Resultado Shadow</th>
+                <th>Reacción oficial</th>
+                <th>Qué pasó</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row"><button class="ticker-link operator-ticker" onclick="openCase('25522')">MSS</button></th>
+              <td><span class="badge neutral">SIN_SEÑAL</span></td>
+              <td>
+                <span class="badge bad">PUT</span>
+                <span class="operator-muted">53%</span>
+              </td>
+              <td>
+                <span class="badge neutral">
+                  PENDIENTE
+                </span>
+              </td>
+              <td>PENDIENTE</td>
+              <td>PENDIENTE CAUSAL</td>
+            </tr>
+
+            <tr>
+              <th scope="row"><button class="ticker-link operator-ticker" onclick="openCase('25602')">RMCF</button></th>
+              <td><span class="badge neutral">SIN_SEÑAL</span></td>
+              <td>
+                <span class="badge bad">PUT</span>
+                <span class="operator-muted">54%</span>
+              </td>
+              <td>
+                <span class="badge neutral">
+                  PENDIENTE
+                </span>
+              </td>
+              <td>PENDIENTE</td>
+              <td>PENDIENTE CAUSAL</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+  </section>
+
+  <section class="operator-subpanel operator-early-panel">
+    <div class="operator-subheader">
+      <div>
+        <h3>2 · REACCIÓN TEMPRANA DE HOY</h3>
+        <p>
+          Medición auxiliar alrededor de las 16:00 Madrid.
+          No cambia la predicción congelada ni el resultado oficial.
+        </p>
+      </div>
+      <span class="operator-date-pill">
+        Hoy · 16:00 Madrid
+      </span>
+    </div>
+
+
+        <div class="table-wrap">
+          <table class="operator-table">
+            <thead>
+              <tr>
+                <th>Empresa</th>
+                <th>Predicción congelada</th>
+                <th>Reacción 16:00</th>
+                <th>Dirección temprana</th>
+                <th>Earnings</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row"><button class="ticker-link operator-ticker" onclick="openCase('25835')">C</button></th>
+              <td>SIN_SEÑAL</td>
+              <td>-1.68%</td>
+              <td><span class="badge bad">PUT</span></td>
+              <td>2026-10-13</td>
+            </tr>
+
+            <tr>
+              <th scope="row"><button class="ticker-link operator-ticker" onclick="openCase('25869')">JPM</button></th>
+              <td>SIN_SEÑAL</td>
+              <td>+0.10%</td>
+              <td><span class="badge good">CALL</span></td>
+              <td>2026-10-13</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="operator-aux-note">
+          AUXILIAR · NO OFICIAL. El resultado oficial sigue siendo el cierre
+          de la primera sesión completa post-earnings.
+        </p>
+
+  </section>
+
+  <section class="operator-subpanel operator-target-panel">
+    <div class="operator-subheader">
+      <div>
+        <h3>3 · MIS TARGETED · MAÑANA</h3>
+        <p>
+          Selección introducida manualmente. Al ejecutar TARGETED,
+          el análisis completo queda congelado.
+        </p>
+      </div>
+      <span class="operator-target-badge">TARGETED</span>
+    </div>
+
+    <p class="operator-selection-meta">Sin selección manual nueva hoy</p>
+
+
+        <div class="operator-empty">
+          No hay una selección TARGETED nueva guardada hoy.
+          Cuando introduzcas las empresas para mañana y ejecutes TARGETED,
+          aparecerán aquí.
+        </div>
+
+  </section>
+
+</section>
+
+</section>
+
+<section
+  id="tab-research"
+  class="dashboard-tab"
+  role="tabpanel"
+  aria-labelledby="tab-button-research"
+>
+
 
 
 <section class="decision-panel">
@@ -377122,6 +377221,8 @@ pre {
 </details>
 
 
+
+</section>
 </main>
 
 
@@ -377143,6 +377244,64 @@ pre {
 </div>
 
 <script>
+
+function showDashboardTab(tabName) {
+
+  const isResearch =
+    tabName === "research";
+
+  const todayTab =
+    document.getElementById(
+      "tab-today"
+    );
+
+  const researchTab =
+    document.getElementById(
+      "tab-research"
+    );
+
+  const todayButton =
+    document.getElementById(
+      "tab-button-today"
+    );
+
+  const researchButton =
+    document.getElementById(
+      "tab-button-research"
+    );
+
+  todayTab.classList.toggle(
+    "active",
+    !isResearch
+  );
+
+  researchTab.classList.toggle(
+    "active",
+    isResearch
+  );
+
+  todayButton.classList.toggle(
+    "active",
+    !isResearch
+  );
+
+  researchButton.classList.toggle(
+    "active",
+    isResearch
+  );
+
+  todayButton.setAttribute(
+    "aria-selected",
+    String(!isResearch)
+  );
+
+  researchButton.setAttribute(
+    "aria-selected",
+    String(isResearch)
+  );
+
+}
+
 
 function applyFilters() {
 
@@ -377253,6 +377412,8 @@ function applyFilters() {
 
 function openCase(caseId) {
 
+  showDashboardTab("research");
+
   const card =
     document.getElementById(
       "case-" + caseId
@@ -377264,9 +377425,11 @@ function openCase(caseId) {
 
   card.open = true;
 
-  card.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
+  requestAnimationFrame(() => {
+    card.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   });
 
 }

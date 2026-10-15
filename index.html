@@ -1239,9 +1239,29 @@ pre {
 
     <div class="operator-date">
       <strong>Hoy</strong>
-      <span>2026-10-15</span>
+      <span id="operator-live-madrid-date">2026-10-15</span>
     </div>
   </div>
+  <p id="operator-snapshot-age" role="status" style="display:none;margin:0 0 16px;color:#92400e;font-weight:600"></p>
+  <script>
+  (function () {
+    const generatedDate = "2026-10-15";
+    const currentDate = new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'Europe/Madrid',
+      year: 'numeric', month: '2-digit', day: '2-digit'
+    }).format(new Date());
+    const label = document.getElementById('operator-live-madrid-date');
+    if (label) label.textContent = currentDate;
+    if (currentDate !== generatedDate) {
+      const age = document.getElementById('operator-snapshot-age');
+      if (age) {
+        age.textContent = 'Datos del operador generados para ' + generatedDate +
+          '. La fecha HOY es actual, pero los resultados, la reacción temprana y TARGETED aún corresponden a esa captura. Es necesario actualizar la publicación.';
+        age.style.display = 'block';
+      }
+    }
+  })();
+  </script>
 
   <div role="note" style="margin:0 0 20px;padding:16px;border:2px solid #245b9b;border-radius:12px;background:#edf4ff;color:#173c68;line-height:1.5">
     <strong>Seguimiento de mis 23 empresas · 14/10/2026</strong>

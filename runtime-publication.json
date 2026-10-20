@@ -1,12 +1,12 @@
 {
-  "archive_sha256": "f2574ac97637427e8aa86a43cf96314dd27d6d7c9fdbcab0dff0b8ca2041d6d5",
-  "asset_id": 658827814,
+  "archive_sha256": "2a82caa1e5d3f34810204ccb189773d315c5f3493c3ada92e09f8860123d39a9",
+  "asset_id": 658827818,
   "full_staging_renderer": true,
-  "generation": 1,
+  "generation": 2,
   "research_invocations": 0,
-  "runtime_ref_sha": "51c8232b6009a115437118498bd869e096b4a9ce",
+  "runtime_ref_sha": "90ef3a201052a4376fa3648ce66faa4904660477",
   "schema": "earnings_dashboard_runtime_provenance_v1",
   "scope": "SYNTHETIC_STAGING_ONLY",
-  "tracking_sha256": "cc72265c4d352bc4657f345286af8d53d4b5e8e9ad704e0e8fe0051c699eac1d",
-  "transaction": "crossrepo-39399044427-first"
+  "tracking_sha256": "2e756c0b7c0d9bee80b6cf0acbfee9b74b991a8d10b647000da82eb7ab1fe5c8",
+  "transaction": "crossrepo-39399044427-second"
 }

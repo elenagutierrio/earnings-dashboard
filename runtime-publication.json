@@ -1,10 +1,10 @@
 {
-  "archive_sha256": "b802af4e09343287ffcca602dc1b257967ca19edd7260e8f0bbe55038d97c2de",
-  "asset_id": 658789043,
-  "generation": 1,
+  "archive_sha256": "f000dc16f5dbd3356c84419cb31c188a4f37bbdfed4061714da15346ef768e1f",
+  "asset_id": 658789037,
+  "generation": 2,
   "research_invocations": 0,
-  "runtime_ref_sha": "e125451ee2d79edef3c821689a51acb2b7692f0d",
+  "runtime_ref_sha": "0cb47a5877006bdff5cd77574d0c446e0201bae7",
   "schema": "earnings_dashboard_runtime_provenance_v1",
   "scope": "SYNTHETIC_STAGING_ONLY",
-  "transaction": "crossrepo-39396906555-first"
+  "transaction": "crossrepo-39396906555-second"
 }

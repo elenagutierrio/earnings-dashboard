@@ -1,0 +1,12 @@
+{
+  "archive_sha256": "5a87382599097c61da62739e0059c373f8e40bb894bf590958f42eb60e8d04c2",
+  "asset_id": 658862042,
+  "full_staging_renderer": true,
+  "generation": 1,
+  "research_invocations": 0,
+  "runtime_ref_sha": "2f539e9694b0868acb60b55eca2cffd1291de991",
+  "schema": "earnings_dashboard_runtime_provenance_v1",
+  "scope": "SYNTHETIC_STAGING_ONLY",
+  "tracking_sha256": "b8e6c987708dcbc8abdec04e480bd87cf56bf65ec0403c9efabac8e88dd00650",
+  "transaction": "crossrepo-39400765548-first"
+}

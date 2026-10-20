@@ -1,0 +1,11 @@
+{
+  "archive_sha256": "dc679a3753f929d50b3bc58127fd5e27eebfe7731753d68198f7111fe561e710",
+  "asset_id": 658927996,
+  "generation": 1,
+  "index_sha256": "900c5e0c3cd8d78d1744ffada80a4dee29e8ccbc2de924f96b64b677e4bd0df3",
+  "mode": "daily",
+  "runtime_ref_sha": "14d25ffcf4f0cd36f9576dafc05c4155910eee36",
+  "schema": "earnings_dashboard_runtime_provenance_v1",
+  "tracking_sha256": "a4e897301c4aa85689c716d69112cccfd4b9829adef997cec9c026f7fbaf2cc1",
+  "transaction": "runtime-39403901438-1-daily"
+}

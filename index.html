@@ -1331,10 +1331,33 @@ pre {
     </div>
 
 
-        <div class="operator-empty">
-          Todavía no se ha capturado ninguna reacción temprana para hoy.
-          La medición se registra alrededor de las 16:00 Madrid y no modifica la señal.
+        <div class="table-wrap">
+          <table class="operator-table">
+            <thead>
+              <tr>
+                <th>Empresa</th>
+                <th>Predicción congelada</th>
+                <th>Reacción 16:00</th>
+                <th>Dirección temprana</th>
+                <th>Earnings</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row"><button class="ticker-link operator-ticker" onclick="openCase('54288')">MED</button></th>
+              <td>SIN_SEÑAL</td>
+              <td>+2.70%</td>
+              <td><span class="badge good">CALL</span></td>
+              <td>2026-10-26</td>
+            </tr>
+            </tbody>
+          </table>
         </div>
+
+        <p class="operator-aux-note">
+          AUXILIAR · NO OFICIAL. El resultado oficial sigue siendo el cierre
+          de la primera sesión completa post-earnings.
+        </p>
 
   </section>
 
@@ -3997,7 +4020,7 @@ pre {
           <td><span class="badge bad">NO</span></td>
           <td><span class="badge neutral">NO DETERMINADO</span></td>
           <td><span class="badge good">Sí</span></td>
-          <td>PENDIENTE</td>
+          <td>+2.70% (CALL)</td>
           <td><span class="badge neutral">-</span></td>
           <td><span class="badge neutral">-</span></td>
         </tr>
@@ -214447,7 +214470,7 @@ pre {
               <div>
                 <span>Reacción 16h ES</span>
                 <strong>
-                  PENDIENTE
+                  +2.70% (CALL)
                 </strong>
               </div>
 
@@ -219528,18 +219551,18 @@ pre {
               </summary>
 
               <pre>{
-  &quot;target_session_date&quot;: null,
-  &quot;target_at&quot;: null,
-  &quot;bar_start_at&quot;: null,
-  &quot;bar_end_at&quot;: null,
-  &quot;pre_session_date&quot;: null,
-  &quot;pre_earnings_close&quot;: null,
-  &quot;early_price&quot;: null,
-  &quot;reaction_pct&quot;: null,
-  &quot;realized_direction&quot;: null,
-  &quot;captured_at&quot;: null,
-  &quot;source&quot;: null,
-  &quot;source_url&quot;: null
+  &quot;target_session_date&quot;: &quot;2026-10-26&quot;,
+  &quot;target_at&quot;: &quot;2026-10-26T16:00:00+01:00&quot;,
+  &quot;bar_start_at&quot;: &quot;2026-10-26T15:59:00+01:00&quot;,
+  &quot;bar_end_at&quot;: &quot;2026-10-26T16:00:00+01:00&quot;,
+  &quot;pre_session_date&quot;: &quot;2026-10-23&quot;,
+  &quot;pre_earnings_close&quot;: 11.869999885559082,
+  &quot;early_price&quot;: 12.1899995803833,
+  &quot;reaction_pct&quot;: 2.695869401090123,
+  &quot;realized_direction&quot;: &quot;CALL&quot;,
+  &quot;captured_at&quot;: &quot;2026-10-26T20:25:57.055724+00:00&quot;,
+  &quot;source&quot;: &quot;Yahoo Finance chart API interval=1m&quot;,
+  &quot;source_url&quot;: &quot;https://query1.finance.yahoo.com/v8/finance/chart/MED?period1=1793019600&amp;period2=1793027400&amp;interval=1m&amp;events=history&amp;includePrePost=false&quot;
 }</pre>
             </details>
 
